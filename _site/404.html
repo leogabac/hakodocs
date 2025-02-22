@@ -1,0 +1,10 @@
+<!-- redirect to page creator if not exists -->
+
+<script type="text/javascript">
+    var filename = window.location.pathname.split('/').pop();
+    if (!filename.endsWith(".md"))
+        filename+=".md";
+
+    var url = 'https://github.com/leogabac/hakodocs/new/master?filename=wiki/'+filename;
+    window.location=url;
+</script>
