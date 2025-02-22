@@ -5,7 +5,7 @@
 body {
   /* background-color: #fff; */
   padding: 50px;
-  font: 14px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font: 18px/1.5 "Noto Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #727272;
   font-weight: 400;
 }
@@ -36,7 +36,7 @@ h3 {
 }
 
 h1 {
-  font-size: 28px;
+  font-size: 30px;
 }
 
 h2 {
@@ -51,16 +51,16 @@ h6 {
 }
 
 a {
-  color: #39c;
+  color: #2277bb;  /* Darker blue */
   text-decoration: none;
 }
 
 a:hover {
-  color: #069;
+  color: #005580;  /* Even darker blue on hover */
 }
 
 a small {
-  font-size: 11px;
+  font-size: 14px;
   color: #777;
   margin-top: -0.3em;
   display: block;
@@ -86,7 +86,7 @@ code,
 pre {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color: #333;
-  font-size: 12px;
+  font-size: 14px;
 }
 
 pre {
@@ -195,7 +195,7 @@ screen and (max-width: 992px) {
 
 #git-wiki-sidebar .git-wiki-downloads a {
   line-height: 1;
-  font-size: 11px;
+  font-size: 14px;
   color: #999;
   display: block;
   text-align: center;
@@ -253,7 +253,7 @@ footer {
 }
 
 .tools-element {
-  border-left: aqua;
+  border-left: darkgray;
   border-left-style: solid;
   padding-left: 10px;
   padding-right: 10px;

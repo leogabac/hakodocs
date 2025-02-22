@@ -35,7 +35,7 @@ var jsondata=[
         "tags"     : "",
         "url"      : "/main_page",
         "date"     : "",
-        "content"  : "<h1 id=\"welcome-to-hakodocs\">Welcome to HakoDocs!</h1>\n<p>HakoDocs is a public compilation of tech-related notes that address specific problems I’ve encountered throughout my life.\nYou can expect to find <em>How to do \\(X\\)</em> guides for a variety of topics, primarily related to Linux, programming languages, servers, and more.\nI started this project as a personal collection of notes, and as I began sharing them with my colleagues, it grew into something more.\nThe same colleagues these notes once helped started contributing to them. I hope you, like them, find something useful within this <em>hako</em>.</p>\n"
+        "content"  : "<h1 id=\"welcome-to-hakodocs\">Welcome to HakoDocs!</h1>\n<p>HakoDocs is a public compilation of tech-related notes that address specific problems I’ve encountered throughout my life.\nYou can expect to find <em>How to do \\(X\\)</em> guides for a variety of topics, primarily related to Linux, programming languages, servers, and more.\nI started this project as a personal collection of notes, and as I began sharing them with my colleagues, it grew into something more.\nThe same colleagues these notes once helped started contributing to them. I hope you, like them, find something useful within this <em>hako</em>.</p>\n\n"
      
    } ,
   
