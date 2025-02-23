@@ -1,0 +1,617 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Arch Linux | HakoDocs</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Arch Linux" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Arch Linux" />
+<meta property="og:description" content="Arch Linux" />
+<link rel="canonical" href="http://localhost:4000/archlinux" />
+<meta property="og:url" content="http://localhost:4000/archlinux" />
+<meta property="og:site_name" content="HakoDocs" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Arch Linux" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Arch Linux","headline":"Arch Linux","url":"http://localhost:4000/archlinux"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>archlinux - HakoDocs</title>
+
+<meta property="og:title" content="archlinux - HakoDocs">
+
+<meta property="og:description" content="
+        A collection of tech-related notes
+      ">
+
+
+<meta property="og:url"
+  content="http://localhost:4000/archlinux" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=49611ff17f86adb30b9692cbf4216e104c37e312">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+  <a href="/">
+    
+    HakoDocs
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1>HakoDocs</h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="https://github.com/leogabac/hakodocs/zipball/gh-pages">Download <strong>ZIP File</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs/tarball/gh-pages">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+    
+
+
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#arch-linux">Arch Linux</a>
+    <ol>
+      <li><a href="#the-package-manager">The package Manager</a></li>
+      <li><a href="#the-arch-user-repository">The Arch User Repository</a></li>
+      <li><a href="#full-system-upgrade">Full System Upgrade</a></li>
+    </ol>
+  </li>
+  <li><a href="#system-sanity-check">System Sanity Check</a>
+    <ol>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#sound">Sound</a></li>
+      <li><a href="#bluetooth">Bluetooth</a>
+        <ol>
+          <li><a href="#sound-through-bluetooth">Sound through Bluetooth</a></li>
+        </ol>
+      </li>
+      <li><a href="#keyboard-backlight">Keyboard Backlight</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#monitors">Monitors</a></li>
+      <li><a href="#graphics-card">Graphics Card</a>
+        <ol>
+          <li><a href="#card-is-detected">Card Is Detected</a></li>
+          <li><a href="#opengl-renderer">OpenGL Renderer</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#text-editor">Text Editor</a>
+    <ol>
+      <li><a href="#vscode">VSCode</a></li>
+      <li><a href="#neovim">Neovim</a></li>
+    </ol>
+  </li>
+</ol>
+
+
+Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
+
+<ul>
+  <li><a href="/">Home</a></li>
+</ul>
+
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/timeshift">Timeshift</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/home">Home</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/archlinux">Arch Linux</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/assets/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/wiki?filename=">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/edit/master//wiki/articles/archlinux.md">Edit</a></span>
+
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/delete/master//wiki/articles/archlinux.md">Delete</a></span>
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/articles/archlinux.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/articles/archlinux.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/articles/archlinux.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+
+
+
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#arch-linux">Arch Linux</a>
+    <ol>
+      <li><a href="#the-package-manager">The package Manager</a></li>
+      <li><a href="#the-arch-user-repository">The Arch User Repository</a></li>
+      <li><a href="#full-system-upgrade">Full System Upgrade</a></li>
+    </ol>
+  </li>
+  <li><a href="#system-sanity-check">System Sanity Check</a>
+    <ol>
+      <li><a href="#network">Network</a></li>
+      <li><a href="#sound">Sound</a></li>
+      <li><a href="#bluetooth">Bluetooth</a>
+        <ol>
+          <li><a href="#sound-through-bluetooth">Sound through Bluetooth</a></li>
+        </ol>
+      </li>
+      <li><a href="#keyboard-backlight">Keyboard Backlight</a></li>
+      <li><a href="#screenshots">Screenshots</a></li>
+      <li><a href="#monitors">Monitors</a></li>
+      <li><a href="#graphics-card">Graphics Card</a>
+        <ol>
+          <li><a href="#card-is-detected">Card Is Detected</a></li>
+          <li><a href="#opengl-renderer">OpenGL Renderer</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#text-editor">Text Editor</a>
+    <ol>
+      <li><a href="#vscode">VSCode</a></li>
+      <li><a href="#neovim">Neovim</a></li>
+    </ol>
+  </li>
+</ol>
+
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1 id="arch-linux">Arch Linux</h1>
+
+<p>Arch Linux is a <em>rolling-release</em> distribution, i.e.  <em>packages</em> (software) receive updates constantly. There is not a concensus on how often one needs to update their system, a good rule of thumb is once per week.</p>
+
+<blockquote>
+  <p><strong>PRO TIP:</strong><br />
+If case something happens, <strong>always</strong> check the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> first. It always help, no matter the problem you may have. Read <strong>very</strong> carefully the instructions, and don’t skip steps. I have encountered many problems for literally not reading the next line in the wiki.</p>
+</blockquote>
+
+<p>This guide serves as both a beginner guide to know that to check after they install Arch Linux for the first time, but also a checklist for myself to remember what to look for in a new installation. I will assume that you installed KDE Plasma as your Desktop Environment.</p>
+
+<h2 id="the-package-manager">The package Manager</h2>
+
+<p>As in any Linux distribution, Arch Linux has a <em>package manager</em> called <code class="language-plaintext highlighter-rouge">pacman</code> that installs software from the <em>Arch repository</em> . Package names may differ from other distributions, so it is recommended that you check on the <a href="https://archlinux.org/packages/">repositories</a> or the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> how to install particular software.</p>
+
+<p>To install packages simply run</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> PACKAGE_NAME
+</code></pre></div></div>
+<p>where the <code class="language-plaintext highlighter-rouge">-S</code> flag stands for <em>Sync</em>. It basically reads</p>
+
+<blockquote>
+  <p>Sync from the pacman (Arch) repository PACKAGE_NAME with my system</p>
+</blockquote>
+
+<h2 id="the-arch-user-repository">The Arch User Repository</h2>
+<p>Not every piece of software can be found in the regular Arch repositories. Take for example <code class="language-plaintext highlighter-rouge">dropbox</code>, that has official support for Debian/Ubuntu, but not for Arch Linux. Another example would be software that need to be <em>compiled from source</em> like <code class="language-plaintext highlighter-rouge">lammps</code>, <code class="language-plaintext highlighter-rouge">gromacs</code> or some of the <code class="language-plaintext highlighter-rouge">xp-pen</code> drivers for their tablets. Manually repackaging, or compiling from source will install the software on your system at the cost of not being properly managed by <code class="language-plaintext highlighter-rouge">pacman</code>. On such cases we turn to the so-called <em>Arch User Repository</em> (AUR).</p>
+
+<p>The Arch User Repository (AUR) is a community-driven repository for Arch Linux that allows users to share and install packages not available in the official Arch repositories. Unlike the official repos, which provide precompiled binaries, the AUR contains <em>PKGBUILD</em> scripts—text files that define how to download, compile, and install software from source or external sources like .deb packages. Users can manually download a PKGBUILD and run <code class="language-plaintext highlighter-rouge">makepkg -si</code> to build and install the package, or use an <em>AUR helper</em> like <code class="language-plaintext highlighter-rouge">yay</code> or <code class="language-plaintext highlighter-rouge">paru</code> to automate the process. Since AUR packages are maintained by the community, they are not officially supported by Arch and may require user intervention if dependencies or builds break.</p>
+
+<p>To install <code class="language-plaintext highlighter-rouge">yay</code> as an AUR helper, run</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> <span class="nt">--needed</span> base-devel git
+<span class="nb">mkdir</span> /tmp/yay
+git clone https://aur.archlinux.org/yay.git /tmp/yay
+<span class="nb">cd</span> /tmp/yay
+makepkg <span class="nt">-si</span>
+</code></pre></div></div>
+<p>Then from the AUR, we can install with same flags as in <code class="language-plaintext highlighter-rouge">pacman</code></p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay -S PACKAGE_NAME
+</code></pre></div></div>
+<p>When yay installs an AUR package, it first downloads the <em>PKGBUILD</em> script, builds the package into a <code class="language-plaintext highlighter-rouge">.pkg.tar.zst</code> file, and then installs it using <code class="language-plaintext highlighter-rouge">pacman -U</code>. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means <code class="language-plaintext highlighter-rouge">pacman -Q</code> can list it, <code class="language-plaintext highlighter-rouge">pacman -R</code> can remove it, and <code class="language-plaintext highlighter-rouge">pacman -U</code> can reinstall it.</p>
+
+<p>Because AUR packages are not in the official repositories, <code class="language-plaintext highlighter-rouge">pacman -Syu</code> does not update them—users must manually rebuild them or use an AUR helper like <code class="language-plaintext highlighter-rouge">yay -Syu</code>, which automates the update process by fetching new <em>PKGBUILD</em> versions and repeating the build-and-install process.</p>
+
+<h2 id="full-system-upgrade">Full System Upgrade</h2>
+<p>Arch Linux receives constant updates, to make a <em>full system upgrade</em> run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -Syu
+</code></pre></div></div>
+<blockquote>
+  <p><strong>WARNING:</strong>
+Always make sure to read what packages are being updated.</p>
+</blockquote>
+
+<h1 id="system-sanity-check">System Sanity Check</h1>
+<p>First thing, is that we need to check if all basic functionalities are working properly. In some sections I don’t have any particular advice, as they usually work out of the box. In such cases, I will simply provide a link to their ArchWiki page.</p>
+
+<h2 id="network">Network</h2>
+<p>Check <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless">Network configuration</a> on the ArchWiki.</p>
+
+<h2 id="sound">Sound</h2>
+<p>Check <a href="https://wiki.archlinux.org/title/Sound_system">Sound system</a> on the ArchWiki.</p>
+
+<h2 id="bluetooth">Bluetooth</h2>
+
+<p>Some extra packages will be necessary.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> bluez bluez-utils bluez-deprecated-tools
+</code></pre></div></div>
+
+<p>Typically the Bluetooth Services is not enabled by default.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start bluetooth.service
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>bluetooth.service
+</code></pre></div></div>
+
+<p>Sometimes you will need to reboot your PC for everything to work properly.</p>
+
+<h3 id="sound-through-bluetooth">Sound through Bluetooth</h3>
+<p>Check <a href="https://wiki.archlinux.org/title/Bluetooth_headset">Bluetooth headset</a> on the ArchWiki.</p>
+
+<h2 id="keyboard-backlight">Keyboard Backlight</h2>
+<p>The frontend that controls the backlight is not installed.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -S brightnessctl
+</code></pre></div></div>
+<p>If that does not solve it, check <a href="https://wiki.archlinux.org/title/Keyboard_backlight">Keyboard backlight</a> on the Archwiki.</p>
+
+<h2 id="screenshots">Screenshots</h2>
+<p>The software that takes screenshots is not installed. For KDE Plasma use <code class="language-plaintext highlighter-rouge">spectacle</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> spectacle
+</code></pre></div></div>
+
+<h2 id="monitors">Monitors</h2>
+<p>In particular,</p>
+<ol>
+  <li>All monitors connect correctly, in particular those that use Thunderbolt/USB4.</li>
+  <li>All monitors run at their respective refresh rate.</li>
+</ol>
+
+<h2 id="graphics-card">Graphics Card</h2>
+<p>There are a few ways to make sure your dedicated graphics card is working.</p>
+
+<h3 id="card-is-detected">Card Is Detected</h3>
+<ol>
+  <li>In KDE Plasma, look for the <em>About</em> setting, it should list all of your components.</li>
+  <li>Using fastfetch
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fastfetch
+fastfech
+</code></pre></div>    </div>
+  </li>
+  <li>Using <code class="language-plaintext highlighter-rouge">lspci</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lspci | <span class="nb">grep</span> <span class="nt">-i</span> vga
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h3 id="opengl-renderer">OpenGL Renderer</h3>
+<p>You can check the default OpenGL rendered for your system to make sure which card is currently being used</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
+</code></pre></div></div>
+<blockquote>
+  <p>OpenGL renderer string: AMD Radeon RX 6650M (radeonsi, navi23, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</p>
+</blockquote>
+
+<p>This will list the current renderer and used driver. If it is not the correct one, you can force it with the <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> environment variable.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DRI_PRIME</span><span class="o">=</span>1 glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
+</code></pre></div></div>
+<blockquote>
+  <p>OpenGL renderer string: AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</p>
+</blockquote>
+
+<p>As a final sanity check, a good way to <em>really</em> make sure your card is working is by launching minecraft. You can install it from the AUR</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay -S minecraft-launcher
+</code></pre></div></div>
+<p>In a world, press F3 and check the <em>display</em> information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> variable state.</p>
+
+<p>I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.</p>
+
+<h1 id="text-editor">Text Editor</h1>
+
+<h2 id="vscode">VSCode</h2>
+<p>There are many text editors on Linux. VSCode is a Microsoft editor with enabled telemetry, Linux users do not like that for privacy concerns. VSCodium is a community open-source release that nullifies telemetry, and is available in the AUR. For Arch Linux, there is an official OSS release</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> code
+</code></pre></div></div>
+<p>For more information, read the <a href="https://wiki.archlinux.org/title/Visual_Studio_Code">VSCode Arch Wiki Page</a>.</p>
+
+<h2 id="neovim">Neovim</h2>
+<p>I personally use <code class="language-plaintext highlighter-rouge">nvim</code> with my own configuration.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> nvim
+git clone https://github.com/leogabac/leovim.git ~/.config/nvim
+nvim
+</code></pre></div></div>
+<p>Check the <a href="https://github.com/leogabac/leovim">leovim repository</a> for more information.</p>
+
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+<div class="git-wiki-copyrights">
+    <p>This project is maintained by <a href="https://github.com/leogabac">leogabac</a></p>
+    
+    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.6</a> </p>
+
+    
+    <p class="view"><a href="https://github.com/leogabac/hakodocs">View the Project on  Github  <small></small></a></p>
+</div>
+
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python,/latex,/timeshift,/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>

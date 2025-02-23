@@ -14,29 +14,29 @@
 <meta name="viewport" content="width=device-width">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>HakoDocs | A collection of tech-related notes</title>
+<title>Timeshift | HakoDocs</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="HakoDocs" />
+<meta property="og:title" content="Timeshift" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A collection of tech-related notes" />
 <meta property="og:description" content="A collection of tech-related notes" />
-<link rel="canonical" href="http://localhost:4000/assets/blog/" />
-<meta property="og:url" content="http://localhost:4000/assets/blog/" />
+<link rel="canonical" href="http://localhost:4000/timeshift" />
+<meta property="og:url" content="http://localhost:4000/timeshift" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="HakoDocs" />
+<meta property="twitter:title" content="Timeshift" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"HakoDocs","url":"http://localhost:4000/assets/blog/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"Timeshift","url":"http://localhost:4000/timeshift"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 
 
 
-<title>index.html - HakoDocs</title>
+<title>timeshift - HakoDocs</title>
 
-<meta property="og:title" content="index.html - HakoDocs">
+<meta property="og:title" content="timeshift - HakoDocs">
 
 <meta property="og:description" content="
         A collection of tech-related notes
@@ -44,7 +44,7 @@
 
 
 <meta property="og:url"
-  content="http://localhost:4000/assets/blog/" />
+  content="http://localhost:4000/timeshift" />
 
 
 
@@ -156,6 +156,11 @@
     
     
 
+
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#timeshift">Timeshift</a></li>
+</ol>
 
 
 Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
@@ -283,16 +288,16 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/wiki?filename=">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/edit/master//assets/blog/index.html">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/edit/master//wiki/articles/timeshift.md">Edit</a></span>
 
     
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/delete/master//assets/blog/index.html">Delete</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/delete/master//wiki/articles/timeshift.md">Delete</a></span>
     
 
     
 
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//assets/blog/index.html">History</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//assets/blog/index.html">Source</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/articles/timeshift.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/articles/timeshift.md">Source</a></span>
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
             new post</a></span>
@@ -302,7 +307,7 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     Prose.io:
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/assets/blog/index.html">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/articles/timeshift.md">Edit</a></span>
     
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
             new post</a></span>
@@ -335,6 +340,11 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
 
 
 
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#timeshift">Timeshift</a></li>
+</ol>
+
 
 
 
@@ -342,21 +352,41 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     
 
     <div id="git-wiki-content">
-      <!-- This loops through the paginated posts -->
+      <h1 id="timeshift">Timeshift</h1>
+
+<p>Timeshift is a backup and restore tool for Linux that creates system snapshots, allowing users to revert their system to a previous state in case of errors, updates gone wrong, or system corruption. It works similarly to Windows System Restore or macOS Time Machine but focuses on system files rather than personal data. Timeshift supports <code class="language-plaintext highlighter-rouge">rsync</code> (incremental backups with hard links) and <code class="language-plaintext highlighter-rouge">btrfs</code> snapshots (for filesystems with built-in snapshot support).</p>
+
+<p>A good practice is to make a system snapshot with <code class="language-plaintext highlighter-rouge">timeshift</code> before making a full system upgrade. Here I will provide a basic setup to accomplish this, but you can read the <a href="https://wiki.archlinux.org/title/Timeshift">Timeshift Arch Wiki Page</a> for more information.</p>
+
+<p>Install the package and enable a chosen cron scheduler (<code class="language-plaintext highlighter-rouge">cronie</code> for this case)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> timeshift cronie
+<span class="nb">sudo </span>systemctl start cronie.service
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>cronie.service
+</code></pre></div></div>
+<blockquote>
+  <p><strong>RECOMMENDED:</strong> <br />
+Open the Timeshift GUI from your applications menu and make an initial setup by clicking on <em>Wizard</em><br />
+For ext4 filesystems:\</p>
+  <ol>
+    <li>Choose <code class="language-plaintext highlighter-rouge">rsync</code>.\</li>
+    <li>Choose your disk.\</li>
+    <li>Select daily snapshots and keep from 2-3 of them.\</li>
+    <li>Click finish</li>
+  </ol>
+</blockquote>
+
+<p>Although you can manipulate Timeshift with a GUI, the <em>Command Line Interface</em> (CLI) helps with automation of snapshops. For example, you can make a bash script that makes a snapshot, and then a full system upgrade</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#!/bin/bash</span>
+
+<span class="nb">sudo </span>timeshift <span class="nt">--create</span> <span class="nt">--comments</span> <span class="s2">"update </span><span class="si">$(</span><span class="nb">date</span> +%y<span class="si">)</span><span class="s2">w</span><span class="si">$(</span><span class="nb">date</span> +%U<span class="si">)</span><span class="s2">"</span>
+<span class="nb">sudo </span>pacman <span class="nt">-Syu</span>
+</code></pre></div></div>
+
+<p>This creates a snapshop with a comment <em>update ##w##</em> that updates with the year and current week, e.g. <em>25w13</em> is Week 13 of 2025.</p>
+
+<p>After the snapshot, it upgrades the system.</p>
 
 
-<!-- Pagination links -->
-<div class="pagination">
-  
-    <span class="previous">Previous</span>
-  
-  <span class="page_number ">
-    Page:  of 
-  </span>
-  
-    <span class="next ">Next</span>
-  
-</div>
     </div>
 
     

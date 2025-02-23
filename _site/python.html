@@ -14,29 +14,29 @@
 <meta name="viewport" content="width=device-width">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>HakoDocs | A collection of tech-related notes</title>
+<title>Python | HakoDocs</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="HakoDocs" />
+<meta property="og:title" content="Python" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A collection of tech-related notes" />
-<meta property="og:description" content="A collection of tech-related notes" />
-<link rel="canonical" href="http://localhost:4000/assets/blog/" />
-<meta property="og:url" content="http://localhost:4000/assets/blog/" />
+<meta name="description" content="Python" />
+<meta property="og:description" content="Python" />
+<link rel="canonical" href="http://localhost:4000/python" />
+<meta property="og:url" content="http://localhost:4000/python" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="HakoDocs" />
+<meta property="twitter:title" content="Python" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"HakoDocs","url":"http://localhost:4000/assets/blog/"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Python","headline":"Python","url":"http://localhost:4000/python"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 
 
 
-<title>index.html - HakoDocs</title>
+<title>python - HakoDocs</title>
 
-<meta property="og:title" content="index.html - HakoDocs">
+<meta property="og:title" content="python - HakoDocs">
 
 <meta property="og:description" content="
         A collection of tech-related notes
@@ -44,7 +44,7 @@
 
 
 <meta property="og:url"
-  content="http://localhost:4000/assets/blog/" />
+  content="http://localhost:4000/python" />
 
 
 
@@ -156,6 +156,20 @@
     
     
 
+
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#python">Python</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+    </ol>
+  </li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ol>
+      <li><a href="#pyenv">pyenv</a></li>
+    </ol>
+  </li>
+</ol>
 
 
 Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
@@ -283,16 +297,16 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/wiki?filename=">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/edit/master//assets/blog/index.html">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/edit/master//wiki/articles/python.md">Edit</a></span>
 
     
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/delete/master//assets/blog/index.html">Delete</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/delete/master//wiki/articles/python.md">Delete</a></span>
     
 
     
 
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//assets/blog/index.html">History</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//assets/blog/index.html">Source</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/articles/python.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/articles/python.md">Source</a></span>
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
             new post</a></span>
@@ -302,7 +316,7 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     Prose.io:
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/assets/blog/index.html">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/articles/python.md">Edit</a></span>
     
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
             new post</a></span>
@@ -335,6 +349,20 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
 
 
 
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#python">Python</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+    </ol>
+  </li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ol>
+      <li><a href="#pyenv">pyenv</a></li>
+    </ol>
+  </li>
+</ol>
+
 
 
 
@@ -342,21 +370,49 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     
 
     <div id="git-wiki-content">
-      <!-- This loops through the paginated posts -->
+      <h1 id="python">Python</h1>
+
+<p>Python is a high-level, interpreted programming language known for its simplicity and readability. It supports multiple programming paradigms, including procedural, object-oriented, and functional programming. Python is widely used in web development, data science, automation, artificial intelligence, and scientific computing due to its extensive libraries and active community.</p>
+
+<p>This article is a basic guide on the common setups one has to deal with in Python.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>WIP</p>
+
+<h1 id="virtual-environments">Virtual Environments</h1>
+
+<p>I use a lot of virtual environments to not break system packages. “Global” environments are stored in <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code>.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> python-virtualenv
+<span class="nb">mkdir</span> ~/.virtualenvs/
+</code></pre></div></div>
+
+<p>As an example, let’s make a virtualenv called <code class="language-plaintext highlighter-rouge">pyglobal</code>, run</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv ~/.virtualenvs/pyglobal
+<span class="nb">source</span> ~/.virtualenvs/global/bin/activate
+</code></pre></div></div>
+
+<p>Add an alias to the environment in your <code class="language-plaintext highlighter-rouge">~/.bashrc</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">pyglobal</span><span class="o">=</span><span class="s2">"source ~/.virtualenvs/global/bin/activate"</span>
+</code></pre></div></div>
+
+<h2 id="pyenv">pyenv</h2>
+
+<p>More often than not, we need to manage multiple python versions since ArchLinux changes versions more often that I like it. To accomplish this, I make a virtual environment that uses a particular python binary. This binary can either be compiled manually, installed from the AUR, or in this case using pyenv.</p>
+
+<p>Pyenv does a lot of things, but I personally use it as an installer and manager of python versions. Following their <a href="https://github.com/pyenv/pyenv">documentation</a></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">--python</span><span class="o">=</span>/home/USER/.pyenv/versions/3.12.0/bin/python3.12 /home/USER/.virtualenv/py3.12
+</code></pre></div></div>
+
+<blockquote>
+  <p><strong>WARNING:</strong><br />
+It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
+</blockquote>
 
 
-<!-- Pagination links -->
-<div class="pagination">
-  
-    <span class="previous">Previous</span>
-  
-  <span class="page_number ">
-    Page:  of 
-  </span>
-  
-    <span class="next ">Next</span>
-  
-</div>
     </div>
 
     

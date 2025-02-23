@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://localhost:4000/archlinux</loc>
+</url>
+<url>
+<loc>http://localhost:4000/home</loc>
+</url>
+<url>
 <loc>http://localhost:4000/assets/blog/</loc>
 </url>
 <url>
-<loc>http://localhost:4000/main_page</loc>
+<loc>http://localhost:4000/python</loc>
+</url>
+<url>
+<loc>http://localhost:4000/latex</loc>
+</url>
+<url>
+<loc>http://localhost:4000/timeshift</loc>
 </url>
 </urlset>
