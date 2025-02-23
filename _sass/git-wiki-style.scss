@@ -40,6 +40,7 @@ h1 {
 }
 
 h2 {
+  font-size: 25px;
   color: #393939;
 }
 
@@ -48,6 +49,12 @@ h4,
 h5,
 h6 {
   color: #494949;
+}
+
+h1 {
+  font-size: 30px;
+  border-bottom: 1px solid #393939;
+  padding-bottom: 5px; /* Adds spacing between text and line */
 }
 
 a {
@@ -86,7 +93,7 @@ code,
 pre {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
   color: #333;
-  font-size: 14px;
+  font-size: 18px;
 }
 
 pre {
