@@ -157,5 +157,12 @@ nvim
 ```
 Check the [leovim repository](https://github.com/leogabac/leovim) for more information.
 
+# See also
+
+There are other tools you might be interested in checking out. Here are some of them (Available on this Wiki)
+
+- [Python](python): Installation, virtual environments, handling versions.
+- [Timeshift](timeshift): Tool for creating system snapshopts. Similar to MacOS TimeMachine.
+- [LaTeX](latex): Typesetting system.
 
 
