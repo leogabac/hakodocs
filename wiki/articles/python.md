@@ -21,6 +21,11 @@ to verify the version. The global python version should update itself with the p
 
 You can install other versions by compiling from source. Visit the [Python Source Download Page](https://www.python.org/downloads/source/) for more information. Make sure to install in your system the [necessary build dependencies](https://devguide.python.org/getting-started/setup-building/#build-dependencies).
 
+On Arch Linux:
+```bash
+pacman -S --needed base-devel openssl zlib xz tk
+```
+
 **Windows**
 
 Go to the [Python Downloads Page](https://www.python.org/downloads/windows/) and get the executable for the version you are interested it. Open the executable and follow the installation wizard. Don't forget to check the _Add Python to PATH_.

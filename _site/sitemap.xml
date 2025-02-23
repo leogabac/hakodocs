@@ -10,6 +10,9 @@
 <loc>http://localhost:4000/assets/blog/</loc>
 </url>
 <url>
+<loc>http://localhost:4000/julia</loc>
+</url>
+<url>
 <loc>http://localhost:4000/python.jupyter</loc>
 </url>
 <url>

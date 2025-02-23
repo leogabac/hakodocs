@@ -107,7 +107,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=d6eb9f9c3fcead4698a698a8b4fbbbd2130e12d1">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=3a737acf8e8c4954b661149e3d2ad3339ccf31fb">
 
 
 
@@ -279,6 +279,16 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
         
         
         
+        <li class="page-list-item">
+            
+            <a href="/julia">Julia</a>
+        </li>
+        
+        
+
+        
+        
+        
 
         
         
@@ -420,20 +430,11 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     <ol>
       <li><a href="#network">Network</a></li>
       <li><a href="#sound">Sound</a></li>
-      <li><a href="#bluetooth">Bluetooth</a>
-        <ol>
-          <li><a href="#sound-through-bluetooth">Sound through Bluetooth</a></li>
-        </ol>
-      </li>
+      <li><a href="#bluetooth">Bluetooth</a></li>
       <li><a href="#keyboard-backlight">Keyboard Backlight</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#monitors">Monitors</a></li>
-      <li><a href="#graphics-card">Graphics Card</a>
-        <ol>
-          <li><a href="#card-is-detected">Card Is Detected</a></li>
-          <li><a href="#opengl-renderer">OpenGL Renderer</a></li>
-        </ol>
-      </li>
+      <li><a href="#graphics-card">Graphics Card</a></li>
     </ol>
   </li>
   <li><a href="#text-editor">Text Editor</a>
@@ -454,7 +455,7 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
     <div id="git-wiki-content">
       <h1 id="arch-linux">Arch Linux</h1>
 
-<p>Arch Linux is a <em>rolling-release</em> distribution, i.e.  <em>packages</em> (software) receive updates constantly. There is not a concensus on how often one needs to update their system, a good rule of thumb is once per week.</p>
+<p>Arch Linux is a <em>rolling-release</em> distribution, i.e. <em>packages</em> (software) receive updates constantly. There is not a concensus on how often one needs to update their system, a good rule of thumb is once per week.</p>
 
 <blockquote>
   <p><strong>PRO TIP:</strong><br />
@@ -468,8 +469,10 @@ If case something happens, <strong>always</strong> check the <a href="https://wi
 <p>As in any Linux distribution, Arch Linux has a <em>package manager</em> called <code class="language-plaintext highlighter-rouge">pacman</code> that installs software from the <em>Arch repository</em> . Package names may differ from other distributions, so it is recommended that you check on the <a href="https://archlinux.org/packages/">repositories</a> or the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> how to install particular software.</p>
 
 <p>To install packages simply run</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> PACKAGE_NAME
 </code></pre></div></div>
+
 <p>where the <code class="language-plaintext highlighter-rouge">-S</code> flag stands for <em>Sync</em>. It basically reads</p>
 
 <blockquote>
@@ -477,133 +480,201 @@ If case something happens, <strong>always</strong> check the <a href="https://wi
 </blockquote>
 
 <h2 id="the-arch-user-repository">The Arch User Repository</h2>
+
 <p>Not every piece of software can be found in the regular Arch repositories. Take for example <code class="language-plaintext highlighter-rouge">dropbox</code>, that has official support for Debian/Ubuntu, but not for Arch Linux. Another example would be software that need to be <em>compiled from source</em> like <code class="language-plaintext highlighter-rouge">lammps</code>, <code class="language-plaintext highlighter-rouge">gromacs</code> or some of the <code class="language-plaintext highlighter-rouge">xp-pen</code> drivers for their tablets. Manually repackaging, or compiling from source will install the software on your system at the cost of not being properly managed by <code class="language-plaintext highlighter-rouge">pacman</code>. On such cases we turn to the so-called <em>Arch User Repository</em> (AUR).</p>
 
 <p>The Arch User Repository (AUR) is a community-driven repository for Arch Linux that allows users to share and install packages not available in the official Arch repositories. Unlike the official repos, which provide precompiled binaries, the AUR contains <em>PKGBUILD</em> scripts—text files that define how to download, compile, and install software from source or external sources like .deb packages. Users can manually download a PKGBUILD and run <code class="language-plaintext highlighter-rouge">makepkg -si</code> to build and install the package, or use an <em>AUR helper</em> like <code class="language-plaintext highlighter-rouge">yay</code> or <code class="language-plaintext highlighter-rouge">paru</code> to automate the process. Since AUR packages are maintained by the community, they are not officially supported by Arch and may require user intervention if dependencies or builds break.</p>
 
 <p>To install <code class="language-plaintext highlighter-rouge">yay</code> as an AUR helper, run</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> <span class="nt">--needed</span> base-devel git
 <span class="nb">mkdir</span> /tmp/yay
 git clone https://aur.archlinux.org/yay.git /tmp/yay
 <span class="nb">cd</span> /tmp/yay
 makepkg <span class="nt">-si</span>
 </code></pre></div></div>
+
 <p>Then from the AUR, we can install with same flags as in <code class="language-plaintext highlighter-rouge">pacman</code></p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> PACKAGE_NAME
 </code></pre></div></div>
+
 <p>When yay installs an AUR package, it first downloads the <em>PKGBUILD</em> script, builds the package into a <code class="language-plaintext highlighter-rouge">.pkg.tar.zst</code> file, and then installs it using <code class="language-plaintext highlighter-rouge">pacman -U</code>. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means <code class="language-plaintext highlighter-rouge">pacman -Q</code> can list it, <code class="language-plaintext highlighter-rouge">pacman -R</code> can remove it, and <code class="language-plaintext highlighter-rouge">pacman -U</code> can reinstall it.</p>
 
 <p>Because AUR packages are not in the official repositories, <code class="language-plaintext highlighter-rouge">pacman -Syu</code> does not update them—users must manually rebuild them or use an AUR helper like <code class="language-plaintext highlighter-rouge">yay -Syu</code>, which automates the update process by fetching new <em>PKGBUILD</em> versions and repeating the build-and-install process.</p>
 
 <h2 id="full-system-upgrade">Full System Upgrade</h2>
+
 <p>Arch Linux receives constant updates, to make a <em>full system upgrade</em> run</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Syu</span>
 </code></pre></div></div>
+
 <blockquote>
   <p><strong>WARNING:</strong>
 Always make sure to read what packages are being updated.</p>
 </blockquote>
 
 <h1 id="system-sanity-check">System Sanity Check</h1>
+
 <p>First thing, is that we need to check if all basic functionalities are working properly. In some sections I don’t have any particular advice, as they usually work out of the box. In such cases, I will simply provide a link to their ArchWiki page.</p>
 
 <h2 id="network">Network</h2>
-<p>Check <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless">Network configuration</a> on the ArchWiki.</p>
+
+<ul>
+  <li><strong>For general troubleshooting</strong> visit <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless">Network configuration</a> on the ArchWiki.</li>
+</ul>
 
 <h2 id="sound">Sound</h2>
-<p>Check <a href="https://wiki.archlinux.org/title/Sound_system">Sound system</a> on the ArchWiki.</p>
+
+<ul>
+  <li>
+    <p><strong>For general troubleshooting</strong> visit <a href="https://wiki.archlinux.org/title/Sound_system">Sound system</a> on the ArchWiki.</p>
+  </li>
+  <li>
+    <p><strong>Microphone is not detected on some Lenovo Laptops</strong></p>
+
+    <p>On some Lenovo laptops, e.g. ThinkPad T14 Gen 2, the built-in microphone was not properly detected.</p>
+
+    <p>A solution was found in <a href="https://www.reddit.com/r/archlinux/comments/13hca34/microphone_is_not_detected/?share_id=ex0_FTMc98thXfpI1To3q&amp;utm_content=2&amp;utm_medium=android_app&amp;utm_name=androidcss&amp;utm_source=share&amp;utm_term=3">this Reddit post</a> by user <code class="language-plaintext highlighter-rouge">4bjmc881</code>, who identified that the issue was related to the audio driver being loaded by the system. By default, the system attempts to use the <code class="language-plaintext highlighter-rouge">snd-hda-intel</code> driver. However, for newer devices (from 2019 onwards), the <code class="language-plaintext highlighter-rouge">sof-audio-pci-intel-cnl</code> driver is more appropriate. To ensure that the correct driver is loaded, the <code class="language-plaintext highlighter-rouge">snd-hda-intel</code> driver must be blacklisted.\</p>
+
+    <p>To solve the issue, create or edit the modprobe config at <code class="language-plaintext highlighter-rouge">/etc/modprobe.d/blacklist.conf</code> and add the following content</p>
+
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>blacklist snd_hda_intel
+</code></pre></div>    </div>
+
+    <p>After reboot, the kernel loads the driver and the microphone is detected correctly.</p>
+  </li>
+</ul>
 
 <h2 id="bluetooth">Bluetooth</h2>
 
-<p>Some extra packages will be necessary.</p>
+<ul>
+  <li>
+    <p><strong>For general troubleshooting</strong> visit <a href="https://wiki.archlinux.org/title/Bluetooth_headset">Bluetooth headset</a> on the ArchWiki.</p>
+  </li>
+  <li>
+    <p><strong>General bluetooth capabilities</strong></p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> bluez bluez-utils bluez-deprecated-tools
-</code></pre></div></div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> bluez bluez-utils bluez-deprecated-tools
+</code></pre></div>    </div>
 
-<p>Typically the Bluetooth Services is not enabled by default.</p>
+    <p>Typically the Bluetooth Services is not enabled by default.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start bluetooth.service
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start bluetooth.service
 <span class="nb">sudo </span>systemctl <span class="nb">enable </span>bluetooth.service
-</code></pre></div></div>
+</code></pre></div>    </div>
 
-<p>Sometimes you will need to reboot your PC for everything to work properly.</p>
-
-<h3 id="sound-through-bluetooth">Sound through Bluetooth</h3>
-<p>Check <a href="https://wiki.archlinux.org/title/Bluetooth_headset">Bluetooth headset</a> on the ArchWiki.</p>
+    <p>Sometimes you will need to reboot your PC for everything to work properly.</p>
+  </li>
+</ul>
 
 <h2 id="keyboard-backlight">Keyboard Backlight</h2>
-<p>The frontend that controls the backlight is not installed.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> brightnessctl
-</code></pre></div></div>
-<p>If that does not solve it, check <a href="https://wiki.archlinux.org/title/Keyboard_backlight">Keyboard backlight</a> on the Archwiki.</p>
+<ul>
+  <li>
+    <p><strong>For general troubleshooting</strong> visit <a href="https://wiki.archlinux.org/title/Keyboard_backlight">Keyboard backlight</a> on the Archwiki.</p>
+  </li>
+  <li>
+    <p><strong>The frontend that controls the backlight is not installed</strong></p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> brightnessctl
+</code></pre></div>    </div>
+
+    <p>If that does not solve it, check the Archwiki.</p>
+  </li>
+</ul>
 
 <h2 id="screenshots">Screenshots</h2>
-<p>The software that takes screenshots is not installed. For KDE Plasma use <code class="language-plaintext highlighter-rouge">spectacle</code>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> spectacle
-</code></pre></div></div>
+<ul>
+  <li>
+    <p><strong>The software that takes screenshots is not installed</strong></p>
+
+    <p>For KDE Plasma use <code class="language-plaintext highlighter-rouge">spectacle</code>.</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> spectacle
+</code></pre></div>    </div>
+  </li>
+</ul>
 
 <h2 id="monitors">Monitors</h2>
-<p>In particular,</p>
+
+<p>In particular, check that</p>
+
 <ol>
   <li>All monitors connect correctly, in particular those that use Thunderbolt/USB4.</li>
   <li>All monitors run at their respective refresh rate.</li>
 </ol>
 
 <h2 id="graphics-card">Graphics Card</h2>
+
 <p>There are a few ways to make sure your dedicated graphics card is working.</p>
 
-<h3 id="card-is-detected">Card Is Detected</h3>
-<ol>
-  <li>In KDE Plasma, look for the <em>About</em> setting, it should list all of your components.</li>
-  <li>Using fastfetch
+<ul>
+  <li>
+    <p><strong>Card Is Detected</strong></p>
+
+    <ol>
+      <li>In KDE Plasma, look for the <em>About</em> setting, it should list all of your components.</li>
+      <li>Using fastfetch</li>
+    </ol>
+
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fastfetch
 fastfech
 </code></pre></div>    </div>
-  </li>
-  <li>Using <code class="language-plaintext highlighter-rouge">lspci</code>
+
+    <ol>
+      <li>Using <code class="language-plaintext highlighter-rouge">lspci</code></li>
+    </ol>
+
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>lspci | <span class="nb">grep</span> <span class="nt">-i</span> vga
 </code></pre></div>    </div>
   </li>
-</ol>
+  <li>
+    <p><strong>OpenGL Renderer</strong></p>
 
-<h3 id="opengl-renderer">OpenGL Renderer</h3>
-<p>You can check the default OpenGL rendered for your system to make sure which card is currently being used</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
-</code></pre></div></div>
-<blockquote>
-  <p>OpenGL renderer string: AMD Radeon RX 6650M (radeonsi, navi23, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</p>
-</blockquote>
+    <p>You can check the default OpenGL rendered for your system to make sure which card is currently being used</p>
 
-<p>This will list the current renderer and used driver. If it is not the correct one, you can force it with the <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> environment variable.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DRI_PRIME</span><span class="o">=</span>1 glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
-</code></pre></div></div>
-<blockquote>
-  <p>OpenGL renderer string: AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</p>
-</blockquote>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
+<span class="c"># OpenGL renderer string: AMD Radeon RX 6650M (radeonsi, navi23, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</span>
+</code></pre></div>    </div>
 
-<p>As a final sanity check, a good way to <em>really</em> make sure your card is working is by launching minecraft. You can install it from the AUR</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> minecraft-launcher
-</code></pre></div></div>
-<p>In a world, press F3 and check the <em>display</em> information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> variable state.</p>
+    <p>This will list the current renderer and used driver. If it is not the correct one, you can force it with the <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> environment variable.</p>
 
-<p>I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.</p>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DRI_PRIME</span><span class="o">=</span>1 glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
+<span class="c"># OpenGL renderer string: AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</span>
+</code></pre></div>    </div>
+
+    <p>As a final sanity check, a good way to <em>really</em> make sure your card is working is by launching minecraft. You can install it from the AUR</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> minecraft-launcher
+</code></pre></div>    </div>
+
+    <p>In a world, press F3 and check the <em>display</em> information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> variable state. I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.</p>
+  </li>
+</ul>
 
 <h1 id="text-editor">Text Editor</h1>
 
 <h2 id="vscode">VSCode</h2>
+
 <p>There are many text editors on Linux. VSCode is a Microsoft editor with enabled telemetry, Linux users do not like that for privacy concerns. VSCodium is a community open-source release that nullifies telemetry, and is available in the AUR. For Arch Linux, there is an official OSS release</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> code
 </code></pre></div></div>
+
 <p>For more information, read the <a href="https://wiki.archlinux.org/title/Visual_Studio_Code">VSCode Arch Wiki Page</a>.</p>
 
 <h2 id="neovim">Neovim</h2>
+
 <p>I personally use <code class="language-plaintext highlighter-rouge">nvim</code> with my own configuration.</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> nvim
 git clone https://github.com/leogabac/leovim.git ~/.config/nvim
 nvim
 </code></pre></div></div>
+
 <p>Check the <a href="https://github.com/leogabac/leovim">leovim repository</a> for more information.</p>
 
 <h1 id="see-also">See also</h1>
@@ -615,7 +686,6 @@ nvim
   <li><a href="timeshift">Timeshift</a>: Tool for creating system snapshopts. Similar to MacOS TimeMachine.</li>
   <li><a href="latex">LaTeX</a>: Typesetting system.</li>
 </ul>
-
 
     </div>
 
@@ -652,7 +722,7 @@ nvim
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python.jupyter,/python,/latex,/timeshift,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/julia,/python.jupyter,/python,/latex,/timeshift,/,".split(","));
     });
 </script>
 
