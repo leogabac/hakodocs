@@ -107,7 +107,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=030542b035280e9b639c6d1182b58f7ec1346ba6">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4a81ff9ce574c8fbc9daa5b418564564832b5b94">
 
 
 
@@ -164,11 +164,9 @@
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a>
-    <ol>
-      <li><a href="#pyenv">pyenv</a></li>
-    </ol>
-  </li>
+  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ol>
 -->
 
@@ -182,11 +180,9 @@
       <li><a href="#installation">Installation</a></li>
     </ul>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a>
-    <ul>
-      <li><a href="#pyenv">pyenv</a></li>
-    </ul>
-  </li>
+  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ul>
 
 
@@ -232,6 +228,16 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
         <li class="page-list-item">
             
             <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
         </li>
         
         
@@ -374,11 +380,9 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a>
-    <ol>
-      <li><a href="#pyenv">pyenv</a></li>
-    </ol>
-  </li>
+  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ol>
 -->
 
@@ -396,40 +400,66 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
 
 <h2 id="installation">Installation</h2>
 
-<p>WIP</p>
+<p><strong>Linux/UNIX</strong></p>
+
+<p>Your system should already has a global Python version available. Run</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 <span class="nt">--version</span>
+</code></pre></div></div>
+<p>to verify the version. The global python version should update itself with the package manager.</p>
+
+<p>You can install other versions by compiling from source. Visit the <a href="https://www.python.org/downloads/source/">Python Source Download Page</a> for more information. Make sure to install in your system the <a href="https://devguide.python.org/getting-started/setup-building/#build-dependencies">necessary build dependencies</a>.</p>
+
+<p><strong>Windows</strong></p>
+
+<p>Go to the <a href="https://www.python.org/downloads/windows/">Python Downloads Page</a> and get the executable for the version you are interested it. Open the executable and follow the installation wizard. Don’t forget to check the <em>Add Python to PATH</em>.</p>
 
 <h1 id="virtual-environments">Virtual Environments</h1>
 
-<p>I use a lot of virtual environments to not break system packages. “Global” environments are stored in <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code>.</p>
+<p>A virtual environment in Python is an isolated workspace that allows you to manage dependencies separately for different projects. It prevents conflicts between packages by creating a self-contained directory with its own Python interpreter and libraries. Python &gt;3.11 prevents users from installing packages globally via <code class="language-plaintext highlighter-rouge">pip</code> and are encouraged to  to use virtual environments or user installs</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--user</span>
+</code></pre></div></div>
+
+<p>Let us create a virtual environment for general usage under the directory <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code>. First install the system package <code class="language-plaintext highlighter-rouge">python-virtualenv</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> python-virtualenv
 <span class="nb">mkdir</span> ~/.virtualenvs/
 </code></pre></div></div>
 
-<p>As an example, let’s make a virtualenv called <code class="language-plaintext highlighter-rouge">pyglobal</code>, run</p>
+<p>As an example, let’s make a virtualenv called <code class="language-plaintext highlighter-rouge">pyglobal</code> and activate it via the <code class="language-plaintext highlighter-rouge">source</code> command.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv ~/.virtualenvs/pyglobal
 <span class="nb">source</span> ~/.virtualenvs/global/bin/activate
 </code></pre></div></div>
 
-<p>Add an alias to the environment in your <code class="language-plaintext highlighter-rouge">~/.bashrc</code></p>
+<p>For easier access, add an alias to your <code class="language-plaintext highlighter-rouge">~/.bashrc</code>.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">pyglobal</span><span class="o">=</span><span class="s2">"source ~/.virtualenvs/global/bin/activate"</span>
 </code></pre></div></div>
 
-<h2 id="pyenv">pyenv</h2>
+<p>To exit any virtual environment, at any time run the command <code class="language-plaintext highlighter-rouge">deactivate</code>.</p>
 
-<p>More often than not, we need to manage multiple python versions since ArchLinux changes versions more often that I like it. To accomplish this, I make a virtual environment that uses a particular python binary. This binary can either be compiled manually, installed from the AUR, or in this case using pyenv.</p>
+<h1 id="managing-versions">Managing Versions</h1>
 
-<p>Pyenv does a lot of things, but I personally use it as an installer and manager of python versions. Following their <a href="https://github.com/pyenv/pyenv">documentation</a></p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">--python</span><span class="o">=</span>/home/USER/.pyenv/versions/3.12.0/bin/python3.12 /home/USER/.virtualenv/py3.12
-</code></pre></div></div>
+<p>Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on Python 3.7 because some of its dependencies have not been updated for newer versions, while a new project could require Python 3.11 to take advantage of performance improvements and new language features. Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like <a href="https://github.com/pyenv/pyenv">pyenv</a> or <a href="https://docs.conda.io/projects/conda/en/stable/index.html">conda</a> allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.</p>
 
 <blockquote>
-  <p><strong>WARNING:</strong><br />
-It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
+  <p><strong>TIP:</strong> For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
 </blockquote>
 
+<p>Pyenv is a tool, that among other things, it serves as an automation tool for compiling python versions from source and have them under the user’s home directory <code class="language-plaintext highlighter-rouge">~/.pyenv/</code>. For installation follow their <a href="https://github.com/pyenv/pyenv">documentation</a>.</p>
+
+<p>Once a python version is installed, we can let <code class="language-plaintext highlighter-rouge">virtualenv</code> point to those binaries. As an example, here we installed Python 3.12.0 and created a virtual environment called <code class="language-plaintext highlighter-rouge">py3.12</code> under the <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code> directory.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">--python</span><span class="o">=</span>/home/USER/.pyenv/versions/3.12.0/bin/python3.12 /home/USER/.virtualenv/py3.12
+</code></pre></div></div>
+<blockquote>
+  <p><strong>WARNING:</strong> It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
+</blockquote>
+
+<h1 id="see-also">See also</h1>
+
+<ul>
+  <li><a href="python.jupyter">Jupyter Notebook</a></li>
+</ul>
 
     </div>
 
@@ -466,7 +496,7 @@ It is really important to give the full path to the python binaries. Otherwise i
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python,/latex,/timeshift,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python.jupyter,/python,/latex,/timeshift,/,".split(","));
     });
 </script>
 

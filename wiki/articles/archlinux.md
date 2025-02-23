@@ -38,7 +38,7 @@ cd /tmp/yay
 makepkg -si
 ```
 Then from the AUR, we can install with same flags as in `pacman`
-```
+```bash
 yay -S PACKAGE_NAME
 ```
 When yay installs an AUR package, it first downloads the _PKGBUILD_ script, builds the package into a `.pkg.tar.zst` file, and then installs it using `pacman -U`. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means `pacman -Q` can list it, `pacman -R` can remove it, and `pacman -U` can reinstall it. 
@@ -47,7 +47,7 @@ Because AUR packages are not in the official repositories, `pacman -Syu` does no
 
 ## Full System Upgrade
 Arch Linux receives constant updates, to make a _full system upgrade_ run
-```
+```bash
 sudo pacman -Syu
 ```
 > __WARNING:__
@@ -86,7 +86,7 @@ Check [Bluetooth headset](https://wiki.archlinux.org/title/Bluetooth_headset) on
 ## Keyboard Backlight
 The frontend that controls the backlight is not installed.
 
-```
+```bash
 sudo pacman -S brightnessctl
 ```
 If that does not solve it, check [Keyboard backlight](https://wiki.archlinux.org/title/Keyboard_backlight) on the Archwiki.
@@ -132,7 +132,7 @@ DRI_PRIME=1 glxinfo | grep "OpenGL renderer"
 > OpenGL renderer string: AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)
 
 As a final sanity check, a good way to _really_ make sure your card is working is by launching minecraft. You can install it from the AUR
-```
+```bash
 yay -S minecraft-launcher
 ```
 In a world, press F3 and check the _display_ information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct `DRI_PRIME` variable state.

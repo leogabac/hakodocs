@@ -1,0 +1,499 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Jupyter Notebooks | HakoDocs</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Jupyter Notebooks" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jupyter Notebooks" />
+<meta property="og:description" content="Jupyter Notebooks" />
+<link rel="canonical" href="http://localhost:4000/python.jupyter" />
+<meta property="og:url" content="http://localhost:4000/python.jupyter" />
+<meta property="og:site_name" content="HakoDocs" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Jupyter Notebooks" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Jupyter Notebooks","headline":"Jupyter Notebooks","url":"http://localhost:4000/python.jupyter"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>python.jupyter - HakoDocs</title>
+
+<meta property="og:title" content="python.jupyter - HakoDocs">
+
+<meta property="og:description" content="
+        A collection of tech-related notes
+      ">
+
+
+<meta property="og:url"
+  content="http://localhost:4000/python.jupyter" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4a81ff9ce574c8fbc9daa5b418564564832b5b94">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+  <a href="/">
+    
+    HakoDocs
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1>HakoDocs</h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="https://github.com/leogabac/hakodocs/zipball/gh-pages">Download <strong>ZIP File</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs/tarball/gh-pages">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+    <!--
+
+
+    Table of Contents:
+    <ol id="sidebar-toc">
+  <li><a href="#python-jupyter-notebooks">Python: Jupyter Notebooks</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+    </ol>
+  </li>
+  <li><a href="#set-up-a-remote-server">Set Up a Remote Server</a></li>
+  <li><a href="#vim-bindings">Vim Bindings</a></li>
+</ol>
+-->
+
+
+
+
+    Table of Contents:
+    <ul id="sidebar-toc">
+  <li><a href="#python-jupyter-notebooks">Python: Jupyter Notebooks</a>
+    <ul>
+      <li><a href="#installation">Installation</a></li>
+    </ul>
+  </li>
+  <li><a href="#set-up-a-remote-server">Set Up a Remote Server</a></li>
+  <li><a href="#vim-bindings">Vim Bindings</a></li>
+</ul>
+
+
+Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
+
+<ul>
+  <li><a href="/">Home</a></li>
+</ul>
+
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/timeshift">Timeshift</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/home">Home</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/archlinux">Arch Linux</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/assets/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/wiki?filename=">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/edit/master//wiki/articles/python.jupyter.md">Edit</a></span>
+
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/delete/master//wiki/articles/python.jupyter.md">Delete</a></span>
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/articles/python.jupyter.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/articles/python.jupyter.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/articles/python.jupyter.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+<!--
+
+
+    Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#python-jupyter-notebooks">Python: Jupyter Notebooks</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+    </ol>
+  </li>
+  <li><a href="#set-up-a-remote-server">Set Up a Remote Server</a></li>
+  <li><a href="#vim-bindings">Vim Bindings</a></li>
+</ol>
+-->
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1 id="python-jupyter-notebooks">Python: Jupyter Notebooks</h1>
+
+<p>Jupyter Notebooks are an interactive computing environment that allows users to write and execute code in a web-based interface. They support multiple programming languages (with Python being the most common) and combine code, text, equations, and visualizations in a single document. Jupyter is widely used in data science, scientific computing, and education for prototyping, data analysis, and sharing reproducible research.</p>
+
+<h2 id="installation">Installation</h2>
+
+<p>Jypyter Notebooks are available via the <a href="https://pypi.org/">Python Package Index</a>.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>notebook
+</code></pre></div></div>
+<p>You can also install the more modern Jupyter Lab, although this guide uses the Classic Notebook package.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install </span>jupyterlab
+</code></pre></div></div>
+<p>To start a server on <code class="language-plaintext highlighter-rouge">localhost:8000</code> simply run.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook
+</code></pre></div></div>
+
+<h1 id="set-up-a-remote-server">Set Up a Remote Server</h1>
+
+<p>Using a remote server in Jupyter is essential when working with resource-intensive tasks that require more computing power than a local machine can provide. This is common in data science, machine learning, and scientific computing, where large datasets and complex models demand high-performance CPUs, GPUs, or specialized hardware. Running Jupyter on a remote server allows users to access powerful resources while working from a lightweight local machine, ensuring efficiency and flexibility. Here is a simple, probably not so secure method to set up a quick jupyter server in your remote machine. Taken from <a href="https://lerner.co.il/2017/02/01/five-minute-guide-setting-jupyter-notebook-server/">this article</a></p>
+
+<p>Generate a jupyter config file with</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>jupyter notebook <span class="nt">--generate-config</span>
+</code></pre></div></div>
+<p>Open the generated file <code class="language-plaintext highlighter-rouge">jupyter_notebook_config.py</code>. This file is stored in the user’s home directory, i.e. these changes apply only to the current user and need to be set up for other users in case you need it. Here we will change a few configuration options.</p>
+
+<ul>
+  <li>Don’t start the web browser automatically.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.NotebookApp.open_browser <span class="o">=</span> False
+</code></pre></div>    </div>
+  </li>
+  <li>Listen on the local network instead of the localhost only.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.NotebookApp.ip <span class="o">=</span> <span class="s1">'0.0.0.0'</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Don’t require a password. (For some reason I never got this to work)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.NotebookApp.password <span class="o">=</span> <span class="s1">''</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Set up a token (This will be the password)
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.NotebookApp.token <span class="o">=</span> <span class="s1">'PASSWWORD'</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Optional</strong>: Change the default port. Useful when you have multiple users on the same PC.
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c.NotebookApp.port <span class="o">=</span> 8888
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p><strong>TIP:</strong> In case you have multiple users/students, set up their configuration files with different ports and token passwords.</p>
+</blockquote>
+
+<h1 id="vim-bindings">Vim Bindings</h1>
+
+<p>Basic Vim Bindings can be easily set up using the <a href="https://github.com/lambdalisue/jupyter-vim-binding">jupyter-vim-binding</a> plugin. Following their documentation, run</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># Create required directory in case (optional)</span>
+<span class="nb">mkdir</span> <span class="nt">-p</span> <span class="si">$(</span>jupyter <span class="nt">--data-dir</span><span class="si">)</span>/nbextensions
+<span class="c"># Clone the repository</span>
+<span class="nb">cd</span> <span class="si">$(</span>jupyter <span class="nt">--data-dir</span><span class="si">)</span>/nbextensions
+git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding
+<span class="c"># Activate the extension</span>
+jupyter nbextension <span class="nb">enable </span>vim_binding/vim_binding
+</code></pre></div></div>
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+<div class="git-wiki-copyrights">
+    <p>This project is maintained by <a href="https://github.com/leogabac">leogabac</a></p>
+    
+    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.6</a> </p>
+
+    
+    <p class="view"><a href="https://github.com/leogabac/hakodocs">View the Project on  Github  <small></small></a></p>
+</div>
+
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python.jupyter,/python,/latex,/timeshift,/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>

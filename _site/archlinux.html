@@ -107,7 +107,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=030542b035280e9b639c6d1182b58f7ec1346ba6">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4a81ff9ce574c8fbc9daa5b418564564832b5b94">
 
 
 
@@ -262,6 +262,16 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
         <li class="page-list-item">
             
             <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
         </li>
         
         
@@ -479,7 +489,7 @@ git clone https://aur.archlinux.org/yay.git /tmp/yay
 makepkg <span class="nt">-si</span>
 </code></pre></div></div>
 <p>Then from the AUR, we can install with same flags as in <code class="language-plaintext highlighter-rouge">pacman</code></p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay -S PACKAGE_NAME
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> PACKAGE_NAME
 </code></pre></div></div>
 <p>When yay installs an AUR package, it first downloads the <em>PKGBUILD</em> script, builds the package into a <code class="language-plaintext highlighter-rouge">.pkg.tar.zst</code> file, and then installs it using <code class="language-plaintext highlighter-rouge">pacman -U</code>. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means <code class="language-plaintext highlighter-rouge">pacman -Q</code> can list it, <code class="language-plaintext highlighter-rouge">pacman -R</code> can remove it, and <code class="language-plaintext highlighter-rouge">pacman -U</code> can reinstall it.</p>
 
@@ -487,7 +497,7 @@ makepkg <span class="nt">-si</span>
 
 <h2 id="full-system-upgrade">Full System Upgrade</h2>
 <p>Arch Linux receives constant updates, to make a <em>full system upgrade</em> run</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -Syu
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Syu</span>
 </code></pre></div></div>
 <blockquote>
   <p><strong>WARNING:</strong>
@@ -524,7 +534,7 @@ Always make sure to read what packages are being updated.</p>
 <h2 id="keyboard-backlight">Keyboard Backlight</h2>
 <p>The frontend that controls the backlight is not installed.</p>
 
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo pacman -S brightnessctl
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> brightnessctl
 </code></pre></div></div>
 <p>If that does not solve it, check <a href="https://wiki.archlinux.org/title/Keyboard_backlight">Keyboard backlight</a> on the Archwiki.</p>
 
@@ -574,7 +584,7 @@ fastfech
 </blockquote>
 
 <p>As a final sanity check, a good way to <em>really</em> make sure your card is working is by launching minecraft. You can install it from the AUR</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay -S minecraft-launcher
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> minecraft-launcher
 </code></pre></div></div>
 <p>In a world, press F3 and check the <em>display</em> information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> variable state.</p>
 
@@ -642,7 +652,7 @@ nvim
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python,/latex,/timeshift,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/home,/assets/blog/,/python.jupyter,/python,/latex,/timeshift,/,".split(","));
     });
 </script>
 
