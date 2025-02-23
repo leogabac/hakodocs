@@ -392,6 +392,15 @@ screen and (max-width: 480px) {
   padding-right: 13px;
 }
 
+#sidebar-toc {
+    max-height: 500px; /* Adjust height */
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+}
+
 
 /* 
   dark mode
