@@ -10,7 +10,7 @@ Jupyter Notebooks are an interactive computing environment that allows users to 
 
 ## Installation
 
-Jypyter Notebooks are available via the [Python Package Index](https://pypi.org/).
+Jupyter Notebooks are available via the [Python Package Index](https://pypi.org/).
 ```bash
 pip install notebook
 ```
