@@ -1,6 +1,16 @@
 <!--{% include git-wiki/components/toc/toc-lib.html title="Table of Contents:" minHeaders=1 html=content sanitize=true class="inline_toc" id="sidebar-toc" h_min=1 h_max=2 ordered=1 %}-->
 
-{% include git-wiki/components/toc/toc-lib.html title="Table of Contents:" minHeaders=1 html=content sanitize=true class="inline_toc" id="sidebar-toc" h_min=1 h_max=2 %}
+<!--{% include git-wiki/components/toc/toc-lib.html title="Table of Contents:" minHeaders=1 html=content sanitize=true class="inline_toc" id="sidebar-toc" h_min=1 h_max=2 %}-->
+
+<button id="toggle-toc" class="toggle-toc-btn">☰ </button>
+
+<div id="sidebar-toc">
+    <button id="close-toc" class="close-toc-btn">✖</button>
+    <div class="toc-content">
+        <!--{% include git-wiki/components/toc/toc-lib.html title="Table of Contents:" minHeaders=1 html=content sanitize=true class="inline_toc" id="inline-toc" h_min=1 h_max=2 ordered=1 %}-->
+        {% include git-wiki/components/toc/toc-lib.html title="Table of Contents:" minHeaders=1 html=content sanitize=true class="inline_toc" id="floating_toc" h_min=1 h_max=3 ordered=1 %}
+    </div>
+</div>
 
 Menu (<a href="{{ site.github.repository_url }}/edit/{{site.git_branch | escape}}/_includes/sidebar.html">Edit</a>):
 
