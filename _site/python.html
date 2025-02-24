@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=eeaa02be0a481a42b329ead38b0a55c2bb4b61e6">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=c32f7d6028730d22253afd26447fb79a126f5a83">
 
 
 
@@ -488,8 +488,8 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
 
 <p>Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on Python 3.7 because some of its dependencies have not been updated for newer versions, while a new project could require Python 3.11 to take advantage of performance improvements and new language features. Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like <a href="https://github.com/pyenv/pyenv">pyenv</a> or <a href="https://docs.conda.io/projects/conda/en/stable/index.html">conda</a> allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.</p>
 
-<blockquote>
-  <p><strong>TIP:</strong> For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
+<blockquote class="tip">
+  <p><strong>Tip:</strong> For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
 </blockquote>
 
 <p>Pyenv is a tool, that among other things, it serves as an automation tool for compiling python versions from source and have them under the user’s home directory <code class="language-plaintext highlighter-rouge">~/.pyenv/</code>. For installation follow their <a href="https://github.com/pyenv/pyenv">documentation</a>.</p>
@@ -497,8 +497,9 @@ Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sideba
 <p>Once a python version is installed, we can let <code class="language-plaintext highlighter-rouge">virtualenv</code> point to those binaries. As an example, here we installed Python 3.12.0 and created a virtual environment called <code class="language-plaintext highlighter-rouge">py3.12</code> under the <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code> directory.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">--python</span><span class="o">=</span>/home/USER/.pyenv/versions/3.12.0/bin/python3.12 /home/USER/.virtualenv/py3.12
 </code></pre></div></div>
-<blockquote>
-  <p><strong>WARNING:</strong> It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
+
+<blockquote class="warning">
+  <p><strong>Warning:</strong> It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
 </blockquote>
 
 <h1 id="see-also">See also</h1>

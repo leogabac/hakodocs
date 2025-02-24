@@ -10,5 +10,6 @@ You can expect to find _How to do $$X$$_ guides for a variety of topics, primari
 I started this project as a personal collection of notes, and as I began sharing them with my colleagues, it grew into something more.
 The same colleagues these notes once helped started contributing to them. I hope you, like them, find something useful within this _hako_.
 
-> __DISCLAIMER:__ Many of the content in these notes is centered around Arch Linux as that is my daily driver.
+{: .note}
+> __Disclaimer:__ Many of the content in these notes is centered around Arch Linux as that is my daily driver.
 

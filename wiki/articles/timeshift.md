@@ -10,12 +10,14 @@ sudo pacman -S timeshift cronie
 sudo systemctl start cronie.service
 sudo systemctl enable cronie.service
 ```
-> __RECOMMENDED:__   
+
+{: .tip}
+> __Tip:__   
 > Open the Timeshift GUI from your applications menu and make an initial setup by clicking on _Wizard_\
-> For ext4 filesystems:\
-> 1. Choose `rsync`.\
-> 2. Choose your disk.\
-> 3. Select daily snapshots and keep from 2-3 of them.\
+> For ext4 filesystems:
+> 1. Choose `rsync`.
+> 2. Choose your disk.
+> 3. Select daily snapshots and keep from 2-3 of them.
 > 4. Click finish
 
 Although you can manipulate Timeshift with a GUI, the _Command Line Interface_ (CLI) helps with automation of snapshops. For example, you can make a bash script that makes a snapshot, and then a full system upgrade

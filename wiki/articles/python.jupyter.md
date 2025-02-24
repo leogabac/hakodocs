@@ -22,6 +22,8 @@ To start a server on `localhost:8000` simply run.
 ```bash
 jupyter notebook
 ```
+
+{: .warning}
 > **Note:** The root directory / is mapped to wherever the jupyter notebook is started.
 
 # Set Up a Remote Server
@@ -55,6 +57,7 @@ c.NotebookApp.token = 'PASSWWORD'
 c.NotebookApp.port = 8888
 ```
 
+{: .tip}
 > __TIP:__ In case you have multiple users/students, set up their configuration files with different ports and token passwords.
 
 # Vim Bindings
