@@ -23,7 +23,7 @@ To start a server on `localhost:8000` simply run.
 jupyter notebook
 ```
 
-{: .warning}
+{: .note}
 > **Note:** The root directory / is mapped to wherever the jupyter notebook is started.
 
 # Set Up a Remote Server
