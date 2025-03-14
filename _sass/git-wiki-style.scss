@@ -96,12 +96,27 @@ pre {
   font-size: 18px;
 }
 
+/* Block code styling */
 pre {
   padding: 8px 15px;
-  background: #f8f8f8;
+  background: #f0f0f0;
   border-radius: 5px;
   border: 1px solid #e5e5e5;
   overflow-x: auto;
+}
+
+/* Inline code styling */
+code {
+  background: #f0f0f0;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* Ensure syntax-highlighted code inside <pre> uses the same background */
+pre code {
+  background: inherit;
+  padding: 0;
+  border-radius: 0;
 }
 
 table {
