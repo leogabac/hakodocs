@@ -1,0 +1,649 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Git | HakoDocs</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Git" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Git" />
+<meta property="og:description" content="Git" />
+<link rel="canonical" href="http://localhost:4000/git" />
+<meta property="og:url" content="http://localhost:4000/git" />
+<meta property="og:site_name" content="HakoDocs" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Git" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Git","headline":"Git","url":"http://localhost:4000/git"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>git - HakoDocs</title>
+
+<meta property="og:title" content="git - HakoDocs">
+
+<meta property="og:description" content="
+        A collection of tech-related notes
+      ">
+
+
+<meta property="og:url"
+  content="http://localhost:4000/git" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<!--mathjax support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!--custom js-->
+<script src="/assets/js/custom.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=5421f1972add295307d7d1690815a3d07b584d7f">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+  <a href="/">
+    
+    HakoDocs
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1>HakoDocs</h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="https://github.com/leogabac/hakodocs/zipball/gh-pages">Download <strong>ZIP File</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs/tarball/gh-pages">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+    Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
+
+<ul>
+  <li><a href="/">Home</a></li>
+</ul>
+
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/timeshift">Timeshift</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/zerotier">ZeroTier</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/steam">Steam</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/linux.clitips">Linux CLI Tips</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/julia">Julia</a>
+        </li>
+        
+        
+
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/home">Home</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/git">Git</a>
+        </li>
+        
+        
+
+        
+        
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/assets/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/git/git.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/git/git.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/git/git.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+
+
+
+    Table of Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#git">Git</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#quick-tutorial">Quick Tutorial</a>
+        <ol>
+          <li><a href="#initializing-a-repository">Initializing a Repository</a></li>
+          <li><a href="#staging-and-committing-changes">Staging and Committing Changes</a></li>
+          <li><a href="#pushing-to-a-remote-repository">Pushing to a Remote Repository</a></li>
+          <li><a href="#summary">Summary</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#see-also">See also</a></li>
+</ol>
+
+
+
+<!--
+
+
+    Table of Contents:
+    <ol id="sidebar-toc">
+  <li><a href="#git">Git</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#quick-tutorial">Quick Tutorial</a></li>
+    </ol>
+  </li>
+  <li><a href="#see-also">See also</a></li>
+</ol>
+-->
+
+<!--
+
+
+    Table of Contents:
+    <ul id="sidebar-toc">
+  <li><a href="#git">Git</a>
+    <ul>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#quick-tutorial">Quick Tutorial</a></li>
+    </ul>
+  </li>
+  <li><a href="#see-also">See also</a></li>
+</ul>
+-->
+
+<button id="toggle-toc" class="toggle-toc-btn">☰ </button>
+
+<div id="sidebar-toc">
+    <button id="close-toc" class="close-toc-btn">✖</button>
+    <div class="toc-content">
+        <!--
+
+
+    Table of Contents:
+    <ol id="inline-toc">
+  <li><a href="#git">Git</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#quick-tutorial">Quick Tutorial</a></li>
+    </ol>
+  </li>
+  <li><a href="#see-also">See also</a></li>
+</ol>
+-->
+        
+
+
+    Table of Contents:
+    <ol id="floating_toc">
+  <li><a href="#git">Git</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#quick-tutorial">Quick Tutorial</a>
+        <ol>
+          <li><a href="#initializing-a-repository">Initializing a Repository</a></li>
+          <li><a href="#staging-and-committing-changes">Staging and Committing Changes</a></li>
+          <li><a href="#pushing-to-a-remote-repository">Pushing to a Remote Repository</a></li>
+          <li><a href="#summary">Summary</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+  <li><a href="#see-also">See also</a></li>
+</ol>
+
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1 id="git">Git</h1>
+
+<p>Git is a version control system that helps track changes in files, mainly used for coding projects. It allows multiple people to work on the same project without overwriting each other’s work. With Git, you can save different versions of your project, go back to previous versions if needed, and collaborate easily. It works by storing changes in a repository, which can be kept on your computer or shared online using platforms like <a href="https://github.com/">GitHub</a>. It was created by <a href="https://github.com/torvalds">Linus Torvalds</a>, the creator of the Linux Kernel.</p>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li>
+    <p><strong>Windows</strong></p>
+
+    <p>There are a few options:</p>
+
+    <ol>
+      <li>Download the wizard from the <a href="https://git-scm.com/downloads/win">git downlods page</a>, execute it and follow the instructions.</li>
+      <li>Use <code class="language-plaintext highlighter-rouge">winget</code>, i.e. open your terminal and execute the following command</li>
+    </ol>
+
+    <pre><code class="language-cmd">winget install --id Git.Git -e --source winget
+</code></pre>
+  </li>
+  <li>
+    <p><strong>MacOS</strong></p>
+
+    <p>Open a terminal and try to run the <code class="language-plaintext highlighter-rouge">git</code> command. MacOS will prompt you to install the XCode command line tool which will install <code class="language-plaintext highlighter-rouge">git</code> and other developer tools as well.</p>
+  </li>
+  <li>
+    <p><strong>Linux</strong></p>
+
+    <p>Install it with your package manager, on Arch Linux</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> git
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="quick-tutorial">Quick Tutorial</h2>
+
+<p>In this section, you will learn the typical Git workflow with the commands <code class="language-plaintext highlighter-rouge">git init</code>, <code class="language-plaintext highlighter-rouge">git add</code>, and <code class="language-plaintext highlighter-rouge">git commit</code> for a local repository. Then we will briefly mention how to <code class="language-plaintext highlighter-rouge">git push</code> to a remote repository that could be hosted on an online platform like <em>GitHub</em> or <em>GitLab</em>.</p>
+
+<h3 id="initializing-a-repository">Initializing a Repository</h3>
+
+<p>First, to work with Git, you need a <em>Git repository</em>, which is a directory for your project that will be managed with Git. To create one, move to your project’s directory and run the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
+
+<p>When you run <code class="language-plaintext highlighter-rouge">git init</code>, it creates a new subdirectory named <code class="language-plaintext highlighter-rouge">.git</code> in your current working directory. This directory contains all the necessary Git metadata for the new repository, including subdirectories for objects, references, and template files. It is a <em>special</em> directory that Git and other programs use to recognize the directory as a Git repository.</p>
+
+<h3 id="staging-and-committing-changes">Staging and Committing Changes</h3>
+
+<p>After creating a <em>repository</em> you can keep working as usual. Add, modify and remove files from your code as you wish, until you want to <em>commit</em> your changes, that is, create a snapshot of the current state of the project to the project’s history so that you can check it out later.</p>
+
+<p>To create a commit, you need to first <em>track</em> and <em>stage</em> your changes. That is, Git needs to know which files it needs to look for changes before making a commit. You can know which files are being tracked and which are not, as well as other information, by running the command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>From here, you can decide which files to <em>track</em> and <em>stage</em> for your upcoming commit. As a simple example, you can add <em>all</em> of the modified files with the following command:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nb">.</span>
+</code></pre></div></div>
+
+<blockquote class="warning">
+  <p><strong>Warning:</strong><br />
+Adding all of the files is commonly unwanted and not recommended, as it can unintentionally include temporary files, logs, or other files that should not be committed. Most of the time, it is preferable to manually add specific files and <em>bundle</em> them under a single commit:</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add &lt;filename&gt;
+</code></pre></div>  </div>
+
+  <p>You can repeat this command as many times as needed to <em>bundle</em> all of your desired files under a single commit. You can also make separate commits for individual files when necessary. Alternatively, if you want to interactively choose files, you can use:</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add <span class="nt">-p</span>
+</code></pre></div>  </div>
+
+  <p>This allows you to review changes before staging them, which can help maintain a cleaner commit history.</p>
+</blockquote>
+
+<p>After staging the files, you need to save the changes to the repository with a commit:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git commit <span class="nt">-m</span> <span class="s2">"Your commit message"</span>
+</code></pre></div></div>
+
+<p>The commit message should describe the changes you made, making it easier to track the project’s history.</p>
+
+<h3 id="pushing-to-a-remote-repository">Pushing to a Remote Repository</h3>
+
+<p>If you want to back up your project or collaborate with others, you can push your changes to a remote repository, i.e. a repository that is hosted in some online/cloud platform like Github. First, you need to add a remote repository URL:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin &lt;repository-url&gt;
+</code></pre></div></div>
+
+<blockquote class="note">
+  <p><strong>Note:</strong><br />
+If your repository was cloned directly from the cloud platform. It will already have this information added. You can skip this step.</p>
+</blockquote>
+
+<p>Then, you can push your changes using:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin &lt;branch&gt;
+</code></pre></div></div>
+<p>Here <code class="language-plaintext highlighter-rouge">&lt;branch&gt;</code> is typically <code class="language-plaintext highlighter-rouge">main</code>.</p>
+
+<blockquote class="note">
+  <p><strong>Note:</strong><br />
+If your repository was cloned directly from the cloud platform. Just run</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin &lt;branch&gt;
+</code></pre></div>  </div>
+</blockquote>
+
+<p>This command uploads your commits to the remote repository and sets up tracking so future pushes can be done with <code class="language-plaintext highlighter-rouge">git push</code>.</p>
+
+<h3 id="summary">Summary</h3>
+
+<ol>
+  <li>Initialize a repository: <code class="language-plaintext highlighter-rouge">git init</code></li>
+  <li>Add files to the staging area: <code class="language-plaintext highlighter-rouge">git add &lt;filename&gt;</code> or <code class="language-plaintext highlighter-rouge">git add .</code></li>
+  <li>Commit changes: <code class="language-plaintext highlighter-rouge">git commit -m "message"</code></li>
+  <li>Add a remote repository: <code class="language-plaintext highlighter-rouge">git remote add origin &lt;repository-url&gt;</code></li>
+  <li>Push changes: <code class="language-plaintext highlighter-rouge">git push -u origin main</code></li>
+</ol>
+
+<p>This basic workflow allows you to manage your project history and collaborate with others efficiently.
+This basic workflow allows you to manage your project history and collaborate with others efficiently.</p>
+<h1 id="see-also">See also</h1>
+
+<ul>
+  <li><a href="git.github">Github</a></li>
+</ul>
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+<div class="git-wiki-copyrights">
+    <p>This project is maintained by <a href="https://github.com/leogabac">leogabac</a></p>
+    
+    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.6</a> </p>
+
+    
+    <p class="view"><a href="https://github.com/leogabac/hakodocs">View the Project on  Github  <small></small></a></p>
+</div>
+
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/archlinux,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>

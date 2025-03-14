@@ -4,6 +4,12 @@
 <loc>http://localhost:4000/archlinux</loc>
 </url>
 <url>
+<loc>http://localhost:4000/git.github</loc>
+</url>
+<url>
+<loc>http://localhost:4000/git</loc>
+</url>
+<url>
 <loc>http://localhost:4000/home</loc>
 </url>
 <url>
