@@ -125,8 +125,7 @@ This command uploads your commits to the remote repository and sets up tracking 
 4. Add a remote repository: `git remote add origin <repository-url>`
 5. Push changes: `git push -u origin main`
 
-This basic workflow allows you to manage your project history and collaborate with others efficiently.
-This basic workflow allows you to manage your project history and collaborate with others efficiently.
+This is the basic workflow you need to follow to make commits and push them to your remote repositories.
 # See also
 
 - [Github](git.github)
