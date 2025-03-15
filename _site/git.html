@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=d49b0c046d25db790f87191fe8f161c96fdf491d">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=acad01280e1885b0117814d5dd4e1dc8f97167ad">
 
 
 
@@ -380,14 +380,17 @@
       <li><a href="#installation">Installation</a></li>
       <li><a href="#quick-tutorial">Quick Tutorial</a>
         <ol>
-          <li><a href="#initializing-a-repository">Initializing a Repository</a></li>
+          <li><a href="#initializing-or-cloning-a-repository">Initializing (or cloning) a Repository</a></li>
           <li><a href="#staging-and-committing-changes">Staging and Committing Changes</a></li>
           <li><a href="#pushing-to-a-remote-repository">Pushing to a Remote Repository</a></li>
-          <li><a href="#summary">Summary</a></li>
+          <li><a href="#the-workflow-in-a-nutshell">The workflow in a nutshell</a></li>
         </ol>
       </li>
     </ol>
   </li>
+  <li><a href="#ignoring-files">Ignoring files</a></li>
+  <li><a href="#checkout">Checkout</a></li>
+  <li><a href="#branches">Branches</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -404,6 +407,9 @@
       <li><a href="#quick-tutorial">Quick Tutorial</a></li>
     </ol>
   </li>
+  <li><a href="#ignoring-files">Ignoring files</a></li>
+  <li><a href="#checkout">Checkout</a></li>
+  <li><a href="#branches">Branches</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -419,6 +425,9 @@
       <li><a href="#quick-tutorial">Quick Tutorial</a></li>
     </ul>
   </li>
+  <li><a href="#ignoring-files">Ignoring files</a></li>
+  <li><a href="#checkout">Checkout</a></li>
+  <li><a href="#branches">Branches</a></li>
   <li><a href="#see-also">See also</a></li>
 </ul>
 -->
@@ -439,6 +448,9 @@
       <li><a href="#quick-tutorial">Quick Tutorial</a></li>
     </ol>
   </li>
+  <li><a href="#ignoring-files">Ignoring files</a></li>
+  <li><a href="#checkout">Checkout</a></li>
+  <li><a href="#branches">Branches</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -452,14 +464,17 @@
       <li><a href="#installation">Installation</a></li>
       <li><a href="#quick-tutorial">Quick Tutorial</a>
         <ol>
-          <li><a href="#initializing-a-repository">Initializing a Repository</a></li>
+          <li><a href="#initializing-or-cloning-a-repository">Initializing (or cloning) a Repository</a></li>
           <li><a href="#staging-and-committing-changes">Staging and Committing Changes</a></li>
           <li><a href="#pushing-to-a-remote-repository">Pushing to a Remote Repository</a></li>
-          <li><a href="#summary">Summary</a></li>
+          <li><a href="#the-workflow-in-a-nutshell">The workflow in a nutshell</a></li>
         </ol>
       </li>
     </ol>
   </li>
+  <li><a href="#ignoring-files">Ignoring files</a></li>
+  <li><a href="#checkout">Checkout</a></li>
+  <li><a href="#branches">Branches</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -513,7 +528,7 @@
 
 <p>In this section, you will learn the typical Git workflow with the commands <code class="language-plaintext highlighter-rouge">git init</code>, <code class="language-plaintext highlighter-rouge">git add</code>, and <code class="language-plaintext highlighter-rouge">git commit</code> for a local repository. Then we will briefly mention how to <code class="language-plaintext highlighter-rouge">git push</code> to a remote repository that could be hosted on an online platform like <em>GitHub</em> or <em>GitLab</em>.</p>
 
-<h3 id="initializing-a-repository">Initializing a Repository</h3>
+<h3 id="initializing-or-cloning-a-repository">Initializing (or cloning) a Repository</h3>
 
 <p>First, to work with Git, you need a <em>Git repository</em>, which is a directory for your project that will be managed with Git. To create one, move to your project’s directory and run the command:</p>
 
@@ -521,6 +536,17 @@
 </code></pre></div></div>
 
 <p>When you run <code class="language-plaintext highlighter-rouge">git init</code>, it creates a new subdirectory named <code class="language-plaintext highlighter-rouge">.git</code> in your current working directory. This directory contains all the necessary Git metadata for the new repository, including subdirectories for objects, references, and template files. It is a <em>special</em> directory that Git and other programs use to recognize the directory as a Git repository.</p>
+
+<p>Alternatively, if the repository already exists somewhere, you can instead clone it by providing the URL</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repository-url&gt;
+</code></pre></div></div>
+
+<blockquote class="note">
+  <p><strong>Note:</strong><br />
+If the repository has submodules, you can add the flag</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repository-url&gt; <span class="nt">--recurse-submodules</span>
+</code></pre></div>  </div>
+</blockquote>
 
 <h3 id="staging-and-committing-changes">Staging and Committing Changes</h3>
 
@@ -585,17 +611,25 @@ If your repository was cloned directly from the cloud platform. Just run</p>
 
 <p>This command uploads your commits to the remote repository and sets up tracking so future pushes can be done with <code class="language-plaintext highlighter-rouge">git push</code>.</p>
 
-<h3 id="summary">Summary</h3>
+<h3 id="the-workflow-in-a-nutshell">The workflow in a nutshell</h3>
+
+<p>The following steps summarize what you will be doint 90% of the times with git.</p>
 
 <ol>
-  <li>Initialize a repository: <code class="language-plaintext highlighter-rouge">git init</code></li>
+  <li>Initialize/clone a repository: <code class="language-plaintext highlighter-rouge">git init</code> or <code class="language-plaintext highlighter-rouge">git clone</code></li>
   <li>Add files to the staging area: <code class="language-plaintext highlighter-rouge">git add &lt;filename&gt;</code> or <code class="language-plaintext highlighter-rouge">git add .</code></li>
   <li>Commit changes: <code class="language-plaintext highlighter-rouge">git commit -m "message"</code></li>
-  <li>Add a remote repository: <code class="language-plaintext highlighter-rouge">git remote add origin &lt;repository-url&gt;</code></li>
-  <li>Push changes: <code class="language-plaintext highlighter-rouge">git push -u origin main</code></li>
+  <li>Push changes: <code class="language-plaintext highlighter-rouge">git push origin main</code></li>
 </ol>
 
-<p>This is the basic workflow you need to follow to make commits and push them to your remote repositories.</p>
+<p>There is a lot more to know about git, but you can learn the specific features as you need them.</p>
+
+<h1 id="ignoring-files">Ignoring files</h1>
+
+<h1 id="checkout">Checkout</h1>
+
+<h1 id="branches">Branches</h1>
+
 <h1 id="see-also">See also</h1>
 
 <ul>

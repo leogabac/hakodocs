@@ -36,7 +36,7 @@ Git is a version control system that helps track changes in files, mainly used f
 
 In this section, you will learn the typical Git workflow with the commands `git init`, `git add`, and `git commit` for a local repository. Then we will briefly mention how to `git push` to a remote repository that could be hosted on an online platform like _GitHub_ or _GitLab_.
 
-### Initializing a Repository
+### Initializing (or cloning) a Repository
 
 First, to work with Git, you need a _Git repository_, which is a directory for your project that will be managed with Git. To create one, move to your project's directory and run the command:
 
@@ -46,6 +46,17 @@ git init
 
 When you run `git init`, it creates a new subdirectory named `.git` in your current working directory. This directory contains all the necessary Git metadata for the new repository, including subdirectories for objects, references, and template files. It is a _special_ directory that Git and other programs use to recognize the directory as a Git repository.
 
+Alternatively, if the repository already exists somewhere, you can instead clone it by providing the URL
+```bash
+git clone <repository-url>
+```
+
+{: .note}
+> __Note:__\\
+> If the repository has submodules, you can add the flag
+>```bash
+>git clone <repository-url> --recurse-submodules
+>```
 
 ### Staging and Committing Changes
 
@@ -117,15 +128,25 @@ Here `<branch>` is typically `main`.
 
 This command uploads your commits to the remote repository and sets up tracking so future pushes can be done with `git push`.
 
-### Summary
+### The workflow in a nutshell
 
-1. Initialize a repository: `git init`
+The following steps summarize what you will be doint 90% of the times with git.
+
+1. Initialize/clone a repository: `git init` or `git clone`
 2. Add files to the staging area: `git add <filename>` or `git add .`
 3. Commit changes: `git commit -m "message"`
-4. Add a remote repository: `git remote add origin <repository-url>`
-5. Push changes: `git push -u origin main`
+4. Push changes: `git push origin main`
 
-This is the basic workflow you need to follow to make commits and push them to your remote repositories.
+There is a lot more to know about git, but you can learn the specific features as you need them.
+
+# Ignoring files
+
+# Checkout
+
+# Branches
+
+
+
 # See also
 
 - [Github](git.github)

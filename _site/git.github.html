@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=d49b0c046d25db790f87191fe8f161c96fdf491d">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=acad01280e1885b0117814d5dd4e1dc8f97167ad">
 
 
 
@@ -375,7 +375,19 @@
 
     Table of Contents:
     <ol id="git-wiki-toc">
-  <li><a href="#git-github">Git: Github</a></li>
+  <li><a href="#git-github">Git: GitHub</a></li>
+  <li><a href="#github-cli">GitHub CLI</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#authenticating-with-github-cli">Authenticating with GitHub CLI</a></li>
+      <li><a href="#useful-commands-for-gh">Useful commands for gh</a></li>
+    </ol>
+  </li>
+  <li><a href="#github-desktop">GitHub Desktop</a>
+    <ol>
+      <li><a href="#installation-1">Installation</a></li>
+    </ol>
+  </li>
 </ol>
 
 
@@ -385,7 +397,19 @@
 
     Table of Contents:
     <ol id="sidebar-toc">
-  <li><a href="#git-github">Git: Github</a></li>
+  <li><a href="#git-github">Git: GitHub</a></li>
+  <li><a href="#github-cli">GitHub CLI</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#authenticating-with-github-cli">Authenticating with GitHub CLI</a></li>
+      <li><a href="#useful-commands-for-gh">Useful commands for gh</a></li>
+    </ol>
+  </li>
+  <li><a href="#github-desktop">GitHub Desktop</a>
+    <ol>
+      <li><a href="#installation-1">Installation</a></li>
+    </ol>
+  </li>
 </ol>
 -->
 
@@ -394,7 +418,19 @@
 
     Table of Contents:
     <ul id="sidebar-toc">
-  <li><a href="#git-github">Git: Github</a></li>
+  <li><a href="#git-github">Git: GitHub</a></li>
+  <li><a href="#github-cli">GitHub CLI</a>
+    <ul>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#authenticating-with-github-cli">Authenticating with GitHub CLI</a></li>
+      <li><a href="#useful-commands-for-gh">Useful commands for gh</a></li>
+    </ul>
+  </li>
+  <li><a href="#github-desktop">GitHub Desktop</a>
+    <ul>
+      <li><a href="#installation-1">Installation</a></li>
+    </ul>
+  </li>
 </ul>
 -->
 
@@ -408,7 +444,19 @@
 
     Table of Contents:
     <ol id="inline-toc">
-  <li><a href="#git-github">Git: Github</a></li>
+  <li><a href="#git-github">Git: GitHub</a></li>
+  <li><a href="#github-cli">GitHub CLI</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#authenticating-with-github-cli">Authenticating with GitHub CLI</a></li>
+      <li><a href="#useful-commands-for-gh">Useful commands for gh</a></li>
+    </ol>
+  </li>
+  <li><a href="#github-desktop">GitHub Desktop</a>
+    <ol>
+      <li><a href="#installation-1">Installation</a></li>
+    </ol>
+  </li>
 </ol>
 -->
         
@@ -416,7 +464,19 @@
 
     Table of Contents:
     <ol id="floating_toc">
-  <li><a href="#git-github">Git: Github</a></li>
+  <li><a href="#git-github">Git: GitHub</a></li>
+  <li><a href="#github-cli">GitHub CLI</a>
+    <ol>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#authenticating-with-github-cli">Authenticating with GitHub CLI</a></li>
+      <li><a href="#useful-commands-for-gh">Useful commands for gh</a></li>
+    </ol>
+  </li>
+  <li><a href="#github-desktop">GitHub Desktop</a>
+    <ol>
+      <li><a href="#installation-1">Installation</a></li>
+    </ol>
+  </li>
 </ol>
 
     </div>
@@ -430,8 +490,137 @@
     
 
     <div id="git-wiki-content">
-      <h1 id="git-github">Git: Github</h1>
+      <h1 id="git-github">Git: GitHub</h1>
 
+<p><a href="https://github.com/">GitHub</a> is an online platform for hosting and managing Git repositories. It provides version control, collaboration tools, and integration with various development workflows. Developers use GitHub to store code, track changes, and collaborate on projects through features like pull requests, issues, and discussions. It also supports automation, continuous integration, and project management tools. While primarily used for software development, GitHub is also popular for documentation, research, and other collaborative projects.</p>
+
+<h1 id="github-cli">GitHub CLI</h1>
+
+<p>To push to a remote repository hosted on GitHub, you need to have access to it by either being invited or being the owner. Then, Git needs to authenticate your credentials to allow pushing your commits. The easiest way to manage authentication is by using the GitHub CLI (<code class="language-plaintext highlighter-rouge">gh</code>).</p>
+
+<h2 id="installation">Installation</h2>
+
+<ul>
+  <li>
+    <p><strong>Windows</strong></p>
+
+    <p>Install with <code class="language-plaintext highlighter-rouge">winget</code>, open a terminal and run:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>winget <span class="nb">install</span> <span class="nt">--id</span> GitHub.cli
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>macOS</strong></p>
+
+    <p>Install with <code class="language-plaintext highlighter-rouge">Homebrew</code>, open a terminal and run:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>brew <span class="nb">install </span>gh
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p><strong>Linux</strong></p>
+
+    <p>Install using your package manager:</p>
+
+    <ul>
+      <li>Debian/Ubuntu (apt)</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">(</span><span class="nb">type</span> <span class="nt">-p</span> wget <span class="o">&gt;</span>/dev/null <span class="o">||</span> <span class="o">(</span><span class="nb">sudo </span>apt update <span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt-get <span class="nb">install </span>wget <span class="nt">-y</span><span class="o">))</span> <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">sudo mkdir</span> <span class="nt">-p</span> <span class="nt">-m</span> 755 /etc/apt/keyrings <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nv">out</span><span class="o">=</span><span class="si">$(</span><span class="nb">mktemp</span><span class="si">)</span> <span class="o">&amp;&amp;</span> wget <span class="nt">-nv</span> <span class="nt">-O</span><span class="nv">$out</span> https://cli.github.com/packages/githubcli-archive-keyring.gpg <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">cat</span> <span class="nv">$out</span> | <span class="nb">sudo tee</span> /etc/apt/keyrings/githubcli-archive-keyring.gpg <span class="o">&gt;</span> /dev/null <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">sudo chmod </span>go+r /etc/apt/keyrings/githubcli-archive-keyring.gpg <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">echo</span> <span class="s2">"deb [arch=</span><span class="si">$(</span>dpkg <span class="nt">--print-architecture</span><span class="si">)</span><span class="s2"> signed-by=/etc/apt/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main"</span> | <span class="nb">sudo tee</span> /etc/apt/sources.list.d/github-cli.list <span class="o">&gt;</span> /dev/null <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt update <span class="se">\</span>
+<span class="o">&amp;&amp;</span> <span class="nb">sudo </span>apt <span class="nb">install </span>gh <span class="nt">-y</span>
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Fedora</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>dnf config-manager addrepo <span class="nt">--from-repofile</span><span class="o">=</span>https://cli.github.com/packages/rpm/gh-cli.repo
+<span class="nb">sudo </span>dnf <span class="nb">install </span>gh <span class="nt">--repo</span> gh-cli
+</code></pre></div>    </div>
+
+    <ul>
+      <li>Arch Linux</li>
+    </ul>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> github-cli
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h2 id="authenticating-with-github-cli">Authenticating with GitHub CLI</h2>
+
+<p>Once installed, you need to authenticate with GitHub:</p>
+
+<ul>
+  <li>
+    <p>Open a terminal and run:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh auth login
+</code></pre></div>    </div>
+  </li>
+  <li>Select <code class="language-plaintext highlighter-rouge">GitHub.com</code> when prompted.</li>
+  <li>
+    <p>Choose between authenticating via <code class="language-plaintext highlighter-rouge">HTTPS</code> or <code class="language-plaintext highlighter-rouge">SSH</code>. If unsure, <code class="language-plaintext highlighter-rouge">HTTPS</code> is the easier option.</p>
+
+    <blockquote class="note">
+      <p><strong>Note:</strong><br />
+HTTPS authentication will require a web browser. This is not useful for headless installations.</p>
+    </blockquote>
+  </li>
+  <li>
+    <p>If using HTTPS, you can authenticate via a web browser or a personal access token (PAT). The recommended way is to use the web authentication:</p>
+
+    <ul>
+      <li>Select <code class="language-plaintext highlighter-rouge">Login with a web browser</code> and follow the instructions to authorize GitHub CLI.</li>
+      <li>If you prefer using a PAT, generate one from <a href="https://github.com/settings/tokens">GitHub’s Personal Access Token page</a>, ensuring you enable <code class="language-plaintext highlighter-rouge">repo</code> scope.</li>
+    </ul>
+  </li>
+  <li>
+    <p>After authentication, verify that you’re logged in by running:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh auth status
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<p>This will cache your credentials in Git, next time you run <code class="language-plaintext highlighter-rouge">git push origin</code>, it will already have access to your account.</p>
+
+<h2 id="useful-commands-for-gh">Useful commands for <code class="language-plaintext highlighter-rouge">gh</code></h2>
+
+<p>Here is a list of commands you will find useful.</p>
+
+<ul>
+  <li><strong>Cloning a repository:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh repo clone &lt;owner&gt;/&lt;repository&gt;
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Creating a new repository:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh repo create &lt;repository-name&gt; <span class="nt">--public</span>
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Viewing pull requests:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh <span class="nb">pr </span>list
+</code></pre></div>    </div>
+  </li>
+  <li><strong>Checking notifications:</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gh notifications
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="github-desktop">GitHub Desktop</h1>
+
+<p><a href="https://github.com/apps/desktop">GitHub Desktop</a> is a graphical user interface (GUI) application that simplifies working with Git repositories. It allows users to clone repositories, commit changes, create branches, and push updates without using the command line.</p>
+
+<h2 id="installation-1">Installation</h2>
+
+<p>Follow the instructions in their <a href="https://desktop.github.com/download/">downloads page</a></p>
 
     </div>
 
