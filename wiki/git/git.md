@@ -47,16 +47,19 @@ git init
 When you run `git init`, it creates a new subdirectory named `.git` in your current working directory. This directory contains all the necessary Git metadata for the new repository, including subdirectories for objects, references, and template files. It is a _special_ directory that Git and other programs use to recognize the directory as a Git repository.
 
 Alternatively, if the repository already exists somewhere, you can instead clone it by providing the URL
+
 ```bash
 git clone <repository-url>
 ```
 
 {: .note}
-> __Note:__\\
+
+> **Note:**\\
 > If the repository has submodules, you can add the flag
->```bash
->git clone <repository-url> --recurse-submodules
->```
+>
+> ```bash
+> git clone <repository-url> --recurse-submodules
+> ```
 
 ### Staging and Committing Changes
 
@@ -75,7 +78,8 @@ git add .
 ```
 
 {: .warning}
-> __Warning:__\\
+
+> **Warning:**\\
 > Adding all of the files is commonly unwanted and not recommended, as it can unintentionally include temporary files, logs, or other files that should not be committed. Most of the time, it is preferable to manually add specific files and _bundle_ them under a single commit:
 >
 > ```bash
@@ -107,7 +111,8 @@ git remote add origin <repository-url>
 ```
 
 {: .note}
-> __Note:__\\
+
+> **Note:**\\
 > If your repository was cloned directly from the cloud platform. It will already have this information added. You can skip this step.
 
 Then, you can push your changes using:
@@ -115,16 +120,17 @@ Then, you can push your changes using:
 ```bash
 git push -u origin <branch>
 ```
+
 Here `<branch>` is typically `main`.
 
 {: .note}
-> __Note:__\\
-> If your repository was cloned directly from the cloud platform. Just run 
->```bash
->git push origin <branch>
->```
 
-
+> **Note:**\\
+> If your repository was cloned directly from the cloud platform. Just run
+>
+> ```bash
+> git push origin <branch>
+> ```
 
 This command uploads your commits to the remote repository and sets up tracking so future pushes can be done with `git push`.
 
@@ -139,11 +145,73 @@ The following steps summarize what you will be doint 90% of the times with git.
 
 There is a lot more to know about git, but you can learn the specific features as you need them.
 
-# Ignoring files
-
-# Checkout
-
 # Branches
+
+Branches allow parallel development without affecting the main code.
+
+- Create a new branch:
+
+  ```bash
+  git branch <branch-name>
+  ```
+
+- Switch to a branch:
+
+  ```bash
+  git checkout <branch-name>
+  ```
+
+- Create and switch to a new branch:
+
+  ```bash
+  git checkout -b <branch-name>
+  ```
+
+- List branches:
+
+  ```bash
+  git branch
+  ```
+
+- Merge a branch into the current one:
+
+  ```bash
+  git merge <branch-name>
+  ```
+
+- Delete a branch:
+  ```bash
+  git branch -d <branch-name>  # Safe delete (only if merged)
+  git branch -D <branch-name>  # Force delete
+  ```
+
+- Checkout a previous commit (detached HEAD):
+  ```bash
+  git checkout <commit-hash>
+  ```
+
+# Ignoring Files
+
+To prevent certain files from being tracked by Git, create a `.gitignore` file in the repository root and list the files or directories to ignore.
+
+```
+# Ignore compiled files
+*.o
+*.exe
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore environment files
+.env
+```
+
+To apply changes after modifying `.gitignore`, use:
+
+```sh
+git rm --cached <file>
+```
 
 
 

@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=acad01280e1885b0117814d5dd4e1dc8f97167ad">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=fb2a6070e5d800b91bbe638f4d51d4d963f25306">
 
 
 
@@ -170,6 +170,16 @@
         
         
         
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/cpp.armadillo">cpp.armadillo.md</a>
+        </li>
         
         
 
@@ -238,6 +248,16 @@
         
         <li class="page-list-item">
             
+            <a href="/minecraft">Minecraft</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
             <a href="/linux.clitips">Linux CLI Tips</a>
         </li>
         
@@ -249,30 +269,6 @@
         <li class="page-list-item">
             
             <a href="/julia">Julia</a>
-        </li>
-        
-        
-
-        
-        
-        
-
-        
-        
-        
-        <li class="page-list-item">
-            
-            <a href="/home">Home</a>
-        </li>
-        
-        
-
-        
-        
-        
-        <li class="page-list-item">
-            
-            <a href="/git">Git</a>
         </li>
         
         
@@ -388,9 +384,8 @@
       </li>
     </ol>
   </li>
-  <li><a href="#ignoring-files">Ignoring files</a></li>
-  <li><a href="#checkout">Checkout</a></li>
   <li><a href="#branches">Branches</a></li>
+  <li><a href="#ignoring-files">Ignoring Files</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -407,9 +402,8 @@
       <li><a href="#quick-tutorial">Quick Tutorial</a></li>
     </ol>
   </li>
-  <li><a href="#ignoring-files">Ignoring files</a></li>
-  <li><a href="#checkout">Checkout</a></li>
   <li><a href="#branches">Branches</a></li>
+  <li><a href="#ignoring-files">Ignoring Files</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -425,9 +419,8 @@
       <li><a href="#quick-tutorial">Quick Tutorial</a></li>
     </ul>
   </li>
-  <li><a href="#ignoring-files">Ignoring files</a></li>
-  <li><a href="#checkout">Checkout</a></li>
   <li><a href="#branches">Branches</a></li>
+  <li><a href="#ignoring-files">Ignoring Files</a></li>
   <li><a href="#see-also">See also</a></li>
 </ul>
 -->
@@ -448,9 +441,8 @@
       <li><a href="#quick-tutorial">Quick Tutorial</a></li>
     </ol>
   </li>
-  <li><a href="#ignoring-files">Ignoring files</a></li>
-  <li><a href="#checkout">Checkout</a></li>
   <li><a href="#branches">Branches</a></li>
+  <li><a href="#ignoring-files">Ignoring Files</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -472,9 +464,8 @@
       </li>
     </ol>
   </li>
-  <li><a href="#ignoring-files">Ignoring files</a></li>
-  <li><a href="#checkout">Checkout</a></li>
   <li><a href="#branches">Branches</a></li>
+  <li><a href="#ignoring-files">Ignoring Files</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -538,12 +529,14 @@
 <p>When you run <code class="language-plaintext highlighter-rouge">git init</code>, it creates a new subdirectory named <code class="language-plaintext highlighter-rouge">.git</code> in your current working directory. This directory contains all the necessary Git metadata for the new repository, including subdirectories for objects, references, and template files. It is a <em>special</em> directory that Git and other programs use to recognize the directory as a Git repository.</p>
 
 <p>Alternatively, if the repository already exists somewhere, you can instead clone it by providing the URL</p>
+
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repository-url&gt;
 </code></pre></div></div>
 
 <blockquote class="note">
   <p><strong>Note:</strong><br />
 If the repository has submodules, you can add the flag</p>
+
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone &lt;repository-url&gt; <span class="nt">--recurse-submodules</span>
 </code></pre></div>  </div>
 </blockquote>
@@ -600,11 +593,13 @@ If your repository was cloned directly from the cloud platform. It will already 
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push <span class="nt">-u</span> origin &lt;branch&gt;
 </code></pre></div></div>
+
 <p>Here <code class="language-plaintext highlighter-rouge">&lt;branch&gt;</code> is typically <code class="language-plaintext highlighter-rouge">main</code>.</p>
 
 <blockquote class="note">
   <p><strong>Note:</strong><br />
 If your repository was cloned directly from the cloud platform. Just run</p>
+
   <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git push origin &lt;branch&gt;
 </code></pre></div>  </div>
 </blockquote>
@@ -624,11 +619,72 @@ If your repository was cloned directly from the cloud platform. Just run</p>
 
 <p>There is a lot more to know about git, but you can learn the specific features as you need them.</p>
 
-<h1 id="ignoring-files">Ignoring files</h1>
-
-<h1 id="checkout">Checkout</h1>
-
 <h1 id="branches">Branches</h1>
+
+<p>Branches allow parallel development without affecting the main code.</p>
+
+<ul>
+  <li>
+    <p>Create a new branch:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch &lt;branch-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Switch to a branch:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout &lt;branch-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create and switch to a new branch:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> &lt;branch-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>List branches:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Merge a branch into the current one:</p>
+
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git merge &lt;branch-name&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>Delete a branch:
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git branch <span class="nt">-d</span> &lt;branch-name&gt;  <span class="c"># Safe delete (only if merged)</span>
+git branch <span class="nt">-D</span> &lt;branch-name&gt;  <span class="c"># Force delete</span>
+</code></pre></div>    </div>
+  </li>
+  <li>Checkout a previous commit (detached HEAD):
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout &lt;commit-hash&gt;
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<h1 id="ignoring-files">Ignoring Files</h1>
+
+<p>To prevent certain files from being tracked by Git, create a <code class="language-plaintext highlighter-rouge">.gitignore</code> file in the repository root and list the files or directories to ignore.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Ignore compiled files
+*.o
+*.exe
+
+# Ignore logs
+logs/
+*.log
+
+# Ignore environment files
+.env
+</code></pre></div></div>
+
+<p>To apply changes after modifying <code class="language-plaintext highlighter-rouge">.gitignore</code>, use:</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nb">rm</span> <span class="nt">--cached</span> &lt;file&gt;
+</code></pre></div></div>
 
 <h1 id="see-also">See also</h1>
 
@@ -671,7 +727,7 @@ If your repository was cloned directly from the cloud platform. Just run</p>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/minecraft,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
     });
 </script>
 

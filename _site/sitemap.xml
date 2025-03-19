@@ -4,6 +4,12 @@
 <loc>http://localhost:4000/archlinux</loc>
 </url>
 <url>
+<loc>http://localhost:4000/cpp.fft</loc>
+</url>
+<url>
+<loc>http://localhost:4000/cpp</loc>
+</url>
+<url>
 <loc>http://localhost:4000/git.github</loc>
 </url>
 <url>
@@ -22,6 +28,9 @@
 <loc>http://localhost:4000/linux.clitips</loc>
 </url>
 <url>
+<loc>http://localhost:4000/minecraft</loc>
+</url>
+<url>
 <loc>http://localhost:4000/python.jupyter</loc>
 </url>
 <url>
@@ -38,5 +47,8 @@
 </url>
 <url>
 <loc>http://localhost:4000/timeshift</loc>
+</url>
+<url>
+<loc>http://localhost:4000/cpp.armadillo</loc>
 </url>
 </urlset>
