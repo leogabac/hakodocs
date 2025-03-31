@@ -14,29 +14,29 @@
 <meta name="viewport" content="width=device-width">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Linux CLI Tips | HakoDocs</title>
+<title>Ollama | HakoDocs</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Linux CLI Tips" />
+<meta property="og:title" content="Ollama" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="Linux CLI Tips" />
-<meta property="og:description" content="Linux CLI Tips" />
-<link rel="canonical" href="http://localhost:4000/linux.clitips" />
-<meta property="og:url" content="http://localhost:4000/linux.clitips" />
+<meta name="description" content="Ollama" />
+<meta property="og:description" content="Ollama" />
+<link rel="canonical" href="http://localhost:4000/ollama" />
+<meta property="og:url" content="http://localhost:4000/ollama" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Linux CLI Tips" />
+<meta property="twitter:title" content="Ollama" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Linux CLI Tips","headline":"Linux CLI Tips","url":"http://localhost:4000/linux.clitips"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Ollama","headline":"Ollama","url":"http://localhost:4000/ollama"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 
 
 
-<title>linux.clitips - HakoDocs</title>
+<title>ollama - HakoDocs</title>
 
-<meta property="og:title" content="linux.clitips - HakoDocs">
+<meta property="og:title" content="ollama - HakoDocs">
 
 <meta property="og:description" content="
         A collection of tech-related notes
@@ -44,7 +44,7 @@
 
 
 <meta property="og:url"
-  content="http://localhost:4000/linux.clitips" />
+  content="http://localhost:4000/ollama" />
 
 
 
@@ -325,8 +325,8 @@
 
     
 
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/misc_tips/linux.clitips.md">History</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/misc_tips/linux.clitips.md">Source</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/ollama/ollama.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/ollama/ollama.md">Source</a></span>
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
             new post</a></span>
@@ -336,7 +336,7 @@
     Prose.io:
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/misc_tips/linux.clitips.md">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/ollama/ollama.md">Edit</a></span>
     
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
             new post</a></span>
@@ -371,18 +371,14 @@
 
     Table of Contents:
     <ol id="git-wiki-toc">
-  <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
-  <li><a href="#images">Images</a>
+  <li><a href="#ollama">Ollama</a>
     <ol>
-      <li><a href="#merge-images-to-pdf">Merge images to PDF</a></li>
-      <li><a href="#merge-images-to-video">Merge images to video</a></li>
+      <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#video">Video</a>
-    <ol>
-      <li><a href="#convert-format">Convert format</a></li>
-    </ol>
-  </li>
+  <li><a href="#running-a-model">Running a model</a></li>
+  <li><a href="#amd-gpus">AMD GPUs</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ol>
 
 
@@ -392,18 +388,14 @@
 
     Table of Contents:
     <ol id="sidebar-toc">
-  <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
-  <li><a href="#images">Images</a>
+  <li><a href="#ollama">Ollama</a>
     <ol>
-      <li><a href="#merge-images-to-pdf">Merge images to PDF</a></li>
-      <li><a href="#merge-images-to-video">Merge images to video</a></li>
+      <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#video">Video</a>
-    <ol>
-      <li><a href="#convert-format">Convert format</a></li>
-    </ol>
-  </li>
+  <li><a href="#running-a-model">Running a model</a></li>
+  <li><a href="#amd-gpus">AMD GPUs</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ol>
 -->
 
@@ -412,18 +404,14 @@
 
     Table of Contents:
     <ul id="sidebar-toc">
-  <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
-  <li><a href="#images">Images</a>
+  <li><a href="#ollama">Ollama</a>
     <ul>
-      <li><a href="#merge-images-to-pdf">Merge images to PDF</a></li>
-      <li><a href="#merge-images-to-video">Merge images to video</a></li>
+      <li><a href="#installation">Installation</a></li>
     </ul>
   </li>
-  <li><a href="#video">Video</a>
-    <ul>
-      <li><a href="#convert-format">Convert format</a></li>
-    </ul>
-  </li>
+  <li><a href="#running-a-model">Running a model</a></li>
+  <li><a href="#amd-gpus">AMD GPUs</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ul>
 -->
 
@@ -437,18 +425,14 @@
 
     Table of Contents:
     <ol id="inline-toc">
-  <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
-  <li><a href="#images">Images</a>
+  <li><a href="#ollama">Ollama</a>
     <ol>
-      <li><a href="#merge-images-to-pdf">Merge images to PDF</a></li>
-      <li><a href="#merge-images-to-video">Merge images to video</a></li>
+      <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#video">Video</a>
-    <ol>
-      <li><a href="#convert-format">Convert format</a></li>
-    </ol>
-  </li>
+  <li><a href="#running-a-model">Running a model</a></li>
+  <li><a href="#amd-gpus">AMD GPUs</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ol>
 -->
         
@@ -456,18 +440,14 @@
 
     Table of Contents:
     <ol id="floating_toc">
-  <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
-  <li><a href="#images">Images</a>
+  <li><a href="#ollama">Ollama</a>
     <ol>
-      <li><a href="#merge-images-to-pdf">Merge images to PDF</a></li>
-      <li><a href="#merge-images-to-video">Merge images to video</a></li>
+      <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#video">Video</a>
-    <ol>
-      <li><a href="#convert-format">Convert format</a></li>
-    </ol>
-  </li>
+  <li><a href="#running-a-model">Running a model</a></li>
+  <li><a href="#amd-gpus">AMD GPUs</a></li>
+  <li><a href="#see-also">See also</a></li>
 </ol>
 
     </div>
@@ -481,35 +461,99 @@
     
 
     <div id="git-wiki-content">
-      <h1 id="linux-cli-tips">Linux: CLI Tips</h1>
+      <h1 id="ollama">Ollama</h1>
 
-<p>This is a collection of quick commands you can use to accomplish very specific tasks using the command line. This is a continuously growing collection, and contributions are accepted.</p>
+<p>Ollama is an application that lets you download and run offline LLMs.</p>
 
-<p>See the Table of Contents for a full guide.</p>
+<h2 id="installation">Installation</h2>
 
-<h1 id="images">Images</h1>
-
-<h2 id="merge-images-to-pdf">Merge images to PDF</h2>
-
-<p>Depends on ‘imagemagick’.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>convert <span class="si">$(</span><span class="nb">ls</span> <span class="nt">-v</span> <span class="k">*</span>.jpg<span class="si">)</span> out.pdf
+<p>Generally for Linux:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl <span class="nt">-fsSL</span> https://ollama.com/install.sh | sh
 </code></pre></div></div>
 
-<h2 id="merge-images-to-video">Merge images to video</h2>
-<p>Combine images (frames) into a single video. Depends on ‘ffmpeg’</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-framerate</span> 30 <span class="nt">-i</span> %d.png <span class="nt">-c</span>:v libx264 <span class="nt">-pix_fmt</span> yuv420p output.mp4
-</code></pre></div></div>
-<p>in case it fails, you can try instead</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg <span class="nt">-framerate</span> 15 <span class="nt">-i</span> %d.png <span class="nt">-vf</span> <span class="s2">"scale=trunc(iw/2)*2:trunc(ih/2)*2"</span> <span class="nt">-c</span>:v libx264 <span class="nt">-pix_fmt</span> yuv420p output.mp4
-</code></pre></div></div>
+<p>For Arch Linux you can install one of three packages</p>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">ollama</code> for CPU Models</li>
+  <li><code class="language-plaintext highlighter-rouge">ollama-cuda</code> for NVIDIA GPUs</li>
+  <li><code class="language-plaintext highlighter-rouge">ollama-rocm</code> for AMD GPUs</li>
+</ol>
 
-<h1 id="video">Video</h1>
-
-<h2 id="convert-format">Convert format</h2>
-<p>Depends on ‘ffmpeg’.</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ffmpeg -i video.mkv -codec copy video_out.mp4
+<p>Then start/enable the daemon</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start ollama.service
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>ollama.service
 </code></pre></div></div>
 
+<p>Or simply run in a command line for quick testing</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ollama serve
+</code></pre></div></div>
+
+<h1 id="running-a-model">Running a model</h1>
+
+<p>To run a model, first look in the <a href="https://ollama.com/library">Ollama library</a> for the model name you want to use. For example</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ollama run deepseek-r1:1.5b
+</code></pre></div></div>
+
+<p>This will download, run and start the prompt in a therminal with the LLM.</p>
+
+<blockquote class="tip">
+  <p><strong>TIP:</strong><br />
+In the model, write <code class="language-plaintext highlighter-rouge">/?</code> for help and <code class="language-plaintext highlighter-rouge">/bye</code> to exit.</p>
+</blockquote>
+
+<h1 id="amd-gpus">AMD GPUs</h1>
+
+<p>Ollama has <a href="https://ollama.com/blog/amd-preview">limited support</a> for AMD discrete GPUs since the ROCm technology only support a few, and very recent models. Nevertheless, it is still possible to offload ollama’s processing into unsopported integrated or discrete GPUs by changing the <code class="language-plaintext highlighter-rouge">HSA_OVERRIDE_GFX_VERSION</code> environment variable when launching ollama.</p>
+
+<p>First we need to figure out the <em>GFX</em> version that applies to your particular GPU. Extracted from the <a href="https://wiki.archlinux.org/title/Ollama">Ollama Arch Wiki Page</a>, first execute.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/opt/rocm/bin/rocminfo | <span class="nb">grep </span>amdhsa
+</code></pre></div></div>
+<p>This will query the exact GFX version to your system. It will give you either three of four digits.</p>
+<ul>
+  <li>If you have four digits, they are interpreted as <code class="language-plaintext highlighter-rouge">XXYZ</code>.</li>
+  <li>If you have three digits, then <code class="language-plaintext highlighter-rouge">XYZ</code></li>
+</ul>
+
+<p>Remember these digits, as your GFX version is either <code class="language-plaintext highlighter-rouge">XX.Y.Z</code> or <code class="language-plaintext highlighter-rouge">X.Y.Z</code> depending on whether you got three or four digits.</p>
+
+<p>Then find all of the installed <code class="language-plaintext highlighter-rouge">rocblas</code> kernels</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find /opt/rocm/lib/rocblas/library <span class="nt">-name</span> <span class="s1">'Kernels.so-*'</span>
+</code></pre></div></div>
+<p>And find the closest to your actual version following these rules</p>
+<ol>
+  <li>For the <code class="language-plaintext highlighter-rouge">X</code> part, it must be strictly equal to the actual version.</li>
+  <li>For the <code class="language-plaintext highlighter-rouge">Y</code> part, mismatch is allowed, but it must be no greater than the the actual version.</li>
+  <li>For the <code class="language-plaintext highlighter-rouge">Z</code> part, mismatch is allowed, but it must be no greater than the the actual version.</li>
+</ol>
+
+<p>As a test, if running, stop the ollama daemon</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl stop ollama.service
+</code></pre></div></div>
+<p>Execute the following with your GFX version</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">HSA_OVERRIDE_GFX_VERSION</span><span class="o">=</span>X.Y.Z ollama serve
+</code></pre></div></div>
+<p>and run a model to test if the GPU is now being used. If it is still not being used, follow the same steps to figure out the correct GFX version until you get the right numbers.</p>
+
+<p>Once you made sure which is the correct environment variable, edit the ollama daemon</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl edit <span class="nt">--full</span> ollama.service
+</code></pre></div></div>
+<p>This will open the daemon configuration file, look for the <code class="language-plaintext highlighter-rouge">[Service]</code> section and add</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Service]
+<span class="nv">Environment</span><span class="o">=</span><span class="s2">"HSA_OVERRIDE_GFX_VERSION=X.Y.Z"</span>
+<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/ollama serve
+</code></pre></div></div>
+
+<p>Finally, perform a daemon reload</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl daemon-reload
+</code></pre></div></div>
+<p>and restart the ollama daemon</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl restart ollama.service
+</code></pre></div></div>
+
+<h1 id="see-also">See also</h1>
+<ul>
+  <li><a href="ollama.openwebui">Ollama: Open WebUI</a></li>
+</ul>
 
     </div>
 
