@@ -53,7 +53,7 @@ services:
     container_name: open-webui
     environment:
       OLLAMA_BASE_URL: http://10.1.0.2:11434
-      HSA_OVERRIDE_GFX_VERSION: "11.0.0"
+      HSA_OVERRIDE_GFX_VERSION: "X.Y.Z"
       HIP_VISIBLE_DEVICES: "0"
     devices:
       - "/dev/kfd"
