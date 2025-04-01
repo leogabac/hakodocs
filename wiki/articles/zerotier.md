@@ -42,10 +42,7 @@ To install ZeroTier, first create an account on [their weibsite](https://www.zer
   sudo zerotier-cli status
   ```
 
-## Usage
-
-{: .note}
-> **Note:** Usage for Linux systems
+## Usage (Linux Systems)
 
 To Join a network, go to [ZeroTier Central](http://my.zerotier.com/) and create a network. Copy the id and run
 ```bash

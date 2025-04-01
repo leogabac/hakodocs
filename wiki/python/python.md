@@ -65,7 +65,7 @@ To exit any virtual environment, at any time run the command `deactivate`.
 Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on Python 3.7 because some of its dependencies have not been updated for newer versions, while a new project could require Python 3.11 to take advantage of performance improvements and new language features. Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like [pyenv](https://github.com/pyenv/pyenv) or [conda](https://docs.conda.io/projects/conda/en/stable/index.html) allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.
 
 {: .tip}
-> **Tip:** For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.
+>For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.
 
 Pyenv is a tool, that among other things, it serves as an automation tool for compiling python versions from source and have them under the user's home directory `~/.pyenv/`. For installation follow their [documentation](https://github.com/pyenv/pyenv). 
 
@@ -75,7 +75,7 @@ virtualenv --python=/home/USER/.pyenv/versions/3.12.0/bin/python3.12 /home/USER/
 ```
 
 {: .warning}
-> **Warning:** It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.
+>It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.
 
 
 # See also

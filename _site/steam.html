@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9514760ac7f980aa90b5a78db56d8087ba0b3c91">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=37cd6a8b61dad481efd37305d9ba8887cdba5c4e">
 
 
 
@@ -467,14 +467,9 @@
 
     <p>Steam is not opening correctly, it is instead openign <em>phantom windows</em>. Issue might be related to which GPU the desktop environment is deciding to use when loading the application. To solve the issue, edit the file <code class="language-plaintext highlighter-rouge">usr/share/applications/steam.desktop</code></p>
 
-    <p>Look for the line that contains</p>
+    <p>Look for the line that contains <code class="language-plaintext highlighter-rouge">PrefersNonDefaultGPU</code> and set it to false.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PrefersNonDefaultGPU</span><span class="o">=</span><span class="nb">true</span>
-</code></pre></div>    </div>
-
-    <p>and set it to false</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">PrefersNonDefaultGPU</span><span class="o">=</span><span class="nb">false</span>
+    <div class="language-sh codeblock highlighter-rouge" data-title="usr/share/applications/steam.desktop"><div class="highlight"><pre class="highlight"><code><span class="nv">PrefersNonDefaultGPU</span><span class="o">=</span><span class="nb">false</span>
 </code></pre></div>    </div>
   </li>
 </ul>
@@ -514,7 +509,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
     });
 </script>
 

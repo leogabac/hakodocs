@@ -12,7 +12,6 @@ sudo systemctl enable cronie.service
 ```
 
 {: .tip}
-> __Tip:__   
 > Open the Timeshift GUI from your applications menu and make an initial setup by clicking on _Wizard_\
 > For ext4 filesystems:
 > 1. Choose `rsync`.

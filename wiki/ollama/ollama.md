@@ -40,7 +40,6 @@ ollama run deepseek-r1:1.5b
 This will download, run and start the prompt in a therminal with the LLM.
 
 {: .tip}
-> __TIP:__  
 > In the model, write `/?` for help and `/bye` to exit.
 
 # AMD GPUs
@@ -82,7 +81,9 @@ Once you made sure which is the correct environment variable, edit the ollama da
 sudo systemctl edit --full ollama.service
 ```
 This will open the daemon configuration file, look for the `[Service]` section and add
-```bash
+
+{: .codeblock data-title="/etc/systemd/system/ollama.service"}
+```
 [Service]
 Environment="HSA_OVERRIDE_GFX_VERSION=X.Y.Z"
 ExecStart=/usr/bin/ollama serve

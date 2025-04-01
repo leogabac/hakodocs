@@ -89,6 +89,7 @@ blockquote {
   font-style: italic;
 }
 
+/* ===== CODE BLOCKS ===== */
 code,
 pre {
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
@@ -96,7 +97,7 @@ pre {
   font-size: 18px;
 }
 
-/* Block code styling */
+// block code styling
 pre {
   padding: 8px 15px;
   background: #f0f0f0;
@@ -105,18 +106,61 @@ pre {
   overflow-x: auto;
 }
 
-/* Inline code styling */
+// inline code styling
 code {
   background: #f0f0f0;
   padding: 2px 4px;
   border-radius: 3px;
 }
 
-/* Ensure syntax-highlighted code inside <pre> uses the same background */
-pre code {
-  background: inherit;
-  padding: 0;
-  border-radius: 0;
+// ensure syntax-highlighted and non-highlighted code inside <pre> uses the same colors
+pre,
+pre code,
+.highlight,
+.highlight pre,
+.highlight code {
+  color: #333 !important;
+  background: #f0f0f0 !important;
+}
+
+// prevent syntax highlighter from overriding styles
+.highlight .k,  /* Keyword */
+.highlight .n,  /* Name */
+.highlight .s,  /* String */
+.highlight .o { /* Operator */
+  color: inherit !important;
+}
+
+
+/* ===== KRAMDOWN CODE BLOCK CONTAINER ===== */
+// codeblock container
+.codeblock {
+  position: relative;
+  border-radius: 5px;
+  font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
+  margin: 12px 0;
+  border: 1px solid #e5e5e5;
+}
+
+// header for the code block
+.codeblock::before {
+  content: attr(data-title);
+  display: block;
+  background: #f0f0f0;
+  color: #222;
+  font-weight: normal;
+  padding: 10px 10px;
+  font-size: 18px;
+  border-bottom: 2px dashed #999;
+}
+
+//code styling
+.codeblock pre {
+  margin: 0;
+  padding: 6px 12px;
+  background: #f0f0f0;
+  border: none;
+  font-size: 16px;
 }
 
 table {
@@ -478,12 +522,27 @@ screen and (max-width: 480px) {
     margin-top: 30px;
 }
 
+
+/* ===== KRAMDOWN BOXES FOR HIGHLIGHTING ===== */
+
+
 /* General box styling */
 .tip, .warning, .bug, .note {
+    position: relative;
     padding: 10px;
     margin: 10px 0;
-    border-radius: 5px;
     border-left: 5px solid;
+}
+
+/* Add header text dynamically */
+.tip::before,
+.warning::before,
+.bug::before,
+.note::before {
+    display: block;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 5px;
 }
 
 /* Tip (Green) */
@@ -492,12 +551,20 @@ screen and (max-width: 480px) {
     color: #155724;
     border-color: #28a745;
 }
+.tip::before {
+    content: "Tip";
+    color: #1c7430;
+}
 
 /* Warning (Yellow) */
 .warning {
     background-color: #fff3cd;
     color: #856404;
     border-color: #ffcc00;
+}
+.warning::before {
+    content: "Warning";
+    color: #856404;
 }
 
 /* Bug (Red) */
@@ -506,6 +573,10 @@ screen and (max-width: 480px) {
     color: #721c24;
     border-color: #dc3545;
 }
+.bug::before {
+    content: "Bug";
+    color: #721c24;
+}
 
 /* Note (Blue) */
 .note {
@@ -513,6 +584,30 @@ screen and (max-width: 480px) {
     color: #004085;
     border-color: #007bff;
 }
+.note::before {
+    content: "Note";
+    color: #004085;
+}
+
+// variants without headers
+.tip-noheader::before,
+.warning-noheader::before,
+.bug-noheader::before,
+.note-noheader::before {
+    content: none;
+}
+
+.wip {
+  background-color: #fff3cd; /* Light yellow background */
+  color: #856404; /* Dark yellow-brown text */
+  border-left: 4px solid #ff9800; /* Orange accent */
+  padding: 10px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+
+
 
 
 
@@ -528,3 +623,4 @@ screen and (max-width: 480px) {
 body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
 }
+

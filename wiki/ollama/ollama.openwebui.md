@@ -11,14 +11,17 @@ First install `docker` and `docker-compose`
 
 ## NVIDIA GPUs
 
-WIP
+{: .wip}
+> Work In Progress
 
 ## AMD GPUs
 ```bash
 sudo pacman -S docker docker-compose
 ```
 
-Take for reference this docker compose file that was posted [reddit](https://www.reddit.com/r/ollama/comments/1gec1nx/docker_compose_for_amd_users/)
+Take for reference this docker compose file that was posted [on reddit](https://www.reddit.com/r/ollama/comments/1gec1nx/docker_compose_for_amd_users/)
+
+{: .codeblock data-title="docker-compose.yml"}
 ```
 services:
 
@@ -88,7 +91,6 @@ docker compose up -d
 ```
 
 {: .warning}
-> __WARNING:__  
 > Don't forget to substitute in the docker compose file the correct `username`. and `X.Y.Z` for your GFX. See the [Ollama Guide](ollama) for more information.
 
 Then access [http://localhost:3000](http://localhost:3000) on your web browser. You should be able to see the the Open WebUI login screen.
@@ -99,7 +101,6 @@ docker compose down
 ```
 
 {: .warning}
-> __WARNING:__  
 > There might be conflicts with the default port for `ollama.service`, run
 >```bash
 >sudo lsof -i :11434

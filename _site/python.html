@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9514760ac7f980aa90b5a78db56d8087ba0b3c91">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=37cd6a8b61dad481efd37305d9ba8887cdba5c4e">
 
 
 
@@ -516,7 +516,7 @@
 <p>Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on Python 3.7 because some of its dependencies have not been updated for newer versions, while a new project could require Python 3.11 to take advantage of performance improvements and new language features. Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like <a href="https://github.com/pyenv/pyenv">pyenv</a> or <a href="https://docs.conda.io/projects/conda/en/stable/index.html">conda</a> allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.</p>
 
 <blockquote class="tip">
-  <p><strong>Tip:</strong> For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
+  <p>For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
 </blockquote>
 
 <p>Pyenv is a tool, that among other things, it serves as an automation tool for compiling python versions from source and have them under the user’s home directory <code class="language-plaintext highlighter-rouge">~/.pyenv/</code>. For installation follow their <a href="https://github.com/pyenv/pyenv">documentation</a>.</p>
@@ -526,7 +526,7 @@
 </code></pre></div></div>
 
 <blockquote class="warning">
-  <p><strong>Warning:</strong> It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
+  <p>It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
 </blockquote>
 
 <h1 id="see-also">See also</h1>
@@ -570,7 +570,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
     });
 </script>
 

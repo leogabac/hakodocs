@@ -13,7 +13,7 @@ The same colleagues these notes once helped started contributing to them. I hope
 _leogabac (main contributor)_
 
 {: .note}
-> __Disclaimer:__ Many of the content in these notes is centered around Arch Linux as that is my daily driver distribution.
+> Many of the content in these notes is centered around Arch Linux as that is my daily driver distribution.
 
 
 ## Why HakoDocs?

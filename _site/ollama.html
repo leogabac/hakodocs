@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9514760ac7f980aa90b5a78db56d8087ba0b3c91">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=37cd6a8b61dad481efd37305d9ba8887cdba5c4e">
 
 
 
@@ -496,8 +496,7 @@
 <p>This will download, run and start the prompt in a therminal with the LLM.</p>
 
 <blockquote class="tip">
-  <p><strong>TIP:</strong><br />
-In the model, write <code class="language-plaintext highlighter-rouge">/?</code> for help and <code class="language-plaintext highlighter-rouge">/bye</code> to exit.</p>
+  <p>In the model, write <code class="language-plaintext highlighter-rouge">/?</code> for help and <code class="language-plaintext highlighter-rouge">/bye</code> to exit.</p>
 </blockquote>
 
 <h1 id="amd-gpus">AMD GPUs</h1>
@@ -538,9 +537,10 @@ In the model, write <code class="language-plaintext highlighter-rouge">/?</code>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl edit <span class="nt">--full</span> ollama.service
 </code></pre></div></div>
 <p>This will open the daemon configuration file, look for the <code class="language-plaintext highlighter-rouge">[Service]</code> section and add</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>Service]
-<span class="nv">Environment</span><span class="o">=</span><span class="s2">"HSA_OVERRIDE_GFX_VERSION=X.Y.Z"</span>
-<span class="nv">ExecStart</span><span class="o">=</span>/usr/bin/ollama serve
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/systemd/system/ollama.service"><div class="highlight"><pre class="highlight"><code>[Service]
+Environment="HSA_OVERRIDE_GFX_VERSION=X.Y.Z"
+ExecStart=/usr/bin/ollama serve
 </code></pre></div></div>
 
 <p>Finally, perform a daemon reload</p>
@@ -590,7 +590,7 @@ In the model, write <code class="language-plaintext highlighter-rouge">/?</code>
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
     });
 </script>
 

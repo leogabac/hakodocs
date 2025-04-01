@@ -9,7 +9,7 @@ Arch Linux is a _rolling-release_ distribution, i.e. _packages_ (software) recei
 
 
 {: .tip}
-> **Tip:** If case something happens, **always** check the [Arch Wiki](https://wiki.archlinux.org/title/Main_page) first. It always help, no matter the problem you may have. Read **very** carefully the instructions, and don't skip steps. I have encountered many problems for literally not reading the next line in the wiki.
+>If case something happens, **always** check the [Arch Wiki](https://wiki.archlinux.org/title/Main_page) first. It always help, no matter the problem you may have. Read **very** carefully the instructions, and don't skip steps. I have encountered many problems for literally not reading the next line in the wiki.
 
 This guide serves as both a beginner guide to know that to check after they install Arch Linux for the first time, but also a checklist for myself to remember what to look for in a new installation. I will assume that you installed KDE Plasma as your Desktop Environment.
 
@@ -62,7 +62,7 @@ sudo pacman -Syu
 ```
 
 {: .warning}
-> **Warning:** Always make sure to read what packages are being updated.
+>Always make sure to read what packages are being updated.
 
 # System Sanity Check
 
@@ -210,6 +210,7 @@ Check the [leovim repository](https://github.com/leogabac/leovim) for more infor
 
 There are other tools you might be interested in checking out. Here are some of them (Available on this Wiki)
 
+- [Linux: Settings](linux.settings): A list of common settings for Linux.
 - [Python](python): Installation, virtual environments, handling versions.
 - [Timeshift](timeshift): Tool for creating system snapshopts. Similar to MacOS TimeMachine.
 - [LaTeX](latex): Typesetting system.
