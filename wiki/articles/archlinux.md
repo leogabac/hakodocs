@@ -142,6 +142,9 @@ In particular, check that
 
 There are a few ways to make sure your dedicated graphics card is working.
 
+{: .warning}
+> For **NVIDIA graphics cards**,  **do not forget** to remove `kms` from the `HOOKS` array in `/etc/mkinitcpio.conf`. Check the [NVIDIA Arch Wiki Page](https://wiki.archlinux.org/title/NVIDIA) for more information.
+
 - **Card Is Detected**
 
   1. In KDE Plasma, look for the _About_ setting, it should list all of your components.
@@ -205,6 +208,29 @@ nvim
 ```
 
 Check the [leovim repository](https://github.com/leogabac/leovim) for more information.
+
+# Common (and useful) utilities
+
+## General Terminal Utilities
+1. `btop`. A terminal system monitor tool.
+2. `nvtop`. A terminal GPU monitoring tool for NVIDIA and AMD cards.
+3. `zoxide`. Quick file navigation.
+4. `fzf`. A general fuzzy finder picker.
+5. `yazi`. A file explorer in the terminal.
+6. `lsd`. A `ls` replacement.
+
+## Terminal Emulators
+
+
+1. [Kitty](https://sw.kovidgoyal.net/kitty/). A modern, fast, GPU-based terminal emulator. The kitty graphics protocol works the best under kitty.
+2. [WezTerm](https://wezterm.org/index.html). A powerful cross-platform terminal emulator and multiplexer. Written in rust.
+3. [Ghostty](https://ghostty.org/). A fast, feature-rich, and cross-platform terminal emulator with GPU accelerator.
+
+## Networking Management.
+
+1. [Headscale](https://headscale.net/stable/) is an open-source, self-hosted implementation of the [tailscale](https://tailscale.com/) service, providing a secure, encrypted network for connecting devices over the internet.
+2. [ZeroTier](https://www.zerotier.com/). Networking (SDN) platform that allows the cration of global private networks between machines. It uses the proprietary ZeroTier protocol.
+
 
 # See also
 

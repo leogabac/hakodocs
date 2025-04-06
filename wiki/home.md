@@ -24,5 +24,40 @@ For some reason, [leogabac](https://github.com/leogabac) (the creator) is obsess
 - The word _hako_ means _box_ in Japanese, symbolizing that this wiki is a "box" of documentation.
 - It could also be read as _Hack o' Docs_, giving it a hacker-esque feel.
 
+# Quick Navigation
+
+Here is a list of the (most useful) articles you will find in this wiki.
+
+## General
+
+- [Arch Linux](archlinux)
+- [Timeshift](timeshift)
+- [Zero Tier](zerotier)
+{:.three-column-list}
+
+## Linux
+
+- [Linux CLI Tips](linux.clitips)
+- [Common Linux Settings](linux.settings)
+{:.three-column-list}
+ 
+## Git
+
+- [Git](git)
+- [GitHub](git.github)
+{:.three-column-list}
+
+## Python
+
+- [Python](python)
+- [Jupyter Notebook](python.jupyter)
+{:.three-column-list}
+
+## LLMs
+
+- [Ollama](ollama)
+- [Ollama: Open WebUI](ollama.openwebui)
+{:.three-column-list}
+
 
 

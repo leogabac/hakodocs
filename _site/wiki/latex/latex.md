@@ -8,4 +8,7 @@ sudo pacman -S texlive
 ```
 From this, your selected LaTeX editor should pickup the `latex` command in PATH.
 
-
+{: .precode}
+```sh
+latex --version
+```

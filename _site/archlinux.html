@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=37cd6a8b61dad481efd37305d9ba8887cdba5c4e">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=0995e036842d8f6921063ceb8a27735ec2652670">
 
 
 
@@ -178,6 +178,16 @@
         
         <li class="page-list-item">
             
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
             <a href="/cpp.armadillo">cpp.armadillo.md</a>
         </li>
         
@@ -189,16 +199,6 @@
         <li class="page-list-item">
             
             <a href="/timeshift">Timeshift</a>
-        </li>
-        
-        
-
-        
-        
-        
-        <li class="page-list-item">
-            
-            <a href="/latex">LaTeX</a>
         </li>
         
         
@@ -395,6 +395,13 @@
       <li><a href="#neovim">Neovim</a></li>
     </ol>
   </li>
+  <li><a href="#common-and-useful-utilities">Common (and useful) utilities</a>
+    <ol>
+      <li><a href="#general-terminal-utilities">General Terminal Utilities</a></li>
+      <li><a href="#terminal-emulators">Terminal Emulators</a></li>
+      <li><a href="#networking-management">Networking Management.</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -429,6 +436,13 @@
       <li><a href="#neovim">Neovim</a></li>
     </ol>
   </li>
+  <li><a href="#common-and-useful-utilities">Common (and useful) utilities</a>
+    <ol>
+      <li><a href="#general-terminal-utilities">General Terminal Utilities</a></li>
+      <li><a href="#terminal-emulators">Terminal Emulators</a></li>
+      <li><a href="#networking-management">Networking Management.</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -460,6 +474,13 @@
     <ul>
       <li><a href="#vscode">VSCode</a></li>
       <li><a href="#neovim">Neovim</a></li>
+    </ul>
+  </li>
+  <li><a href="#common-and-useful-utilities">Common (and useful) utilities</a>
+    <ul>
+      <li><a href="#general-terminal-utilities">General Terminal Utilities</a></li>
+      <li><a href="#terminal-emulators">Terminal Emulators</a></li>
+      <li><a href="#networking-management">Networking Management.</a></li>
     </ul>
   </li>
   <li><a href="#see-also">See also</a></li>
@@ -500,6 +521,13 @@
       <li><a href="#neovim">Neovim</a></li>
     </ol>
   </li>
+  <li><a href="#common-and-useful-utilities">Common (and useful) utilities</a>
+    <ol>
+      <li><a href="#general-terminal-utilities">General Terminal Utilities</a></li>
+      <li><a href="#terminal-emulators">Terminal Emulators</a></li>
+      <li><a href="#networking-management">Networking Management.</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -530,6 +558,13 @@
     <ol>
       <li><a href="#vscode">VSCode</a></li>
       <li><a href="#neovim">Neovim</a></li>
+    </ol>
+  </li>
+  <li><a href="#common-and-useful-utilities">Common (and useful) utilities</a>
+    <ol>
+      <li><a href="#general-terminal-utilities">General Terminal Utilities</a></li>
+      <li><a href="#terminal-emulators">Terminal Emulators</a></li>
+      <li><a href="#networking-management">Networking Management.</a></li>
     </ol>
   </li>
   <li><a href="#see-also">See also</a></li>
@@ -702,6 +737,10 @@ makepkg <span class="nt">-si</span>
 
 <p>There are a few ways to make sure your dedicated graphics card is working.</p>
 
+<blockquote class="warning">
+  <p>For <strong>NVIDIA graphics cards</strong>,  <strong>do not forget</strong> to remove <code class="language-plaintext highlighter-rouge">kms</code> from the <code class="language-plaintext highlighter-rouge">HOOKS</code> array in <code class="language-plaintext highlighter-rouge">/etc/mkinitcpio.conf</code>. Check the <a href="https://wiki.archlinux.org/title/NVIDIA">NVIDIA Arch Wiki Page</a> for more information.</p>
+</blockquote>
+
 <ul>
   <li>
     <p><strong>Card Is Detected</strong></p>
@@ -768,6 +807,33 @@ nvim
 
 <p>Check the <a href="https://github.com/leogabac/leovim">leovim repository</a> for more information.</p>
 
+<h1 id="common-and-useful-utilities">Common (and useful) utilities</h1>
+
+<h2 id="general-terminal-utilities">General Terminal Utilities</h2>
+<ol>
+  <li><code class="language-plaintext highlighter-rouge">btop</code>. A terminal system monitor tool.</li>
+  <li><code class="language-plaintext highlighter-rouge">nvtop</code>. A terminal GPU monitoring tool for NVIDIA and AMD cards.</li>
+  <li><code class="language-plaintext highlighter-rouge">zoxide</code>. Quick file navigation.</li>
+  <li><code class="language-plaintext highlighter-rouge">fzf</code>. A general fuzzy finder picker.</li>
+  <li><code class="language-plaintext highlighter-rouge">yazi</code>. A file explorer in the terminal.</li>
+  <li><code class="language-plaintext highlighter-rouge">lsd</code>. A <code class="language-plaintext highlighter-rouge">ls</code> replacement.</li>
+</ol>
+
+<h2 id="terminal-emulators">Terminal Emulators</h2>
+
+<ol>
+  <li><a href="https://sw.kovidgoyal.net/kitty/">Kitty</a>. A modern, fast, GPU-based terminal emulator. The kitty graphics protocol works the best under kitty.</li>
+  <li><a href="https://wezterm.org/index.html">WezTerm</a>. A powerful cross-platform terminal emulator and multiplexer. Written in rust.</li>
+  <li><a href="https://ghostty.org/">Ghostty</a>. A fast, feature-rich, and cross-platform terminal emulator with GPU accelerator.</li>
+</ol>
+
+<h2 id="networking-management">Networking Management.</h2>
+
+<ol>
+  <li><a href="https://headscale.net/stable/">Headscale</a> is an open-source, self-hosted implementation of the <a href="https://tailscale.com/">tailscale</a> service, providing a secure, encrypted network for connecting devices over the internet.</li>
+  <li><a href="https://www.zerotier.com/">ZeroTier</a>. Networking (SDN) platform that allows the cration of global private networks between machines. It uses the proprietary ZeroTier protocol.</li>
+</ol>
+
 <h1 id="see-also">See also</h1>
 
 <p>There are other tools you might be interested in checking out. Here are some of them (Available on this Wiki)</p>
@@ -814,7 +880,7 @@ nvim
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/latex,/timeshift,/cpp.armadillo,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
     });
 </script>
 

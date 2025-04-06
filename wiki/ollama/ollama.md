@@ -30,7 +30,7 @@ Or simply run in a command line for quick testing
 ollama serve
 ```
 
-# Running a model
+## Running a model
 
 To run a model, first look in the [Ollama library](https://ollama.com/library) for the model name you want to use. For example
 ```bash

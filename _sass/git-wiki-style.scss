@@ -10,6 +10,8 @@ body {
   font-weight: 400;
 }
 
+
+
 h1,
 h2,
 h3,
@@ -18,6 +20,14 @@ h5,
 h6 {
   color: #222;
   margin: 0 0 20px;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold
 }
 
 p,
@@ -134,7 +144,8 @@ pre code,
 
 /* ===== KRAMDOWN CODE BLOCK CONTAINER ===== */
 // codeblock container
-.codeblock {
+.codeblock,
+.precode {
   position: relative;
   border-radius: 5px;
   font-family: Monaco, Bitstream Vera Sans Mono, Lucida Console, Terminal, Consolas, Liberation Mono, DejaVu Sans Mono, Courier New, monospace;
@@ -161,6 +172,10 @@ pre code,
   background: #f0f0f0;
   border: none;
   font-size: 16px;
+}
+
+.precode {
+  margin-bottom: 0px; /* Remove bottom margin */
 }
 
 table {
@@ -606,9 +621,20 @@ screen and (max-width: 480px) {
   font-weight: bold;
 }
 
+.three-column-list {
+  display: flex;
+  flex-wrap: wrap;
+  // list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
 
-
-
+.three-column-list li {
+  flex: 1 1 auto; /* Let items adjust dynamically */
+  width: 33.33%; /* Ensure three columns */
+  max-width: 33.33%;
+  padding: 5px;
+}
 
 
 /* 
