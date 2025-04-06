@@ -49,6 +49,9 @@
 <loc>http://localhost:4000/steam</loc>
 </url>
 <url>
+<loc>http://localhost:4000/sunshine</loc>
+</url>
+<url>
 <loc>http://localhost:4000/zerotier</loc>
 </url>
 <url>

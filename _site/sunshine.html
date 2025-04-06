@@ -14,29 +14,29 @@
 <meta name="viewport" content="width=device-width">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>C++: Fast Fourier Transform | HakoDocs</title>
+<title>Sushine/Moonlight | HakoDocs</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="C++: Fast Fourier Transform" />
+<meta property="og:title" content="Sushine/Moonlight" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A collection of tech-related notes" />
-<meta property="og:description" content="A collection of tech-related notes" />
-<link rel="canonical" href="http://localhost:4000/cpp.fft" />
-<meta property="og:url" content="http://localhost:4000/cpp.fft" />
+<meta name="description" content="Remote Desktop" />
+<meta property="og:description" content="Remote Desktop" />
+<link rel="canonical" href="http://localhost:4000/sunshine" />
+<meta property="og:url" content="http://localhost:4000/sunshine" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="C++: Fast Fourier Transform" />
+<meta property="twitter:title" content="Sushine/Moonlight" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"C++: Fast Fourier Transform","url":"http://localhost:4000/cpp.fft"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Remote Desktop","headline":"Sushine/Moonlight","url":"http://localhost:4000/sunshine"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 
 
 
-<title>cpp.fft - HakoDocs</title>
+<title>sunshine - HakoDocs</title>
 
-<meta property="og:title" content="cpp.fft - HakoDocs">
+<meta property="og:title" content="sunshine - HakoDocs">
 
 <meta property="og:description" content="
         A collection of tech-related notes
@@ -44,7 +44,7 @@
 
 
 <meta property="og:url"
-  content="http://localhost:4000/cpp.fft" />
+  content="http://localhost:4000/sunshine" />
 
 
 
@@ -325,8 +325,8 @@
 
     
 
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/cpp/cpp.fft.md">History</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/cpp/cpp.fft.md">Source</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/articles/sunshine.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/articles/sunshine.md">Source</a></span>
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
             new post</a></span>
@@ -336,7 +336,7 @@
     Prose.io:
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/cpp/cpp.fft.md">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/articles/sunshine.md">Edit</a></span>
     
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
             new post</a></span>
@@ -371,14 +371,18 @@
 
     Table of Contents:
     <ol id="git-wiki-toc">
-  <li><a href="#c-fast-fourier-transform">C++: Fast Fourier Transform</a>
+  <li><a href="#sunshine">Sunshine</a></li>
+  <li><a href="#quick-setup">Quick setup</a>
     <ol>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#quick-start">Quick Start</a>
+      <li><a href="#sunshine-setup-host">Sunshine Setup (Host)</a>
         <ol>
-          <li><a href="#computing-the-fft">Computing the FFT</a></li>
-          <li><a href="#compilation">Compilation</a></li>
-          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#initial-setup">Initial Setup</a></li>
+        </ol>
+      </li>
+      <li><a href="#moonlight-client">Moonlight (Client)</a>
+        <ol>
+          <li><a href="#installation-1">Installation</a></li>
         </ol>
       </li>
     </ol>
@@ -392,10 +396,11 @@
 
     Table of Contents:
     <ol id="sidebar-toc">
-  <li><a href="#c-fast-fourier-transform">C++: Fast Fourier Transform</a>
+  <li><a href="#sunshine">Sunshine</a></li>
+  <li><a href="#quick-setup">Quick setup</a>
     <ol>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#quick-start">Quick Start</a></li>
+      <li><a href="#sunshine-setup-host">Sunshine Setup (Host)</a></li>
+      <li><a href="#moonlight-client">Moonlight (Client)</a></li>
     </ol>
   </li>
 </ol>
@@ -406,10 +411,11 @@
 
     Table of Contents:
     <ul id="sidebar-toc">
-  <li><a href="#c-fast-fourier-transform">C++: Fast Fourier Transform</a>
+  <li><a href="#sunshine">Sunshine</a></li>
+  <li><a href="#quick-setup">Quick setup</a>
     <ul>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#quick-start">Quick Start</a></li>
+      <li><a href="#sunshine-setup-host">Sunshine Setup (Host)</a></li>
+      <li><a href="#moonlight-client">Moonlight (Client)</a></li>
     </ul>
   </li>
 </ul>
@@ -425,10 +431,11 @@
 
     Table of Contents:
     <ol id="inline-toc">
-  <li><a href="#c-fast-fourier-transform">C++: Fast Fourier Transform</a>
+  <li><a href="#sunshine">Sunshine</a></li>
+  <li><a href="#quick-setup">Quick setup</a>
     <ol>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#quick-start">Quick Start</a></li>
+      <li><a href="#sunshine-setup-host">Sunshine Setup (Host)</a></li>
+      <li><a href="#moonlight-client">Moonlight (Client)</a></li>
     </ol>
   </li>
 </ol>
@@ -438,14 +445,18 @@
 
     Table of Contents:
     <ol id="floating_toc">
-  <li><a href="#c-fast-fourier-transform">C++: Fast Fourier Transform</a>
+  <li><a href="#sunshine">Sunshine</a></li>
+  <li><a href="#quick-setup">Quick setup</a>
     <ol>
-      <li><a href="#installation">Installation</a></li>
-      <li><a href="#quick-start">Quick Start</a>
+      <li><a href="#sunshine-setup-host">Sunshine Setup (Host)</a>
         <ol>
-          <li><a href="#computing-the-fft">Computing the FFT</a></li>
-          <li><a href="#compilation">Compilation</a></li>
-          <li><a href="#visualization">Visualization</a></li>
+          <li><a href="#installation">Installation</a></li>
+          <li><a href="#initial-setup">Initial Setup</a></li>
+        </ol>
+      </li>
+      <li><a href="#moonlight-client">Moonlight (Client)</a>
+        <ol>
+          <li><a href="#installation-1">Installation</a></li>
         </ol>
       </li>
     </ol>
@@ -463,68 +474,100 @@
     
 
     <div id="git-wiki-content">
-      <h1 id="c-fast-fourier-transform">C++: Fast Fourier Transform</h1>
+      <h1 id="sunshine">Sunshine</h1>
 
-<p>The fastest Fourier Transform in the West.</p>
+<p><a href="https://github.com/LizardByte/Sunshine">Sunshine</a> is a self-hosted game stream host for Moonlight. Offering low latency, cloud gaming server capabilities with support for AMD, Intel, and Nvidia GPUs for hardware encoding. Software encoding is also available. You can connect to Sunshine from any Moonlight client on a variety of devices. A web UI is provided to allow configuration, and client pairing, from your favorite web browser. Pair from the local server or any mobile device.</p>
 
-<h2 id="installation">Installation</h2>
-<p>Install the <em>FFTW</em> library, on Arch Linux</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fftw
+<p>To access the desktop or an application of a remote PC (host), you need</p>
+<ol>
+  <li>Setup <code class="language-plaintext highlighter-rouge">sunshine</code> on the host.</li>
+  <li>Download <code class="language-plaintext highlighter-rouge">moonlight</code> on the client, and connect to the host.</li>
+</ol>
+
+<h1 id="quick-setup">Quick setup</h1>
+
+<h2 id="sunshine-setup-host">Sunshine Setup (Host)</h2>
+
+<blockquote class="note">
+  <p>This is a installation guide for Arch Linux systems. For other systems and more detailed instructions, read the <a href="https://docs.lizardbyte.dev/projects/sunshine/latest/index.html"><strong>Sunshine Documentation</strong></a></p>
+</blockquote>
+
+<blockquote class="tip">
+  <p>For the initial setup, everything becomes easier if you have physical access to the host.</p>
+</blockquote>
+
+<h3 id="installation">Installation</h3>
+
+<p>On Arch Linux, the developers explicitely state that they do not provide support for any AUR packages, but provide prebuilt binaries via their custom repository for pacman. Add the following to <code class="language-plaintext highlighter-rouge">/etc/pacman.conf</code></p>
+
+<div class="language-sh codeblock highlighter-rouge" data-title="/etc/pacman.conf"><div class="highlight"><pre class="highlight"><code><span class="o">[</span>lizardbyte]
+SigLevel <span class="o">=</span> Optional
+Server <span class="o">=</span> https://github.com/LizardByte/pacman-repo/releases/latest/download
 </code></pre></div></div>
-<p>By installing this, we have access to the header:</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;fftw3.h&gt;</span><span class="cp">
-</span></code></pre></div></div>
-
-<h2 id="quick-start">Quick Start</h2>
-
-<h3 id="computing-the-fft">Computing the FFT</h3>
-<p>Here is an example of a function that computes the Fourier Transform on a complex vector, and returns a complex vector:</p>
-
-<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">#include</span> <span class="cpf">&lt;vector&gt;</span><span class="cp">
-#include</span> <span class="cpf">&lt;complex&gt;</span><span class="cp">
-#include</span> <span class="cpf">&lt;fftw3.h&gt;</span><span class="cp">
-</span>
-<span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">compute_fft</span><span class="p">(</span><span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="o">&amp;</span><span class="n">input</span><span class="p">){</span>
-    <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">input</span><span class="p">.</span><span class="n">size</span><span class="p">();</span>
-    <span class="n">std</span><span class="o">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">std</span><span class="o">::</span><span class="n">complex</span><span class="o">&lt;</span><span class="kt">double</span><span class="o">&gt;&gt;</span> <span class="n">output</span><span class="p">(</span><span class="n">N</span><span class="p">);</span>
-
-    <span class="n">fftw_plan</span> <span class="n">plan</span> <span class="o">=</span> <span class="n">fftw_plan_dft_1d</span><span class="p">(</span>
-            <span class="n">N</span><span class="p">,</span>
-            <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">fftw_complex</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">input</span><span class="p">.</span><span class="n">data</span><span class="p">()),</span>
-            <span class="k">reinterpret_cast</span><span class="o">&lt;</span><span class="n">fftw_complex</span><span class="o">*&gt;</span><span class="p">(</span><span class="n">output</span><span class="p">.</span><span class="n">data</span><span class="p">()),</span>
-            <span class="n">FFTW_FORWARD</span><span class="p">,</span>
-            <span class="n">FFTW_ESTIMATE</span>
-    <span class="p">);</span>
-
-    <span class="n">fftw_execute</span><span class="p">(</span><span class="n">plan</span><span class="p">);</span>
-    <span class="n">fftw_destroy_plan</span><span class="p">(</span><span class="n">plan</span><span class="p">);</span>
-
-    <span class="k">return</span> <span class="n">output</span><span class="p">;</span>
-<span class="p">}</span>
+<p>Then update the repository, and install <code class="language-plaintext highlighter-rouge">sunshine</code></p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-Sy</span>
+pacman <span class="nt">-S</span> sunshine
 </code></pre></div></div>
 
-<h3 id="compilation">Compilation</h3>
-<p>Compile your file by linking the FFTW library:</p>
+<h3 id="initial-setup">Initial Setup</h3>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>c++ main.cpp <span class="nt">-o</span> main.out <span class="nt">-lfftw3</span> <span class="nt">-lm</span>
+<p>After installation, some installation is required, enable</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>setcap cap_sys_admin+p <span class="si">$(</span><span class="nb">readlink</span> <span class="nt">-f</span> <span class="si">$(</span>which sunshine<span class="si">))</span>
+</code></pre></div></div>
+<p>For <strong>X11 capture</strong>, you may need to disable the capabilities set for KMS campture</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>setcap <span class="nt">-r</span> <span class="si">$(</span><span class="nb">readlink</span> <span class="nt">-f</span> <span class="si">$(</span>which sunshine<span class="si">))</span>
 </code></pre></div></div>
 
-<h3 id="visualization">Visualization</h3>
-<p>To visualize it, modify your code to write the real and imaginary parts to a file and visualize it with Gnuplot:</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gnuplot
-gnuplot&gt; <span class="nb">set </span>xlabel <span class="s2">"omega"</span>
-gnuplot&gt; <span class="nb">set </span>ylabel <span class="s2">"f(omega)"</span>
-gnuplot&gt; plot <span class="s2">"out.dat"</span> using 1:2 with lines title <span class="s2">"FFTW"</span>
+<p>At this stage you should be able to open a server by running</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sunshine
+</code></pre></div></div>
+<p>Preferably, start the daemon</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>systemctl <span class="nt">--user</span> start sunshine
+</code></pre></div></div>
+<p>and optinally enable it on startup.</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># OPTIONAL</span>
+systemctl <span class="nt">--user</span> <span class="nb">enable </span>sunshine
 </code></pre></div></div>
 
-<p>If you have multiple columns (e.g., real and imaginary parts), use:</p>
+<p>Sunsine is configured via the Web UI, which is available on <a href="https://localhost:47990">https://localhost:47990</a>.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gnuplot
-gnuplot&gt; plot <span class="s2">"out.dat"</span> using 1:2 with lines title <span class="s2">"real"</span>,<span class="se">\</span>
-<span class="o">&gt;</span> <span class="s2">"out.dat"</span> using 1:3 with lines title <span class="s2">"imag"</span>
+<blockquote class="note">
+  <p>You can ignore the browser’s message of “insecure website”.</p>
+</blockquote>
+
+<p>On a first setup, you will be prompted to create a <em>local</em> account for managing sunshine. Make sure to remember your username and password, since this is <em>self hosted</em> once gone, they are gone forever.</p>
+
+<blockquote class="tip">
+  <p>At this stage, you can already share your host’s desktop. For more information on how to add applications <a href="https://docs.lizardbyte.dev/projects/sunshine/latest/md_docs_2getting__started.html">read the docs</a></p>
+</blockquote>
+
+<h2 id="moonlight-client">Moonlight (Client)</h2>
+
+<blockquote class="warning">
+  <p>When first setting up a client, you will need access to the Web UI. It is simpler if you have physical acces to the host during this process.</p>
+</blockquote>
+
+<h3 id="installation-1">Installation</h3>
+
+<p>You can install the <code class="language-plaintext highlighter-rouge">moonlight-qt</code> AUR package</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> moonlight-qt
 </code></pre></div></div>
+<p>or install their official flatpak</p>
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>flatpak <span class="nb">install </span>flathub com.moonlight_stream.Moonlight
+</code></pre></div></div>
+<p>When launching the application, it will automatically look for sunshine servers on the local network, if your host is not on the local network and has an assigned IP address, you can add it manually by clicking the icon on the top-right corner. Here is a brief overview</p>
+
+<ol>
+  <li>Select or add manually the host by providing the correct IP address.</li>
+  <li>Moonlight will give you a PIN, take note of it.</li>
+  <li>Go to your host’s Web UI, and click the <em>PIN</em> button located on the top bar.</li>
+  <li>Provide the PIN the client gave you.</li>
+</ol>
+
+<p>Once the client is paired, you should be able to access the host via the moonlight application.</p>
+
 
     </div>
 
