@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=dfa157b84d4d0cd8e369ff1a7e96200c667d98f1">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=b24c1b3690136d4080831117ef707a9f3dbf1244">
 
 
 
@@ -372,6 +372,7 @@
     Table of Contents:
     <ol id="git-wiki-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
+  <li><a href="#battery">Battery</a></li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -388,6 +389,7 @@
     Table of Contents:
     <ol id="sidebar-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
+  <li><a href="#battery">Battery</a></li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -403,6 +405,7 @@
     Table of Contents:
     <ul id="sidebar-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
+  <li><a href="#battery">Battery</a></li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ul>
@@ -423,6 +426,7 @@
     Table of Contents:
     <ol id="inline-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
+  <li><a href="#battery">Battery</a></li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -437,6 +441,7 @@
     Table of Contents:
     <ol id="floating_toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
+  <li><a href="#battery">Battery</a></li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -459,6 +464,16 @@
       <h1 id="linux-settings">Linux: Settings</h1>
 
 <p>This is a list of common settings one might want to change at some point</p>
+
+<h1 id="battery">Battery</h1>
+
+<p>TLP is a CLI for saving lapptop battery power.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> tlp
+</code></pre></div></div>
+<p>then enable/start the service</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start tlp.service
+<span class="nb">sudo </span>systemctl <span class="nb">enable </span>tlp.service
+</code></pre></div></div>
 
 <h1 id="grub">GRUB</h1>
 
@@ -517,7 +532,7 @@ GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
     });
 </script>
 

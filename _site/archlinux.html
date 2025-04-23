@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=dfa157b84d4d0cd8e369ff1a7e96200c667d98f1">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=b24c1b3690136d4080831117ef707a9f3dbf1244">
 
 
 
@@ -325,8 +325,8 @@
 
     
 
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/articles/archlinux.md">History</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/articles/archlinux.md">Source</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/archlinux/archlinux.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/archlinux/archlinux.md">Source</a></span>
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
             new post</a></span>
@@ -336,7 +336,7 @@
     Prose.io:
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/articles/archlinux.md">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/archlinux/archlinux.md">Edit</a></span>
     
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
             new post</a></span>
@@ -380,13 +380,18 @@
   </li>
   <li><a href="#system-sanity-check">System Sanity Check</a>
     <ol>
-      <li><a href="#network">Network</a></li>
+      <li><a href="#network">Network</a>
+        <ol>
+          <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
+        </ol>
+      </li>
       <li><a href="#sound">Sound</a></li>
       <li><a href="#bluetooth">Bluetooth</a></li>
       <li><a href="#keyboard-backlight">Keyboard Backlight</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#monitors">Monitors</a></li>
       <li><a href="#graphics-card">Graphics Card</a></li>
+      <li><a href="#fonts">Fonts</a></li>
     </ol>
   </li>
   <li><a href="#text-editor">Text Editor</a>
@@ -428,6 +433,7 @@
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#monitors">Monitors</a></li>
       <li><a href="#graphics-card">Graphics Card</a></li>
+      <li><a href="#fonts">Fonts</a></li>
     </ol>
   </li>
   <li><a href="#text-editor">Text Editor</a>
@@ -468,6 +474,7 @@
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#monitors">Monitors</a></li>
       <li><a href="#graphics-card">Graphics Card</a></li>
+      <li><a href="#fonts">Fonts</a></li>
     </ul>
   </li>
   <li><a href="#text-editor">Text Editor</a>
@@ -513,6 +520,7 @@
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#monitors">Monitors</a></li>
       <li><a href="#graphics-card">Graphics Card</a></li>
+      <li><a href="#fonts">Fonts</a></li>
     </ol>
   </li>
   <li><a href="#text-editor">Text Editor</a>
@@ -545,13 +553,18 @@
   </li>
   <li><a href="#system-sanity-check">System Sanity Check</a>
     <ol>
-      <li><a href="#network">Network</a></li>
+      <li><a href="#network">Network</a>
+        <ol>
+          <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
+        </ol>
+      </li>
       <li><a href="#sound">Sound</a></li>
       <li><a href="#bluetooth">Bluetooth</a></li>
       <li><a href="#keyboard-backlight">Keyboard Backlight</a></li>
       <li><a href="#screenshots">Screenshots</a></li>
       <li><a href="#monitors">Monitors</a></li>
       <li><a href="#graphics-card">Graphics Card</a></li>
+      <li><a href="#fonts">Fonts</a></li>
     </ol>
   </li>
   <li><a href="#text-editor">Text Editor</a>
@@ -650,6 +663,9 @@ makepkg <span class="nt">-si</span>
 <ul>
   <li><strong>For general troubleshooting</strong> visit <a href="https://wiki.archlinux.org/title/Network_configuration/Wireless">Network configuration</a> on the ArchWiki.</li>
 </ul>
+
+<h3 id="migrating-wpa_supplicant-to-iwd">Migrating <code class="language-plaintext highlighter-rouge">wpa_supplicant</code> to <code class="language-plaintext highlighter-rouge">iwd</code></h3>
+<p>fjaskl</p>
 
 <h2 id="sound">Sound</h2>
 
@@ -785,6 +801,13 @@ fastfech
   </li>
 </ul>
 
+<h2 id="fonts">Fonts</h2>
+
+<p>You will note that some characters (chinese, japanese or korean) will not render correctly in your browser. Install the Google Noto CJK fonts</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> noto-fonts-cjk
+</code></pre></div></div>
+<p>and reset your browser.</p>
+
 <h1 id="text-editor">Text Editor</h1>
 
 <h2 id="vscode">VSCode</h2>
@@ -880,7 +903,7 @@ nvim
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
     });
 </script>
 

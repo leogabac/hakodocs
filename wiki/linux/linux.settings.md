@@ -7,6 +7,19 @@ description: A compilation of useful linux settings
 
 This is a list of common settings one might want to change at some point
 
+# Battery
+
+TLP is a CLI for saving lapptop battery power.
+```bash
+sudo pacman -S tlp
+```
+then enable/start the service
+```bash
+sudo systemctl start tlp.service
+sudo systemctl enable tlp.service
+```
+
+
 # GRUB
 
 WIP

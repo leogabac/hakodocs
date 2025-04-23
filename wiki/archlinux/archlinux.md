@@ -72,6 +72,9 @@ First thing, is that we need to check if all basic functionalities are working p
 
 - **For general troubleshooting** visit [Network configuration](https://wiki.archlinux.org/title/Network_configuration/Wireless) on the ArchWiki.
 
+### Migrating `wpa_supplicant` to `iwd`
+fjaskl
+
 ## Sound
 
 - **For general troubleshooting** visit [Sound system](https://wiki.archlinux.org/title/Sound_system) on the ArchWiki.
@@ -185,6 +188,14 @@ There are a few ways to make sure your dedicated graphics card is working.
 
   In a world, press F3 and check the _display_ information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct `DRI_PRIME` variable state. I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.
 
+## Fonts
+
+You will note that some characters (chinese, japanese or korean) will not render correctly in your browser. Install the Google Noto CJK fonts
+```bash
+sudo pacman -S noto-fonts-cjk
+```
+and reset your browser.
+
 # Text Editor
 
 ## VSCode
@@ -230,6 +241,7 @@ Check the [leovim repository](https://github.com/leogabac/leovim) for more infor
 
 1. [Headscale](https://headscale.net/stable/) is an open-source, self-hosted implementation of the [tailscale](https://tailscale.com/) service, providing a secure, encrypted network for connecting devices over the internet.
 2. [ZeroTier](https://www.zerotier.com/). Networking (SDN) platform that allows the cration of global private networks between machines. It uses the proprietary ZeroTier protocol.
+
 
 
 # See also
