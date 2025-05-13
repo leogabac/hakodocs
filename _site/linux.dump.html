@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=b24c1b3690136d4080831117ef707a9f3dbf1244">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4bd4f551971d1a216bed9433407114ded12665f9">
 
 
 
@@ -374,7 +374,12 @@
   <li><a href="#linux-dump">Linux: Dump</a></li>
   <li><a href="#general-guides">General guides</a>
     <ol>
-      <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
+      <li><a href="#tlp">TLP</a></li>
+      <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a>
+        <ol>
+          <li><a href="#connecting-iwd-to-eap-peap-networks">Connecting iwd to EAP-PEAP networks</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li><a href="#troubleshooting-dump">Troubleshooting Dump</a>
@@ -394,6 +399,7 @@
   <li><a href="#linux-dump">Linux: Dump</a></li>
   <li><a href="#general-guides">General guides</a>
     <ol>
+      <li><a href="#tlp">TLP</a></li>
       <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
     </ol>
   </li>
@@ -413,6 +419,7 @@
   <li><a href="#linux-dump">Linux: Dump</a></li>
   <li><a href="#general-guides">General guides</a>
     <ul>
+      <li><a href="#tlp">TLP</a></li>
       <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
     </ul>
   </li>
@@ -437,6 +444,7 @@
   <li><a href="#linux-dump">Linux: Dump</a></li>
   <li><a href="#general-guides">General guides</a>
     <ol>
+      <li><a href="#tlp">TLP</a></li>
       <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
     </ol>
   </li>
@@ -455,7 +463,12 @@
   <li><a href="#linux-dump">Linux: Dump</a></li>
   <li><a href="#general-guides">General guides</a>
     <ol>
-      <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a></li>
+      <li><a href="#tlp">TLP</a></li>
+      <li><a href="#migrating-wpa_supplicant-to-iwd">Migrating wpa_supplicant to iwd</a>
+        <ol>
+          <li><a href="#connecting-iwd-to-eap-peap-networks">Connecting iwd to EAP-PEAP networks</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li><a href="#troubleshooting-dump">Troubleshooting Dump</a>
@@ -480,6 +493,31 @@
 <p>This is a list of random problems I have had to solve at some point.</p>
 
 <h1 id="general-guides">General guides</h1>
+
+<h2 id="tlp">TLP</h2>
+
+<p>Install packages</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> tlp tlp-rdw acpi_call ethtool smartmontools
+</code></pre></div></div>
+<p>and enable/start services</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> tlp.service
+<span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> NetworkManager-dispatcher.service
+<span class="nb">sudo </span>systemctl mask systemd-rfkill.service
+<span class="nb">sudo </span>systemctl mask systemd-rfkill.socket
+</code></pre></div></div>
+<p>then we need to edit a configuration under <code class="language-plaintext highlighter-rouge">/etc/tlp.conf</code>. It already has sensible defaults, but the file has all the information you need. For reference, here are all the parameters I changed.</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/tlp.conf"><div class="highlight"><pre class="highlight"><code>CPU_SCALING_GOVERNOR_ON_AC=performance
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
+
+CPU_ENERGY_PERF_POLICY_ON_AC=performance
+
+PLATFORM_PROFILE_ON_AC=balanced
+PLATFORM_PROFILE_ON_BAT=low-power
+
+START_CHARGE_THRESH_BAT0=75
+STOP_CHARGE_THRESH_BAT0=80
+</code></pre></div></div>
 
 <h2 id="migrating-wpa_supplicant-to-iwd">Migrating <code class="language-plaintext highlighter-rouge">wpa_supplicant</code> to <code class="language-plaintext highlighter-rouge">iwd</code></h2>
 
@@ -514,56 +552,42 @@ wifi.backend<span class="o">=</span>iwd
 </code></pre></div></div>
 <p>You will be asked again for Network authentication.</p>
 
+<h3 id="connecting-iwd-to-eap-peap-networks">Connecting <code class="language-plaintext highlighter-rouge">iwd</code> to EAP-PEAP networks</h3>
+
+<p>Universities and Organizations have some tricky networks that cannot be configured using <code class="language-plaintext highlighter-rouge">iwctl</code> directly, and need to be done manually. For this you need to create a file called <code class="language-plaintext highlighter-rouge">essid.8021x</code> under <code class="language-plaintext highlighter-rouge">/var/lib/iwd/essid.8021x</code>, where <code class="language-plaintext highlighter-rouge">essid</code> is the network name. The file structure is as follows, and you only need to fill in the spaces.</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/var/lib/iwd/essid.8021x"><div class="highlight"><pre class="highlight"><code>[Security]
+EAP-Method=PEAP
+EAP-Identity=anonymous@realm.edu
+EAP-PEAP-CACert=/path/to/root.crt
+EAP-PEAP-ServerDomainMask=radius.realm.edu
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=johndoe@realm.edu
+EAP-PEAP-Phase2-Password=hunter2
+
+[Settings]
+AutoConnect=true
+</code></pre></div></div>
+
+<p>For example, at <em>Tec</em> you need something like. If you are at this institution, you should know how to fill-in the information.</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/var/lib/iwd/Tec.8021x"><div class="highlight"><pre class="highlight"><code>[Security]
+EAP-Method=PEAP
+EAP-Identity=a0xxxxxxx
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=a0xxxxxxx
+EAP-PEAP-Phase2-Password=your_passwd
+
+[Settings]
+AutoConnect=true
+</code></pre></div></div>
+<p>NetworkManager will connect automatically to the network.</p>
+
 <h1 id="troubleshooting-dump">Troubleshooting Dump</h1>
 <h2 id="laptop-is-laggy-after-suspend">Laptop is <em>laggy</em> after suspend</h2>
 
-<p>This could be one of several issues.</p>
+<p>See <a href="linux.dump.laggy_suspend">Laptop is laggy after suspend</a> for more information.</p>
 
-<ul>
-  <li><strong>Symptoms</strong></li>
-</ul>
-
-<p>In particular after resuming from suspend, the CPU clock is stuck near the absolute minimum around 500 MHz affecting general performance. Everything loads slower.</p>
-
-<ul>
-  <li><strong>Software-level solutions</strong></li>
-</ul>
-
-<p>I tried software-level solutions like</p>
-<ol>
-  <li>Changing power profile.</li>
-  <li>Forcing frequency scaling to performance mode.</li>
-  <li>Could not change suspend mode as my laptop only allows <code class="language-plaintext highlighter-rouge">s2idle</code> mode. You can see more information on the <a href="https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate">Suspend and Hibernate Arch Wiki page</a>.</li>
-  <li>Changing CPU and powersaving features in the BIOS.</li>
-</ol>
-
-<p>Nothing from this worked. But it could work for you.</p>
-
-<ul>
-  <li><strong>Driver-level solutions</strong></li>
-</ul>
-
-<p>If software does not work, then it can only be a firmware/driver issue. First check which scaling driver you are using</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cpupower frequency-info
-</code></pre></div></div>
-<p>I identified my scaling driver to be <code class="language-plaintext highlighter-rouge">amd-pstate-epp</code> which has reported issues regarding this specific problem <a href="https://bugzilla.kernel.org/show_bug.cgi?id=217931">on bugzilla</a> and <a href="https://www.reddit.com/r/linuxquestions/comments/z7rk35/really_weird_bug_with_new_amd_pstateepp_v4_driver/">on reddit as well</a>.</p>
-
-<p>A workaround for this is to change the driver on the boot options from GRUB. There are several options, my first approach was to change it to regular <code class="language-plaintext highlighter-rouge">amd-pstate</code></p>
-
-<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="... amd_pstate=disable"
-</code></pre></div></div>
-<p>update grub and reboot</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg <span class="o">&amp;&amp;</span> reboot
-</code></pre></div></div>
-<p>which also <strong>did not work</strong> for me after some days of testing. But still I encourage whoever is reading this to try this approach.</p>
-
-<p>Finally, my last attempt, which seems to work by now is to change to the <code class="language-plaintext highlighter-rouge">acpi-cpufreq</code> driver by editing grub again.</p>
-
-<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="initcall_blacklist=amd_pstate_init amd_pstate.enable=0"
-</code></pre></div></div>
-<p>update grub and reboot</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg <span class="o">&amp;&amp;</span> reboot
-</code></pre></div></div>
 
     </div>
 
@@ -600,7 +624,7 @@ wifi.backend<span class="o">=</span>iwd
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
     });
 </script>
 

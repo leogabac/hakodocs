@@ -22,7 +22,36 @@ sudo systemctl enable tlp.service
 
 # GRUB
 
-WIP
+- **Remaking the GRUB configuration file**
+
+Not a setting _per se_, but it is useful to have this command at hand somewhere.
+```bash
+sudo grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+- **Show logs**
+
+To show the kernel logs on boot for a _hacker_ feeling, edit the `GRUB_CMDLINE_LINUX_DEFAULT` variable in your GRUB configuration to contain a `loglevel`.
+
+{: .codeblock data-title="/etc/default/grub"}
+```
+GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
+```
+
+Make sure to remove `splash` or `quiet` if they appear.
+
+- **Make GRUB remember last launched entry**
+
+It is very helpful, specially when dual booting, to make GRUB default to the last launched entry. To do this, edit your GRUB configuration to contain
+
+{: .codeblock data-title="/etc/default/grub"}
+```
+GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+```
+
+- **Make a custom font**
+- **Add a theme to GRUB**
 
 # SDDM
 

@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=b24c1b3690136d4080831117ef707a9f3dbf1244">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4bd4f551971d1a216bed9433407114ded12665f9">
 
 
 
@@ -477,7 +477,39 @@
 
 <h1 id="grub">GRUB</h1>
 
-<p>WIP</p>
+<ul>
+  <li><strong>Remaking the GRUB configuration file</strong></li>
+</ul>
+
+<p>Not a setting <em>per se</em>, but it is useful to have this command at hand somewhere.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Show logs</strong></li>
+</ul>
+
+<p>To show the kernel logs on boot for a <em>hacker</em> feeling, edit the <code class="language-plaintext highlighter-rouge">GRUB_CMDLINE_LINUX_DEFAULT</code> variable in your GRUB configuration to contain a <code class="language-plaintext highlighter-rouge">loglevel</code>.</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
+</code></pre></div></div>
+
+<p>Make sure to remove <code class="language-plaintext highlighter-rouge">splash</code> or <code class="language-plaintext highlighter-rouge">quiet</code> if they appear.</p>
+
+<ul>
+  <li><strong>Make GRUB remember last launched entry</strong></li>
+</ul>
+
+<p>It is very helpful, specially when dual booting, to make GRUB default to the last launched entry. To do this, edit your GRUB configuration to contain</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+</code></pre></div></div>
+
+<ul>
+  <li><strong>Make a custom font</strong></li>
+  <li><strong>Add a theme to GRUB</strong></li>
+</ul>
 
 <h1 id="sddm">SDDM</h1>
 
@@ -532,7 +564,7 @@ GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
     });
 </script>
 

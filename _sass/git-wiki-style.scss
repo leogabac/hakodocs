@@ -542,7 +542,11 @@ screen and (max-width: 480px) {
 
 
 /* General box styling */
-.tip, .warning, .bug, .note {
+.tip, 
+.tip-noheader,
+.warning,
+.bug,
+.note,{
     position: relative;
     padding: 10px;
     margin: 10px 0;
@@ -610,6 +614,7 @@ screen and (max-width: 480px) {
 .bug-noheader::before,
 .note-noheader::before {
     content: none;
+    color: #1c7430;
 }
 
 .wip {

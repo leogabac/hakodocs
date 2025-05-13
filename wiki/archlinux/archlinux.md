@@ -73,7 +73,7 @@ First thing, is that we need to check if all basic functionalities are working p
 - **For general troubleshooting** visit [Network configuration](https://wiki.archlinux.org/title/Network_configuration/Wireless) on the ArchWiki.
 
 ### Migrating `wpa_supplicant` to `iwd`
-fjaskl
+See [Migrating wpa_supplicant to iwd](linux.dump#migrating-wpa_supplicant-to-iwd)
 
 ## Sound
 

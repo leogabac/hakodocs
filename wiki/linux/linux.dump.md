@@ -9,6 +9,37 @@ This is a list of random problems I have had to solve at some point.
 
 # General guides
 
+
+## TLP
+
+Install packages
+```bash
+sudo pacman -S tlp tlp-rdw acpi_call ethtool smartmontools
+```
+and enable/start services
+```bash
+sudo systemctl enable --now tlp.service
+sudo systemctl enable --now NetworkManager-dispatcher.service
+sudo systemctl mask systemd-rfkill.service
+sudo systemctl mask systemd-rfkill.socket
+```
+then we need to edit a configuration under `/etc/tlp.conf`. It already has sensible defaults, but the file has all the information you need. For reference, here are all the parameters I changed.
+
+
+{: .codeblock data-title="/etc/tlp.conf"}
+```
+CPU_SCALING_GOVERNOR_ON_AC=performance
+CPU_SCALING_GOVERNOR_ON_BAT=powersave
+
+CPU_ENERGY_PERF_POLICY_ON_AC=performance
+
+PLATFORM_PROFILE_ON_AC=balanced
+PLATFORM_PROFILE_ON_BAT=low-power
+
+START_CHARGE_THRESH_BAT0=75
+STOP_CHARGE_THRESH_BAT0=80
+```
+
 ## Migrating `wpa_supplicant` to `iwd`
 
 The Intel Wireless Daemon is a modern alternative to `wpa_supplicant` with
@@ -47,52 +78,44 @@ sudo systemctl restart NetworkManager
 ```
 You will be asked again for Network authentication.
 
+### Connecting `iwd` to EAP-PEAP networks
+
+Universities and Organizations have some tricky networks that cannot be configured using `iwctl` directly, and need to be done manually. For this you need to create a file called `essid.8021x` under `/var/lib/iwd/essid.8021x`, where `essid` is the network name. The file structure is as follows, and you only need to fill in the spaces.
+
+{: .codeblock data-title="/var/lib/iwd/essid.8021x"}
+```
+[Security]
+EAP-Method=PEAP
+EAP-Identity=anonymous@realm.edu
+EAP-PEAP-CACert=/path/to/root.crt
+EAP-PEAP-ServerDomainMask=radius.realm.edu
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=johndoe@realm.edu
+EAP-PEAP-Phase2-Password=hunter2
+
+[Settings]
+AutoConnect=true
+```
+
+For example, at _Tec_ you need something like. If you are at this institution, you should know how to fill-in the information.
+
+{: .codeblock data-title="/var/lib/iwd/Tec.8021x"}
+```
+[Security]
+EAP-Method=PEAP
+EAP-Identity=a0xxxxxxx
+EAP-PEAP-Phase2-Method=MSCHAPV2
+EAP-PEAP-Phase2-Identity=a0xxxxxxx
+EAP-PEAP-Phase2-Password=your_passwd
+
+[Settings]
+AutoConnect=true
+```
+NetworkManager will connect automatically to the network.
+
 # Troubleshooting Dump
 ## Laptop is _laggy_ after suspend
 
-This could be one of several issues. 
+See [Laptop is laggy after suspend](linux.dump.laggy_suspend) for more information.
 
-- **Symptoms**
 
-In particular after resuming from suspend, the CPU clock is stuck near the absolute minimum around 500 MHz affecting general performance. Everything loads slower.
-
-- **Software-level solutions**
-
-I tried software-level solutions like
-1. Changing power profile.
-2. Forcing frequency scaling to performance mode.
-3. Could not change suspend mode as my laptop only allows `s2idle` mode. You can see more information on the [Suspend and Hibernate Arch Wiki page](https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate).
-4. Changing CPU and powersaving features in the BIOS.
-
-Nothing from this worked. But it could work for you.
-
-- **Driver-level solutions**
-
-If software does not work, then it can only be a firmware/driver issue. First check which scaling driver you are using
-```bash
-cpupower frequency-info
-```
-I identified my scaling driver to be `amd-pstate-epp` which has reported issues regarding this specific problem [on bugzilla](https://bugzilla.kernel.org/show_bug.cgi?id=217931) and [on reddit as well](https://www.reddit.com/r/linuxquestions/comments/z7rk35/really_weird_bug_with_new_amd_pstateepp_v4_driver/).
-
-A workaround for this is to change the driver on the boot options from GRUB. There are several options, my first approach was to change it to regular `amd-pstate`
-
-{: .codeblock data-title="/etc/default/grub"}
-```
-GRUB_CMDLINE_LINUX_DEFAULT="... amd_pstate=disable"
-```
-update grub and reboot
-```bash
-sudo grub-mkconfig -o /boot/grub/grub.cfg && reboot
-```
-which also **did not work** for me after some days of testing. But still I encourage whoever is reading this to try this approach.
-
-Finally, my last attempt, which seems to work by now is to change to the `acpi-cpufreq` driver by editing grub again.
-
-{: .codeblock data-title="/etc/default/grub"}
-```
-GRUB_CMDLINE_LINUX_DEFAULT="initcall_blacklist=amd_pstate_init amd_pstate.enable=0"
-```
-update grub and reboot
-```bash
-sudo grub-mkconfig -o /boot/grub/grub.cfg && reboot
-```

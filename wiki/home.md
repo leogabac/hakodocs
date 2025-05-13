@@ -39,6 +39,7 @@ Here is a list of the (most useful) articles you will find in this wiki.
 
 - [Linux CLI Tips](linux.clitips)
 - [Common Linux Settings](linux.settings)
+- [Dump](linux.dump)
 {:.three-column-list}
  
 ## Git

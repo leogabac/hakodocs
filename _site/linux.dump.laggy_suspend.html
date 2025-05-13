@@ -1,0 +1,641 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Linux Dump: Laptop is laggy after suspend | HakoDocs</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Linux Dump: Laptop is laggy after suspend" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of tech-related notes" />
+<meta property="og:description" content="A collection of tech-related notes" />
+<link rel="canonical" href="http://localhost:4000/linux.dump.laggy_suspend" />
+<meta property="og:url" content="http://localhost:4000/linux.dump.laggy_suspend" />
+<meta property="og:site_name" content="HakoDocs" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Linux Dump: Laptop is laggy after suspend" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"Linux Dump: Laptop is laggy after suspend","url":"http://localhost:4000/linux.dump.laggy_suspend"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>linux.dump.laggy_suspend - HakoDocs</title>
+
+<meta property="og:title" content="linux.dump.laggy_suspend - HakoDocs">
+
+<meta property="og:description" content="
+        A collection of tech-related notes
+      ">
+
+
+<meta property="og:url"
+  content="http://localhost:4000/linux.dump.laggy_suspend" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<!--mathjax support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!--custom js-->
+<script src="/assets/js/custom.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4bd4f551971d1a216bed9433407114ded12665f9">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+  <a href="/">
+    
+    HakoDocs
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1>HakoDocs</h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="https://github.com/leogabac/hakodocs/zipball/gh-pages">Download <strong>ZIP File</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs/tarball/gh-pages">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+    Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
+
+<ul>
+  <li><a href="/">Home</a></li>
+</ul>
+
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/cpp.armadillo">cpp.armadillo.md</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/timeshift">Timeshift</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/zerotier">ZeroTier</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/sunshine">Sushine/Moonlight</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/steam">Steam</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/ollama.openwebui">Ollama: Open Web UI</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/ollama">Ollama</a>
+        </li>
+        
+        
+
+        
+        
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/assets/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/linux/linux.dump.laggy_suspend.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/linux/linux.dump.laggy_suspend.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/linux/linux.dump.laggy_suspend.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+
+
+
+    Table of Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#linux-dump-laptop-is-laggy-after-suspend">Linux Dump: Laptop is laggy after suspend</a></li>
+  <li><a href="#symptoms">Symptoms</a></li>
+  <li><a href="#ultimate-solution">Ultimate solution</a></li>
+  <li><a href="#the-journey">The Journey</a>
+    <ol>
+      <li><a href="#software-level-solutions">Software-level solutions</a></li>
+      <li><a href="#firmware-level-solutions">Firmware-level solutions</a></li>
+      <li><a href="#driver-level-solutions">Driver-level solutions</a></li>
+      <li><a href="#ignore-processor-power-cap">Ignore Processor Power Cap</a></li>
+      <li><a href="#changing-to-lts-kernel">Changing to LTS kernel</a></li>
+    </ol>
+  </li>
+</ol>
+
+
+
+<!--
+
+
+    Table of Contents:
+    <ol id="sidebar-toc">
+  <li><a href="#linux-dump-laptop-is-laggy-after-suspend">Linux Dump: Laptop is laggy after suspend</a></li>
+  <li><a href="#symptoms">Symptoms</a></li>
+  <li><a href="#ultimate-solution">Ultimate solution</a></li>
+  <li><a href="#the-journey">The Journey</a>
+    <ol>
+      <li><a href="#software-level-solutions">Software-level solutions</a></li>
+      <li><a href="#firmware-level-solutions">Firmware-level solutions</a></li>
+      <li><a href="#driver-level-solutions">Driver-level solutions</a></li>
+      <li><a href="#ignore-processor-power-cap">Ignore Processor Power Cap</a></li>
+      <li><a href="#changing-to-lts-kernel">Changing to LTS kernel</a></li>
+    </ol>
+  </li>
+</ol>
+-->
+
+<!--
+
+
+    Table of Contents:
+    <ul id="sidebar-toc">
+  <li><a href="#linux-dump-laptop-is-laggy-after-suspend">Linux Dump: Laptop is laggy after suspend</a></li>
+  <li><a href="#symptoms">Symptoms</a></li>
+  <li><a href="#ultimate-solution">Ultimate solution</a></li>
+  <li><a href="#the-journey">The Journey</a>
+    <ul>
+      <li><a href="#software-level-solutions">Software-level solutions</a></li>
+      <li><a href="#firmware-level-solutions">Firmware-level solutions</a></li>
+      <li><a href="#driver-level-solutions">Driver-level solutions</a></li>
+      <li><a href="#ignore-processor-power-cap">Ignore Processor Power Cap</a></li>
+      <li><a href="#changing-to-lts-kernel">Changing to LTS kernel</a></li>
+    </ul>
+  </li>
+</ul>
+-->
+
+<button id="toggle-toc" class="toggle-toc-btn">☰ </button>
+
+<div id="sidebar-toc">
+    <button id="close-toc" class="close-toc-btn">✖</button>
+    <div class="toc-content">
+        <!--
+
+
+    Table of Contents:
+    <ol id="inline-toc">
+  <li><a href="#linux-dump-laptop-is-laggy-after-suspend">Linux Dump: Laptop is laggy after suspend</a></li>
+  <li><a href="#symptoms">Symptoms</a></li>
+  <li><a href="#ultimate-solution">Ultimate solution</a></li>
+  <li><a href="#the-journey">The Journey</a>
+    <ol>
+      <li><a href="#software-level-solutions">Software-level solutions</a></li>
+      <li><a href="#firmware-level-solutions">Firmware-level solutions</a></li>
+      <li><a href="#driver-level-solutions">Driver-level solutions</a></li>
+      <li><a href="#ignore-processor-power-cap">Ignore Processor Power Cap</a></li>
+      <li><a href="#changing-to-lts-kernel">Changing to LTS kernel</a></li>
+    </ol>
+  </li>
+</ol>
+-->
+        
+
+
+    Table of Contents:
+    <ol id="floating_toc">
+  <li><a href="#linux-dump-laptop-is-laggy-after-suspend">Linux Dump: Laptop is laggy after suspend</a></li>
+  <li><a href="#symptoms">Symptoms</a></li>
+  <li><a href="#ultimate-solution">Ultimate solution</a></li>
+  <li><a href="#the-journey">The Journey</a>
+    <ol>
+      <li><a href="#software-level-solutions">Software-level solutions</a></li>
+      <li><a href="#firmware-level-solutions">Firmware-level solutions</a></li>
+      <li><a href="#driver-level-solutions">Driver-level solutions</a></li>
+      <li><a href="#ignore-processor-power-cap">Ignore Processor Power Cap</a></li>
+      <li><a href="#changing-to-lts-kernel">Changing to LTS kernel</a></li>
+    </ol>
+  </li>
+</ol>
+
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1 id="linux-dump-laptop-is-laggy-after-suspend">Linux Dump: Laptop is laggy after suspend</h1>
+
+<p>This guide started to become very long as I try to solve this problem. Here is basically a log on everything I tried.</p>
+
+<h1 id="symptoms">Symptoms</h1>
+
+<p>After resuming from suspend, the CPU clock is stuck near the absolute minimum, in my case ~500 MHz affecting general performance.</p>
+
+<p>The issue seems to appear when the laptops is suspended <em>on low battery</em>.</p>
+
+<h1 id="ultimate-solution">Ultimate solution</h1>
+
+<p>Still haven’t found anything very specific. Best results come from</p>
+
+<ul>
+  <li>Going back to <code class="language-plaintext highlighter-rouge">acpi-cpufreq</code> scaling driver.</li>
+  <li>Daily-driving the <code class="language-plaintext highlighter-rouge">linux-lts</code> kernel.</li>
+  <li>Using <code class="language-plaintext highlighter-rouge">tlp</code> for managing battery. See <a href="linux.dump#TLP">TLP</a> for information on how to install and configure it.</li>
+  <li>Suspending on power and decent battery levels when possible.</li>
+</ul>
+
+<h1 id="the-journey">The Journey</h1>
+
+<h2 id="software-level-solutions">Software-level solutions</h2>
+
+<p>There are several software-level solutions you can try, such ac</p>
+<ol>
+  <li>Changing power profile.</li>
+  <li>Forcing frequency scaling to performance mode.</li>
+  <li>Change suspend mode. In my case, my laptop only allows <code class="language-plaintext highlighter-rouge">s2idle</code>. You can see more information on the <a href="https://wiki.archlinux.org/title/Power_management/Suspend_and_hibernate">Suspend and Hibernate Arch Wiki page</a>.</li>
+</ol>
+
+<blockquote class="note">
+  <p>Nothing from this worked for me. But it could work for you.</p>
+</blockquote>
+
+<h2 id="firmware-level-solutions">Firmware-level solutions</h2>
+
+<p>If software does not work, then this might be a firmware/BIOS problem.</p>
+
+<ol>
+  <li>Check for BIOS updates.</li>
+  <li>Disable power-saving features on the BIOS options.</li>
+</ol>
+
+<blockquote class="note">
+  <p>Nothing from this worked for me. But it could work for you.</p>
+</blockquote>
+
+<h2 id="driver-level-solutions">Driver-level solutions</h2>
+
+<p>The issue might be driver-related. In particular my laptops uses the <code class="language-plaintext highlighter-rouge">amd-pstate-epp</code> driver, which has some related-reported issues <a href="https://bugzilla.kernel.org/show_bug.cgi?id=217931">on bugzilla</a> and <a href="https://www.reddit.com/r/linuxquestions/comments/z7rk35/really_weird_bug_with_new_amd_pstateepp_v4_driver/">on reddit as well</a>.</p>
+
+<p>To figure out your driver, run</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cpupower frequency-info
+</code></pre></div></div>
+<p>A workaround for this is to change the driver on the boot options from GRUB. There are several options,  and make a new GRUB config file with the command</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg <span class="o">&amp;&amp;</span> reboot
+</code></pre></div></div>
+
+<ul>
+  <li>To use the regular <code class="language-plaintext highlighter-rouge">amd-pstate</code> scaling driver</li>
+</ul>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="... amd_pstate=disable"
+</code></pre></div></div>
+
+<blockquote class="note">
+  <p>Did not work for me after some days of testing. But I still encourage whoever is reading this to try this approach.</p>
+</blockquote>
+
+<ul>
+  <li>To use the older <code class="language-plaintext highlighter-rouge">acpi-cpufreq</code> driver</li>
+</ul>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="... initcall_blacklist=amd_pstate_init amd_pstate.enable=0"
+</code></pre></div></div>
+
+<blockquote class="tip-noheader">
+  <p>Best results so far, but still the problem arises from time to time.
+It seems to be that the problem only arises when <em>on battery power</em>. Nothing on software seems to fix this, so I believe it is a BIOS/firmware issue.</p>
+</blockquote>
+
+<h2 id="ignore-processor-power-cap">Ignore Processor Power Cap</h2>
+
+<p>This seems to fix the problem for some people. Ignoring the Processor Power Cap (PPC).</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_CMDLINE_LINUX_DEFAULT="... processor.ignore_ppc=1"
+</code></pre></div></div>
+
+<blockquote class="note">
+  <p>Did not work for me. But I still encourage whoever is reading this to try this approach.</p>
+</blockquote>
+
+<h2 id="changing-to-lts-kernel">Changing to LTS kernel</h2>
+
+<p>The LTS kernel might have better and more stable behavior. Did not work for me, but you can still try. Install the kernel by</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> linux-lts linux-lts-headers
+</code></pre></div></div>
+
+<p>Add the following to your GRUB configuration so that it becomes easier to return to the last used kernel.</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_DEFAULT=saved
+GRUB_SAVEDEFAULT=true
+</code></pre></div></div>
+
+<p>remake the GRUB configuration and reboot.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg <span class="o">&amp;&amp;</span> reboot
+</code></pre></div></div>
+<p>You will find the kernels under “Advances Options for Arch Linux”, but when both kernels are installed, GRUB defaults to the LTS.</p>
+
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+<div class="git-wiki-copyrights">
+    <p>This project is maintained by <a href="https://github.com/leogabac">leogabac</a></p>
+    
+    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.6</a> </p>
+
+    
+    <p class="view"><a href="https://github.com/leogabac/hakodocs">View the Project on  Github  <small></small></a></p>
+</div>
+
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/archlinux,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/cpp.armadillo,/latex,/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>
