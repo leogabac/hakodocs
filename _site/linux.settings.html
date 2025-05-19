@@ -18,8 +18,6 @@
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="Linux: Settings" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="A collection of tech-related notes" />
-<meta property="og:description" content="A collection of tech-related notes" />
 <link rel="canonical" href="http://localhost:4000/linux.settings" />
 <meta property="og:url" content="http://localhost:4000/linux.settings" />
 <meta property="og:site_name" content="HakoDocs" />
@@ -27,7 +25,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Linux: Settings" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"Linux: Settings","url":"http://localhost:4000/linux.settings"}</script>
+{"@context":"https://schema.org","@type":"WebPage","headline":"Linux: Settings","url":"http://localhost:4000/linux.settings"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -39,7 +37,7 @@
 <meta property="og:title" content="linux.settings - HakoDocs">
 
 <meta property="og:description" content="
-        A collection of tech-related notes
+        
       ">
 
 
@@ -110,7 +108,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=4bd4f551971d1a216bed9433407114ded12665f9">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=2c0d130a0634b07901758ce0122c8b73de0e0a3b">
 
 
 
@@ -372,7 +370,13 @@
     Table of Contents:
     <ol id="git-wiki-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
-  <li><a href="#battery">Battery</a></li>
+  <li><a href="#battery">Battery</a>
+    <ol>
+      <li><a href="#using-tlp">Using TLP</a></li>
+      <li><a href="#using-ppd">Using PPD</a></li>
+      <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
+    </ol>
+  </li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -389,7 +393,13 @@
     Table of Contents:
     <ol id="sidebar-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
-  <li><a href="#battery">Battery</a></li>
+  <li><a href="#battery">Battery</a>
+    <ol>
+      <li><a href="#using-tlp">Using TLP</a></li>
+      <li><a href="#using-ppd">Using PPD</a></li>
+      <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
+    </ol>
+  </li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -405,7 +415,13 @@
     Table of Contents:
     <ul id="sidebar-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
-  <li><a href="#battery">Battery</a></li>
+  <li><a href="#battery">Battery</a>
+    <ul>
+      <li><a href="#using-tlp">Using TLP</a></li>
+      <li><a href="#using-ppd">Using PPD</a></li>
+      <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
+    </ul>
+  </li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ul>
@@ -426,7 +442,13 @@
     Table of Contents:
     <ol id="inline-toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
-  <li><a href="#battery">Battery</a></li>
+  <li><a href="#battery">Battery</a>
+    <ol>
+      <li><a href="#using-tlp">Using TLP</a></li>
+      <li><a href="#using-ppd">Using PPD</a></li>
+      <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
+    </ol>
+  </li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -441,7 +463,13 @@
     Table of Contents:
     <ol id="floating_toc">
   <li><a href="#linux-settings">Linux: Settings</a></li>
-  <li><a href="#battery">Battery</a></li>
+  <li><a href="#battery">Battery</a>
+    <ol>
+      <li><a href="#using-tlp">Using TLP</a></li>
+      <li><a href="#using-ppd">Using PPD</a></li>
+      <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
+    </ol>
+  </li>
   <li><a href="#grub">GRUB</a></li>
   <li><a href="#sddm">SDDM</a>
     <ol>
@@ -467,12 +495,49 @@
 
 <h1 id="battery">Battery</h1>
 
-<p>TLP is a CLI for saving lapptop battery power.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> tlp
+<h2 id="using-tlp">Using TLP</h2>
+<p>TLP is a common linux utility for improving battery life. Some things that you can do are:</p>
+<ul>
+  <li>Enable performance/powersave modes when on AC and Battery automatically.</li>
+  <li>Enable <em>advanced</em> powersaving features like USB autosuspend, ACPI sleep states, LAN, Wifi, and more.</li>
+  <li>Enables the setup of battery thresholds.</li>
+</ul>
+
+<p>See the <a href="linux.dump#TLP">Hakodocs’ TLP section</a> for more information on the installation process and setup. Additionally, you can read the <a href="https://linrunner.de/tlp/index.html">TLP documentation</a>.</p>
+
+<h2 id="using-ppd">Using PPD</h2>
+
+<p>The Power Profiles Daemon (DDP) is a common, and simple way to manage power profiles on Linux with no configuration. On Arch Linux:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> power-profiles-daemon
+<span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> power-profiles-daemon
 </code></pre></div></div>
-<p>then enable/start the service</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start tlp.service
-<span class="nb">sudo </span>systemctl <span class="nb">enable </span>tlp.service
+<p>You can install a manager for your DE, on KDE Plasma:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> power-devil
+</code></pre></div></div>
+<p>then you will be able to change power profiles from your panel/taskbar.</p>
+
+<h2 id="manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</h2>
+
+<p>You can manually adjust the charging thresholds if your hardware allows it. As a reference you can check your current values by running</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">echo</span> /sys/class/power_supply/BAT0/charge_control_start_threshold
+<span class="nb">echo</span> /sys/class/power_supply/BAT0/charge_control_end_threshold
+</code></pre></div></div>
+<p>and create a systemd service that rewrites them on boot</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/systemd/system/battery.service"><div class="highlight"><pre class="highlight"><code>[Unit]
+Description=Set battery charge thresholds
+After=multi-user.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/sh -c "echo 75 &gt; /sys/class/power_supply/BAT0/charge_control_start_threshold"
+ExecStart=/bin/sh -c "echo 85 &gt; /sys/class/power_supply/BAT0/charge_control_end_threshold"
+
+[Install]
+WantedBy=multi-user.target
+</code></pre></div></div>
+<p>then simply enable the service</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> battery.service
 </code></pre></div></div>
 
 <h1 id="grub">GRUB</h1>

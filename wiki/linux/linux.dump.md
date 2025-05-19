@@ -9,7 +9,6 @@ This is a list of random problems I have had to solve at some point.
 
 # General guides
 
-
 ## TLP
 
 Install packages
@@ -114,8 +113,12 @@ AutoConnect=true
 NetworkManager will connect automatically to the network.
 
 # Troubleshooting Dump
+
 ## Laptop is _laggy_ after suspend
 
 See [Laptop is laggy after suspend](linux.dump.laggy_suspend) for more information.
+
+
+## 
 
 
