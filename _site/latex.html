@@ -18,6 +18,8 @@
 <meta name="generator" content="Jekyll v3.10.0" />
 <meta property="og:title" content="LaTeX" />
 <meta property="og:locale" content="en_US" />
+<meta name="description" content="A collection of tech-related notes" />
+<meta property="og:description" content="A collection of tech-related notes" />
 <link rel="canonical" href="http://localhost:4000/latex" />
 <meta property="og:url" content="http://localhost:4000/latex" />
 <meta property="og:site_name" content="HakoDocs" />
@@ -25,7 +27,7 @@
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="LaTeX" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","headline":"LaTeX","url":"http://localhost:4000/latex"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"LaTeX","url":"http://localhost:4000/latex"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -37,7 +39,7 @@
 <meta property="og:title" content="latex - HakoDocs">
 
 <meta property="og:description" content="
-        
+        A collection of tech-related notes
       ">
 
 
@@ -108,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=2c0d130a0634b07901758ce0122c8b73de0e0a3b">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=3bea8027228c7ec3ec7541a0dd9d10fdaae9c309">
 
 
 
@@ -370,6 +372,8 @@
     Table of Contents:
     <ol id="git-wiki-toc">
   <li><a href="#latex">LaTeX</a></li>
+  <li><a href="#neovim-latex-support">Neovim LaTeX support</a></li>
+  <li><a href="#spellcheck-lsp-neovim">Spellcheck LSP (Neovim)</a></li>
 </ol>
 
 
@@ -380,6 +384,8 @@
     Table of Contents:
     <ol id="sidebar-toc">
   <li><a href="#latex">LaTeX</a></li>
+  <li><a href="#neovim-latex-support">Neovim LaTeX support</a></li>
+  <li><a href="#spellcheck-lsp-neovim">Spellcheck LSP (Neovim)</a></li>
 </ol>
 -->
 
@@ -389,6 +395,8 @@
     Table of Contents:
     <ul id="sidebar-toc">
   <li><a href="#latex">LaTeX</a></li>
+  <li><a href="#neovim-latex-support">Neovim LaTeX support</a></li>
+  <li><a href="#spellcheck-lsp-neovim">Spellcheck LSP (Neovim)</a></li>
 </ul>
 -->
 
@@ -403,6 +411,8 @@
     Table of Contents:
     <ol id="inline-toc">
   <li><a href="#latex">LaTeX</a></li>
+  <li><a href="#neovim-latex-support">Neovim LaTeX support</a></li>
+  <li><a href="#spellcheck-lsp-neovim">Spellcheck LSP (Neovim)</a></li>
 </ol>
 -->
         
@@ -411,6 +421,8 @@
     Table of Contents:
     <ol id="floating_toc">
   <li><a href="#latex">LaTeX</a></li>
+  <li><a href="#neovim-latex-support">Neovim LaTeX support</a></li>
+  <li><a href="#spellcheck-lsp-neovim">Spellcheck LSP (Neovim)</a></li>
 </ol>
 
     </div>
@@ -431,10 +443,47 @@
 <p>A basic setup is obtained by installing the whole group.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> texlive
 </code></pre></div></div>
-<p>From this, your selected LaTeX editor should pickup the <code class="language-plaintext highlighter-rouge">latex</code> command in PATH.</p>
 
-<div class="language-sh precode highlighter-rouge"><div class="highlight"><pre class="highlight"><code>latex <span class="nt">--version</span>
+<p>From this, your selected LaTeX editor should pick up the <code class="language-plaintext highlighter-rouge">latex</code> command in PATH.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>latex <span class="nt">--version</span>
 </code></pre></div></div>
+
+<h1 id="neovim-latex-support">Neovim LaTeX support</h1>
+
+<p>To have LaTeX support in neovim, install the <code class="language-plaintext highlighter-rouge">vimtex</code> plugin using your preferred plugin manager.</p>
+
+<blockquote class="tip">
+  <p>Install <code class="language-plaintext highlighter-rouge">zathura</code> and <code class="language-plaintext highlighter-rouge">zathura-pdf-mupdf</code> to render your PDF and have additional features.</p>
+</blockquote>
+
+<p>Additionally, you might want to setup an equivalent for the following:</p>
+<ul>
+  <li>An autocompletion engine (e.g. <code class="language-plaintext highlighter-rouge">nvim-cmp</code>) that connects with <code class="language-plaintext highlighter-rouge">vimtex</code>.</li>
+  <li>A snippet engine (e.g. <code class="language-plaintext highlighter-rouge">LuaSnip</code>).</li>
+  <li>A snippet library (e.g. <code class="language-plaintext highlighter-rouge">friendly-snippets</code>).</li>
+</ul>
+
+<h1 id="spellcheck-lsp-neovim">Spellcheck LSP (Neovim)</h1>
+
+<blockquote class="warning">
+  <p>The spellcheck consumes <strong>a lot</strong> of RAM. You have been warned.</p>
+</blockquote>
+
+<p>To have an LSP intended for LaTeX that checks spelling and grammar, in neovim you can install the <code class="language-plaintext highlighter-rouge">ltex-ls</code> LSP through your package manager. If you have <code class="language-plaintext highlighter-rouge">lspconfig</code> and <code class="language-plaintext highlighter-rouge">mason</code> installed, you can run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>:MasonInstall ltex-ls
+</code></pre></div></div>
+<p>Additionally, you will need a Java runtime</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> jdk21-openjdk
+</code></pre></div></div>
+
+<blockquote class="warning">
+  <p>Note that <code class="language-plaintext highlighter-rouge">ltex-ls</code> is <strong>not</strong> compatible with Java 24, hence I suggested <code class="language-plaintext highlighter-rouge">jdk21-openjdk</code> previously. If you already had a java runtime installed with Java 24, install Java 21 alongside it and run</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>archlinux-java <span class="nb">set </span>java-21-openjdk
+</code></pre></div>  </div>
+</blockquote>
+
+<p>Use your LSP configuration and picker of choice to interact with the diagnostics and fixes.</p>
+
 
     </div>
 
