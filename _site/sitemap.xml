@@ -67,6 +67,9 @@
 <loc>http://localhost:4000/cpp.armadillo</loc>
 </url>
 <url>
+<loc>http://localhost:4000/inkscape</loc>
+</url>
+<url>
 <loc>http://localhost:4000/latex</loc>
 </url>
 </urlset>

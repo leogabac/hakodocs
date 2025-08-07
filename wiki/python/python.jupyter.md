@@ -62,6 +62,16 @@ c.NotebookApp.port = 8888
 
 # Vim Bindings
 
+## Jupyter Lab
+
+Simply install the python package
+
+```bash
+pip install jupyterlab-vim
+```
+and restart your notebook.
+
+## Older notebook package
 Basic Vim Bindings can be easily set up using the [jupyter-vim-binding](https://github.com/lambdalisue/jupyter-vim-binding) plugin. Following their documentation, run
 ```bash
 # Create required directory in case (optional)
@@ -72,3 +82,60 @@ git clone https://github.com/lambdalisue/jupyter-vim-binding vim_binding
 # Activate the extension
 jupyter nbextension enable vim_binding/vim_binding
 ```
+
+# Indent Guides
+
+## Jupyter Lab
+Simply install the python package
+
+```bash
+pip install jupyterlab-indent-guides
+```
+and restart your notebook.
+
+# Advanced settings
+
+In your **Jupyterlab* go the settings menu (Ctrl+,) and 
+1. look for "notebook" under the settings.
+2. Click on "JSON Settings Editor" (that will open the json file).
+3. Change options on the right panel of "User Preferences".
+4. Click on the save icon and refresh the website.
+
+## Line number
+
+Add the following setting
+```json
+"codeCellConfig": {
+    "lineNumbers": true,
+}
+```
+
+## Matching brackets
+
+Add the following setting
+```json
+"codeCellConfig": {
+    "matchBrackets":true
+}
+```
+
+# Language Server Protocol (LSP)
+
+Inside your virtual environment, install the following package
+```bash
+pip install jupyterlab-lsp
+```
+and then install your LSP of choice
+```bash
+pip install 'python-lsp-server[all]'
+```
+Restart your notebook and be happy.
+
+In case it helps
+```bash
+ln -s / .lsp_symlink
+```
+this symlinks root so that the LSP can find libraries and binaries outside the jupyter root. See the [Documentation](https://github.com/krassowski/jupyterlab-lsp) for more information.
+
+
+
