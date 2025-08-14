@@ -60,6 +60,16 @@ alias pyglobal="source ~/.virtualenvs/global/bin/activate"
 
 To exit any virtual environment, at any time run the command `deactivate`.
 
+## Python's built-in `venv` module
+
+Python has its own tool for creating virtual environments. This is very helpful whenever you are accessing a server and don't have access to `virtualenv`, but you still have some access to some python binaries.
+
+For example, in one of the High Performance Computing (HPC) servers I have access, there are multiple python versions callable by e.g. `python3.12` or `python3.8`, but we don't have access to `virtualenv`. Thus I need to manage virtual environments either with `conda` or `venv`. To do this, call the the python binary you are interested in, followed by the module flag `-m venv`
+
+```
+python3.12 -m venv .venv
+```
+
 # Managing Versions
 
 Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on Python 3.7 because some of its dependencies have not been updated for newer versions, while a new project could require Python 3.11 to take advantage of performance improvements and new language features. Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like [pyenv](https://github.com/pyenv/pyenv) or [conda](https://docs.conda.io/projects/conda/en/stable/index.html) allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.
