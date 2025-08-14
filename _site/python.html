@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=bc3cd2369f2f921d95c2a0c53b470a5ef718184f">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=96da12b8c81f519f7b006be4fe6a8796c07756bf">
 
 
 
@@ -376,7 +376,11 @@
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ol>
+      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+    </ol>
+  </li>
   <li><a href="#managing-versions">Managing Versions</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
@@ -393,7 +397,11 @@
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ol>
+      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+    </ol>
+  </li>
   <li><a href="#managing-versions">Managing Versions</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
@@ -409,7 +417,11 @@
       <li><a href="#installation">Installation</a></li>
     </ul>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ul>
+      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+    </ul>
+  </li>
   <li><a href="#managing-versions">Managing Versions</a></li>
   <li><a href="#see-also">See also</a></li>
 </ul>
@@ -430,7 +442,11 @@
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ol>
+      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+    </ol>
+  </li>
   <li><a href="#managing-versions">Managing Versions</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
@@ -445,7 +461,11 @@
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#virtual-environments">Virtual Environments</a></li>
+  <li><a href="#virtual-environments">Virtual Environments</a>
+    <ol>
+      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+    </ol>
+  </li>
   <li><a href="#managing-versions">Managing Versions</a></li>
   <li><a href="#see-also">See also</a></li>
 </ol>
@@ -510,6 +530,15 @@
 </code></pre></div></div>
 
 <p>To exit any virtual environment, at any time run the command <code class="language-plaintext highlighter-rouge">deactivate</code>.</p>
+
+<h2 id="pythons-built-in-venv-module">Python’s built-in <code class="language-plaintext highlighter-rouge">venv</code> module</h2>
+
+<p>Python has its own tool for creating virtual environments. This is very helpful whenever you are accessing a server and don’t have access to <code class="language-plaintext highlighter-rouge">virtualenv</code>, but you still have some access to some python binaries.</p>
+
+<p>For example, in one of the High Performance Computing (HPC) servers I have access, there are multiple python versions callable by e.g. <code class="language-plaintext highlighter-rouge">python3.12</code> or <code class="language-plaintext highlighter-rouge">python3.8</code>, but we don’t have access to <code class="language-plaintext highlighter-rouge">virtualenv</code>. Thus I need to manage virtual environments either with <code class="language-plaintext highlighter-rouge">conda</code> or <code class="language-plaintext highlighter-rouge">venv</code>. To do this, call the the python binary you are interested in, followed by the module flag <code class="language-plaintext highlighter-rouge">-m venv</code></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.12 -m venv .venv
+</code></pre></div></div>
 
 <h1 id="managing-versions">Managing Versions</h1>
 
