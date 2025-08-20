@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=96da12b8c81f519f7b006be4fe6a8796c07756bf">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=389b0e7be1f0bf6030e1a944cbc2a22741708d1c">
 
 
 
@@ -379,10 +379,20 @@
       <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
     </ol>
   </li>
-  <li><a href="#grub">GRUB</a></li>
+  <li><a href="#grub">GRUB</a>
+    <ol>
+      <li><a href="#remaking-the-grub-configuration-file">Remaking the GRUB configuration file</a></li>
+      <li><a href="#show-kernel-logs">Show kernel logs</a></li>
+      <li><a href="#remember-the-last-launched-entry">Remember the last launched entry</a></li>
+      <li><a href="#detect-windows-entry">Detect Windows entry</a></li>
+      <li><a href="#make-a-custom-font">Make a custom font</a></li>
+      <li><a href="#add-a-theme-to-grub">Add a theme to GRUB</a></li>
+    </ol>
+  </li>
   <li><a href="#sddm">SDDM</a>
     <ol>
       <li><a href="#high-resolution-displays">High Resolution Displays</a></li>
+      <li><a href="#remapping-keys-with-keyd">Remapping keys with keyd</a></li>
     </ol>
   </li>
 </ol>
@@ -402,10 +412,20 @@
       <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
     </ol>
   </li>
-  <li><a href="#grub">GRUB</a></li>
+  <li><a href="#grub">GRUB</a>
+    <ol>
+      <li><a href="#remaking-the-grub-configuration-file">Remaking the GRUB configuration file</a></li>
+      <li><a href="#show-kernel-logs">Show kernel logs</a></li>
+      <li><a href="#remember-the-last-launched-entry">Remember the last launched entry</a></li>
+      <li><a href="#detect-windows-entry">Detect Windows entry</a></li>
+      <li><a href="#make-a-custom-font">Make a custom font</a></li>
+      <li><a href="#add-a-theme-to-grub">Add a theme to GRUB</a></li>
+    </ol>
+  </li>
   <li><a href="#sddm">SDDM</a>
     <ol>
       <li><a href="#high-resolution-displays">High Resolution Displays</a></li>
+      <li><a href="#remapping-keys-with-keyd">Remapping keys with keyd</a></li>
     </ol>
   </li>
 </ol>
@@ -424,10 +444,20 @@
       <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
     </ul>
   </li>
-  <li><a href="#grub">GRUB</a></li>
+  <li><a href="#grub">GRUB</a>
+    <ul>
+      <li><a href="#remaking-the-grub-configuration-file">Remaking the GRUB configuration file</a></li>
+      <li><a href="#show-kernel-logs">Show kernel logs</a></li>
+      <li><a href="#remember-the-last-launched-entry">Remember the last launched entry</a></li>
+      <li><a href="#detect-windows-entry">Detect Windows entry</a></li>
+      <li><a href="#make-a-custom-font">Make a custom font</a></li>
+      <li><a href="#add-a-theme-to-grub">Add a theme to GRUB</a></li>
+    </ul>
+  </li>
   <li><a href="#sddm">SDDM</a>
     <ul>
       <li><a href="#high-resolution-displays">High Resolution Displays</a></li>
+      <li><a href="#remapping-keys-with-keyd">Remapping keys with keyd</a></li>
     </ul>
   </li>
 </ul>
@@ -451,10 +481,20 @@
       <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
     </ol>
   </li>
-  <li><a href="#grub">GRUB</a></li>
+  <li><a href="#grub">GRUB</a>
+    <ol>
+      <li><a href="#remaking-the-grub-configuration-file">Remaking the GRUB configuration file</a></li>
+      <li><a href="#show-kernel-logs">Show kernel logs</a></li>
+      <li><a href="#remember-the-last-launched-entry">Remember the last launched entry</a></li>
+      <li><a href="#detect-windows-entry">Detect Windows entry</a></li>
+      <li><a href="#make-a-custom-font">Make a custom font</a></li>
+      <li><a href="#add-a-theme-to-grub">Add a theme to GRUB</a></li>
+    </ol>
+  </li>
   <li><a href="#sddm">SDDM</a>
     <ol>
       <li><a href="#high-resolution-displays">High Resolution Displays</a></li>
+      <li><a href="#remapping-keys-with-keyd">Remapping keys with keyd</a></li>
     </ol>
   </li>
 </ol>
@@ -472,10 +512,20 @@
       <li><a href="#manually-adjusting-charging-thresholds">Manually adjusting charging thresholds</a></li>
     </ol>
   </li>
-  <li><a href="#grub">GRUB</a></li>
+  <li><a href="#grub">GRUB</a>
+    <ol>
+      <li><a href="#remaking-the-grub-configuration-file">Remaking the GRUB configuration file</a></li>
+      <li><a href="#show-kernel-logs">Show kernel logs</a></li>
+      <li><a href="#remember-the-last-launched-entry">Remember the last launched entry</a></li>
+      <li><a href="#detect-windows-entry">Detect Windows entry</a></li>
+      <li><a href="#make-a-custom-font">Make a custom font</a></li>
+      <li><a href="#add-a-theme-to-grub">Add a theme to GRUB</a></li>
+    </ol>
+  </li>
   <li><a href="#sddm">SDDM</a>
     <ol>
       <li><a href="#high-resolution-displays">High Resolution Displays</a></li>
+      <li><a href="#remapping-keys-with-keyd">Remapping keys with keyd</a></li>
     </ol>
   </li>
 </ol>
@@ -544,17 +594,13 @@ WantedBy=multi-user.target
 
 <h1 id="grub">GRUB</h1>
 
-<ul>
-  <li><strong>Remaking the GRUB configuration file</strong></li>
-</ul>
+<h2 id="remaking-the-grub-configuration-file">Remaking the GRUB configuration file</h2>
 
 <p>Not a setting <em>per se</em>, but it is useful to have this command at hand somewhere.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>grub-mkconfig <span class="nt">-o</span> /boot/grub/grub.cfg
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Show logs</strong></li>
-</ul>
+<h2 id="show-kernel-logs">Show kernel logs</h2>
 
 <p>To show the kernel logs on boot for a <em>hacker</em> feeling, edit the <code class="language-plaintext highlighter-rouge">GRUB_CMDLINE_LINUX_DEFAULT</code> variable in your GRUB configuration to contain a <code class="language-plaintext highlighter-rouge">loglevel</code>.</p>
 
@@ -563,9 +609,7 @@ WantedBy=multi-user.target
 
 <p>Make sure to remove <code class="language-plaintext highlighter-rouge">splash</code> or <code class="language-plaintext highlighter-rouge">quiet</code> if they appear.</p>
 
-<ul>
-  <li><strong>Make GRUB remember last launched entry</strong></li>
-</ul>
+<h2 id="remember-the-last-launched-entry">Remember the last launched entry</h2>
 
 <p>It is very helpful, specially when dual booting, to make GRUB default to the last launched entry. To do this, edit your GRUB configuration to contain</p>
 
@@ -573,10 +617,20 @@ WantedBy=multi-user.target
 GRUB_SAVEDEFAULT=true
 </code></pre></div></div>
 
-<ul>
-  <li><strong>Make a custom font</strong></li>
-  <li><strong>Add a theme to GRUB</strong></li>
-</ul>
+<h2 id="detect-windows-entry">Detect Windows entry</h2>
+
+<p>To make GRUB detect your Windows installation that is either on a separate partition or disk, first install <code class="language-plaintext highlighter-rouge">os-prober</code></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> os-prober
+</code></pre></div></div>
+<p>and add/uncomment to your configuration file</p>
+
+<div class="language-plaintext codeblock highlighter-rouge" data-title="/etc/default/grub"><div class="highlight"><pre class="highlight"><code>GRUB_DISABLE_OS_PROBER=false
+</code></pre></div></div>
+<p>Regenerate your configuration file, and reboot.</p>
+
+<h2 id="make-a-custom-font">Make a custom font</h2>
+
+<h2 id="add-a-theme-to-grub">Add a theme to GRUB</h2>
 
 <h1 id="sddm">SDDM</h1>
 
@@ -595,6 +649,20 @@ EnableHiDPI=true
 <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[General]
 GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
 </code></pre></div></div>
+
+<h2 id="remapping-keys-with-keyd">Remapping keys with <code class="language-plaintext highlighter-rouge">keyd</code></h2>
+
+<p>Sometimes it is really useful to remap keys to another ones, e.g. <code class="language-plaintext highlighter-rouge">CapsLock</code> to <code class="language-plaintext highlighter-rouge">Esc</code> or <code class="language-plaintext highlighter-rouge">Ctrl</code>. To do this, we use the <code class="language-plaintext highlighter-rouge">keyd</code> software, on arch-based distriutions</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> keyd
+<span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> keyd
+</code></pre></div></div>
+
+<p>Then you need to make a configuration file either systemwide or for your user only</p>
+
+<div class="language-bash codeblock highlighter-rouge" data-title="usr/share/applications/steam.desktop"><div class="highlight"><pre class="highlight"><code><span class="nv">PrefersNonDefaultGPU</span><span class="o">=</span><span class="nb">false</span>
+</code></pre></div></div>
+
 
     </div>
 

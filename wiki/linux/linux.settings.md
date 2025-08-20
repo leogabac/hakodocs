@@ -60,17 +60,16 @@ then simply enable the service
 sudo systemctl enable --now battery.service
 ```
 
-
 # GRUB
 
-- **Remaking the GRUB configuration file**
+## Remaking the GRUB configuration file
 
 Not a setting _per se_, but it is useful to have this command at hand somewhere.
 ```bash
 sudo grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
-- **Show logs**
+## Show kernel logs
 
 To show the kernel logs on boot for a _hacker_ feeling, edit the `GRUB_CMDLINE_LINUX_DEFAULT` variable in your GRUB configuration to contain a `loglevel`.
 
@@ -81,7 +80,7 @@ GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3"
 
 Make sure to remove `splash` or `quiet` if they appear.
 
-- **Make GRUB remember last launched entry**
+## Remember the last launched entry
 
 It is very helpful, specially when dual booting, to make GRUB default to the last launched entry. To do this, edit your GRUB configuration to contain
 
@@ -91,8 +90,23 @@ GRUB_DEFAULT=saved
 GRUB_SAVEDEFAULT=true
 ```
 
-- **Make a custom font**
-- **Add a theme to GRUB**
+## Detect Windows entry
+
+To make GRUB detect your Windows installation that is either on a separate partition or disk, first install `os-prober`
+```bash
+sudo pacman -S os-prober
+```
+and add/uncomment to your configuration file
+
+{: .codeblock data-title="/etc/default/grub"}
+```
+GRUB_DISABLE_OS_PROBER=false
+```
+Regenerate your configuration file, and reboot.
+
+## Make a custom font
+
+## Add a theme to GRUB
 
 # SDDM
 
@@ -114,3 +128,20 @@ When using KDE Plasma, which has a Qt-based greeter, add the following
 [General]
 GreeterEnvironment=QT_SCREEN_SCALE_FACTORS=2,QT_FONT_DPI=192
 ```
+
+## Remapping keys with `keyd`
+
+Sometimes it is really useful to remap keys to another ones, e.g. `CapsLock` to `Esc` or `Ctrl`. To do this, we use the `keyd` software, on arch-based distriutions
+
+```bash
+sudo pacman -S keyd
+sudo systemctl enable --now keyd
+```
+
+Then you need to make a configuration file either systemwide or for your user only
+
+{: .codeblock data-title="usr/share/applications/steam.desktop"}
+```bash
+PrefersNonDefaultGPU=false
+```
+
