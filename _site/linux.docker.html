@@ -14,29 +14,29 @@
 <meta name="viewport" content="width=device-width">
 
 <!-- Begin Jekyll SEO tag v2.8.0 -->
-<title>Inkscape | HakoDocs</title>
+<title>Docker | HakoDocs</title>
 <meta name="generator" content="Jekyll v3.10.0" />
-<meta property="og:title" content="Inkscape" />
+<meta property="og:title" content="Docker" />
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="A collection of tech-related notes" />
 <meta property="og:description" content="A collection of tech-related notes" />
-<link rel="canonical" href="http://localhost:4000/inkscape" />
-<meta property="og:url" content="http://localhost:4000/inkscape" />
+<link rel="canonical" href="http://localhost:4000/linux.docker" />
+<meta property="og:url" content="http://localhost:4000/linux.docker" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
-<meta property="twitter:title" content="Inkscape" />
+<meta property="twitter:title" content="Docker" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"Inkscape","url":"http://localhost:4000/inkscape"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"A collection of tech-related notes","headline":"Docker","url":"http://localhost:4000/linux.docker"}</script>
 <!-- End Jekyll SEO tag -->
 
 
 
 
 
-<title>inkscape - HakoDocs</title>
+<title>linux.docker - HakoDocs</title>
 
-<meta property="og:title" content="inkscape - HakoDocs">
+<meta property="og:title" content="linux.docker - HakoDocs">
 
 <meta property="og:description" content="
         A collection of tech-related notes
@@ -44,7 +44,7 @@
 
 
 <meta property="og:url"
-  content="http://localhost:4000/inkscape" />
+  content="http://localhost:4000/linux.docker" />
 
 
 
@@ -325,8 +325,8 @@
 
     
 
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/inkscape/inkscape.md">History</a></span>
-    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/inkscape/inkscape.md">Source</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/linux/linux.docker.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/linux/linux.docker.md">Source</a></span>
     
     <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
             new post</a></span>
@@ -336,7 +336,7 @@
     Prose.io:
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
             new</a></span>
-    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/inkscape/inkscape.md">Edit</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/linux/linux.docker.md">Edit</a></span>
     
     <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
             new post</a></span>
@@ -371,12 +371,24 @@
 
     Table of Contents:
     <ol id="git-wiki-toc">
-  <li><a href="#inkscape">Inkscape</a>
+  <li><a href="#docker">Docker</a>
     <ol>
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#rendering-latex">Rendering LaTeX</a></li>
+  <li><a href="#basic-introduction-to-docker">Basic Introduction to Docker</a></li>
+  <li><a href="#cool-applications">Cool applications</a>
+    <ol>
+      <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
+      <li><a href="#winapps">WinApps</a></li>
+      <li><a href="#stirling-pdf">Stirling PDF</a></li>
+    </ol>
+  </li>
+  <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
+    <ol>
+      <li><a href="#how-do-i-run-rootless-docker">How do I run rootless docker?</a></li>
+    </ol>
+  </li>
 </ol>
 
 
@@ -386,12 +398,24 @@
 
     Table of Contents:
     <ol id="sidebar-toc">
-  <li><a href="#inkscape">Inkscape</a>
+  <li><a href="#docker">Docker</a>
     <ol>
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#rendering-latex">Rendering LaTeX</a></li>
+  <li><a href="#basic-introduction-to-docker">Basic Introduction to Docker</a></li>
+  <li><a href="#cool-applications">Cool applications</a>
+    <ol>
+      <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
+      <li><a href="#winapps">WinApps</a></li>
+      <li><a href="#stirling-pdf">Stirling PDF</a></li>
+    </ol>
+  </li>
+  <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
+    <ol>
+      <li><a href="#how-do-i-run-rootless-docker">How do I run rootless docker?</a></li>
+    </ol>
+  </li>
 </ol>
 -->
 
@@ -400,12 +424,24 @@
 
     Table of Contents:
     <ul id="sidebar-toc">
-  <li><a href="#inkscape">Inkscape</a>
+  <li><a href="#docker">Docker</a>
     <ul>
       <li><a href="#installation">Installation</a></li>
     </ul>
   </li>
-  <li><a href="#rendering-latex">Rendering LaTeX</a></li>
+  <li><a href="#basic-introduction-to-docker">Basic Introduction to Docker</a></li>
+  <li><a href="#cool-applications">Cool applications</a>
+    <ul>
+      <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
+      <li><a href="#winapps">WinApps</a></li>
+      <li><a href="#stirling-pdf">Stirling PDF</a></li>
+    </ul>
+  </li>
+  <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
+    <ul>
+      <li><a href="#how-do-i-run-rootless-docker">How do I run rootless docker?</a></li>
+    </ul>
+  </li>
 </ul>
 -->
 
@@ -419,12 +455,24 @@
 
     Table of Contents:
     <ol id="inline-toc">
-  <li><a href="#inkscape">Inkscape</a>
+  <li><a href="#docker">Docker</a>
     <ol>
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#rendering-latex">Rendering LaTeX</a></li>
+  <li><a href="#basic-introduction-to-docker">Basic Introduction to Docker</a></li>
+  <li><a href="#cool-applications">Cool applications</a>
+    <ol>
+      <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
+      <li><a href="#winapps">WinApps</a></li>
+      <li><a href="#stirling-pdf">Stirling PDF</a></li>
+    </ol>
+  </li>
+  <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
+    <ol>
+      <li><a href="#how-do-i-run-rootless-docker">How do I run rootless docker?</a></li>
+    </ol>
+  </li>
 </ol>
 -->
         
@@ -432,12 +480,24 @@
 
     Table of Contents:
     <ol id="floating_toc">
-  <li><a href="#inkscape">Inkscape</a>
+  <li><a href="#docker">Docker</a>
     <ol>
       <li><a href="#installation">Installation</a></li>
     </ol>
   </li>
-  <li><a href="#rendering-latex">Rendering LaTeX</a></li>
+  <li><a href="#basic-introduction-to-docker">Basic Introduction to Docker</a></li>
+  <li><a href="#cool-applications">Cool applications</a>
+    <ol>
+      <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
+      <li><a href="#winapps">WinApps</a></li>
+      <li><a href="#stirling-pdf">Stirling PDF</a></li>
+    </ol>
+  </li>
+  <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
+    <ol>
+      <li><a href="#how-do-i-run-rootless-docker">How do I run rootless docker?</a></li>
+    </ol>
+  </li>
 </ol>
 
     </div>
@@ -451,40 +511,68 @@
     
 
     <div id="git-wiki-content">
-      <h1 id="inkscape">Inkscape</h1>
-
-<p>Inkscape is a free and open-source vector graphics editor known for its powerful tools and user-friendly interface, making it ideal for creating illustrations, diagrams, logos, and complex designs. It uses the Scalable Vector Graphics (SVG) format as its native file type, ensuring resolution-independent output suitable for both print and web. Inkscape supports a wide range of features, including path editing, node manipulation, advanced text handling, layers, filters, and extensions. Compatible with Windows, macOS, and Linux, it is widely used by designers, illustrators, and hobbyists seeking a robust alternative to commercial vector design software.</p>
+      <h1 id="docker">Docker</h1>
 
 <h2 id="installation">Installation</h2>
+
+<p>To run docker, install the docker engine</p>
+
 <ul>
-  <li>On Arch Linux, simply
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> inkscape
+  <li><strong>Arch-based systems</strong>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> docker docker-compose
 </code></pre></div>    </div>
   </li>
-  <li>On Ubuntu-based systems,
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>add-apt-repository ppa:inkscape.dev/stable
-<span class="nb">sudo </span>apt update
-<span class="nb">sudo </span>apt <span class="nb">install </span>inkscape
-</code></pre></div>    </div>
+  <li>
+    <p><strong>Debian/Ubuntu</strong></p>
   </li>
+  <li><strong>REHL/Fedora</strong></li>
 </ul>
 
-<h1 id="rendering-latex">Rendering LaTeX</h1>
+<p>and start/enable the daemon</p>
 
-<p>There are many ways to render LaTeX text inside inkscape. An excellent option is the TexText plugin as it allows re-editing your renders and provides a preamble <code class="language-plaintext highlighter-rouge">.tex</code> file for full customization of your environment.</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> docker.service
+</code></pre></div></div>
 
-<p>To install it (on Linux)</p>
-<ol>
-  <li>Go to their <a href="https://github.com/textext/textext/releases">releases page</a> on GitHub and download the corresponding tarball (<code class="language-plaintext highlighter-rouge">.tar.gz</code>).</li>
-  <li>Change into the extracted directory</li>
-  <li>Run <code class="language-plaintext highlighter-rouge">python3 setup.py</code>.</li>
-  <li>Install the <code class="language-plaintext highlighter-rouge">python3-tinycss2</code> package from your package manager.</li>
-</ol>
+<h1 id="basic-introduction-to-docker">Basic Introduction to Docker</h1>
+
+<h1 id="cool-applications">Cool applications</h1>
+
+<h2 id="windows-virtual-machine">Windows Virtual Machine</h2>
+
+<p>Unfortunately, you will need Windows at some point and we are sometimes lazy enough to spend 5 hours debugging a <em>not-decently</em> made alternative instead of rebooting into a Windows partition.</p>
+
+<p>Just shove a Windows VM into a docker container and call it when you need it. Or just remove it completely when you get tired of it.</p>
+
+<p>Here is a <a href="https://github.com/winapps-org/winapps/blob/main/docs/docker.md">tutorial</a> from WinApps on how to set it up using <code class="language-plaintext highlighter-rouge">docker</code> or <code class="language-plaintext highlighter-rouge">podman</code>.</p>
+
+<h2 id="winapps">WinApps</h2>
+
+<p>WinApps is a way of running Windows applications on Linux. While <code class="language-plaintext highlighter-rouge">wine</code> uses a translation layer of instructions, <code class="language-plaintext highlighter-rouge">winapps</code> uses a VM in a docker container and streams specific applications to you DE via Remote Desktop, making it so that you can use a regular Win application as if it were native.</p>
+
+<p>See the <a href="https://github.com/winapps-org/winapps">WinApps repository</a> for more information.</p>
+
+<p>The obvious downside is that you need enough resources to keep the VM active. The benefit is that you can run basically any Windows application this way.</p>
+
+<h2 id="stirling-pdf">Stirling PDF</h2>
+
+<p>Although you can run a Stirling PDF server locally without issues. It has <em>way too many</em> dependencies that you might not need in your system. For this case, it is simpler to just shove it in a Docker Container</p>
+
+<h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
+
+<h2 id="how-do-i-run-rootless-docker">How do I run rootless docker?</h2>
 
 <blockquote class="warning">
-  <p>Make sure to have a LaTeX compiler installed (e.g. <code class="language-plaintext highlighter-rouge">texlive</code>). You can see the <a href="latex">Hakodocs’ LaTeX page</a> for more information.</p>
+  <p>Any action from this could cause unperceived vulnerabilities. Use at your own caution and risk.</p>
 </blockquote>
 
+<p>Create the <code class="language-plaintext highlighter-rouge">docker</code> group</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>groupadd docker
+</code></pre></div></div>
+
+<p>and add your current user (or any user) to the group</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>gpasswd <span class="nt">-a</span> <span class="nv">$USER</span> docker
+</code></pre></div></div>
 
     </div>
 

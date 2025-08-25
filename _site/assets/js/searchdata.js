@@ -30,6 +30,18 @@ var jsondata=[
    {
      
      
+        "title"    : "C++: Armadillo",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/cpp.armadillo",
+        "date"     : "",
+        "content"  : "<h1 id=\"c-armadillo\">C++: Armadillo</h1>\n\n<blockquote class=\"wip\">\n  <p>WIP</p>\n</blockquote>\n"
+     
+   } ,
+  
+   {
+     
+     
         "title"    : "C++: Fast Fourier Transform",
         "category" : "",
         "tags"     : "",
@@ -270,18 +282,6 @@ var jsondata=[
    {
      
      
-        "title"    : "cpp.armadillo.md",
-        "category" : "",
-        "tags"     : "",
-        "url"      : "/cpp.armadillo",
-        "date"     : "",
-        "content"  : ""
-     
-   } ,
-  
-   {
-     
-     
         "title"    : "Inkscape",
         "category" : "",
         "tags"     : "",
@@ -300,6 +300,18 @@ var jsondata=[
         "url"      : "/latex",
         "date"     : "",
         "content"  : "# LaTeX\n\nTo work with LaTeX, you need a compiler. In Linux we typically use `texlive`, for more information you can read the [TexLive Arch Wiki Page](https://wiki.archlinux.org/title/TeX_Live) and the [texlive package group](https://archlinux.org/groups/x86_64/texlive/).\n\nA basic setup is obtained by installing the whole group.\n```bash\nsudo pacman -S texlive\n```\n\nFrom this, your selected LaTeX editor should pick up the `latex` command in PATH.\n```bash\nlatex --version\n```\n\n# Neovim LaTeX support\n\nTo have LaTeX support in neovim, install the `vimtex` plugin using your preferred plugin manager.\n\n{: .tip}\n> Install `zathura` and `zathura-pdf-mupdf` to render your PDF and have additional features.\n\nAdditionally, you might want to setup an equivalent for the following:\n- An autocompletion engine (e.g. `nvim-cmp`) that connects with `vimtex`.\n- A snippet engine (e.g. `LuaSnip`).\n- A snippet library (e.g. `friendly-snippets`).\n\n# Spellcheck LSP (Neovim)\n\n{: .warning}\n> The spellcheck consumes **a lot** of RAM. You have been warned.\n\nTo have an LSP intended for LaTeX that checks spelling and grammar, in neovim you can install the `ltex-ls` LSP through your package manager. If you have `lspconfig` and `mason` installed, you can run\n```\n:MasonInstall ltex-ls\n```\nAdditionally, you will need a Java runtime\n```bash\nsudo pacman -S jdk21-openjdk\n```\n\n{: .warning}\n> Note that `ltex-ls` is **not** compatible with Java 24, hence I suggested `jdk21-openjdk` previously. If you already had a java runtime installed with Java 24, install Java 21 alongside it and run\n> ```bash\n> sudo archlinux-java set java-21-openjdk\n>```\n\nUse your LSP configuration and picker of choice to interact with the diagnostics and fixes.\n\n\n\n"
+     
+   } ,
+  
+   {
+     
+     
+        "title"    : "Docker",
+        "category" : "",
+        "tags"     : "",
+        "url"      : "/linux.docker",
+        "date"     : "",
+        "content"  : "# Docker\n\n## Installation\n\nTo run docker, install the docker engine\n\n* **Arch-based systems**\n```bash\nsudo pacman -S docker docker-compose\n```\n\n* **Debian/Ubuntu**\n\n* **REHL/Fedora**\n\nand start/enable the daemon\n\n```bash\nsudo systemctl enable --now docker.service\n```\n\n# Basic Introduction to Docker\n\n# Cool applications\n\n## Windows Virtual Machine\n\nUnfortunately, you will need Windows at some point and we are sometimes lazy enough to spend 5 hours debugging a _not-decently_ made alternative instead of rebooting into a Windows partition.\n\nJust shove a Windows VM into a docker container and call it when you need it. Or just remove it completely when you get tired of it.\n\nHere is a [tutorial](https://github.com/winapps-org/winapps/blob/main/docs/docker.md) from WinApps on how to set it up using `docker` or `podman`.\n\n## WinApps\n\nWinApps is a way of running Windows applications on Linux. While `wine` uses a translation layer of instructions, `winapps` uses a VM in a docker container and streams specific applications to you DE via Remote Desktop, making it so that you can use a regular Win application as if it were native.\n\nSee the [WinApps repository](https://github.com/winapps-org/winapps) for more information.\n\nThe obvious downside is that you need enough resources to keep the VM active. The benefit is that you can run basically any Windows application this way.\n\n## Stirling PDF\n\nAlthough you can run a Stirling PDF server locally without issues. It has _way too many_ dependencies that you might not need in your system. For this case, it is simpler to just shove it in a Docker Container\n\n# Frequently Asked Questions\n\n## How do I run rootless docker?\n\n{: .warning}\n>Any action from this could cause unperceived vulnerabilities. Use at your own caution and risk.\n\nCreate the `docker` group\n\n```bash\nsudo groupadd docker\n```\n\nand add your current user (or any user) to the group\n```bash\nsudo gpasswd -a $USER docker\n```\n"
      
    } ,
   
