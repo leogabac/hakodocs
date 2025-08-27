@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=22159f65ca8ea3a3d471e1913464ddb930a632f5">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=e9409cd10cffd8c2f33c0cb0dd3ca14e2c821419">
 
 
 
@@ -382,6 +382,12 @@
       <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
       <li><a href="#winapps">WinApps</a></li>
       <li><a href="#stirling-pdf">Stirling PDF</a></li>
+      <li><a href="#matlab">MATLAB</a>
+        <ol>
+          <li><a href="#browser-image">Browser Image</a></li>
+          <li><a href="#vnc-version">VNC version</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
@@ -409,6 +415,7 @@
       <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
       <li><a href="#winapps">WinApps</a></li>
       <li><a href="#stirling-pdf">Stirling PDF</a></li>
+      <li><a href="#matlab">MATLAB</a></li>
     </ol>
   </li>
   <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
@@ -435,6 +442,7 @@
       <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
       <li><a href="#winapps">WinApps</a></li>
       <li><a href="#stirling-pdf">Stirling PDF</a></li>
+      <li><a href="#matlab">MATLAB</a></li>
     </ul>
   </li>
   <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
@@ -466,6 +474,7 @@
       <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
       <li><a href="#winapps">WinApps</a></li>
       <li><a href="#stirling-pdf">Stirling PDF</a></li>
+      <li><a href="#matlab">MATLAB</a></li>
     </ol>
   </li>
   <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
@@ -491,6 +500,12 @@
       <li><a href="#windows-virtual-machine">Windows Virtual Machine</a></li>
       <li><a href="#winapps">WinApps</a></li>
       <li><a href="#stirling-pdf">Stirling PDF</a></li>
+      <li><a href="#matlab">MATLAB</a>
+        <ol>
+          <li><a href="#browser-image">Browser Image</a></li>
+          <li><a href="#vnc-version">VNC version</a></li>
+        </ol>
+      </li>
     </ol>
   </li>
   <li><a href="#frequently-asked-questions">Frequently Asked Questions</a>
@@ -556,6 +571,84 @@
 <h2 id="stirling-pdf">Stirling PDF</h2>
 
 <p>Although you can run a Stirling PDF server locally without issues. It has <em>way too many</em> dependencies that you might not need in your system. For this case, it is simpler to just shove it in a Docker Container</p>
+
+<p>Follow their <a href="https://docs.stirlingpdf.com/Installation/Docker%20Install/">Docker Install</a> guide for more information.</p>
+
+<h2 id="matlab">MATLAB</h2>
+
+<p>MATLAB is one of those “programming languages” that you usually use against your will. It can be either very easy or very difficult to install it on Linux, and <a href="https://www.mathworks.com/help/install/ug/install-products-with-internet-connection.html">their documentation</a> is misleading at best when they never mention all the required dependencies that you always need to look manually in a painfully slow iterative process.</p>
+
+<h3 id="browser-image">Browser Image</h3>
+
+<p>Turns out there is an <a href="https://hub.docker.com/r/mathworks/matlab">Official MATLAB image</a> on DockerHub that contrary to their installer, actually works. Here is a basic <code class="language-plaintext highlighter-rouge">compose.yaml</code> file.</p>
+
+<div class="language-yaml codeblock highlighter-rouge" data-title="compose.yaml"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">matlab</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mathworks/matlab:r2025a</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">matlab-desktop</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">8000:8888"</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">./matlab-files:/home/matlab/Documents/MATLAB:rw</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">-browser</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+</code></pre></div></div>
+<p>then</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose up
+</code></pre></div></div>
+<p>This will make MATLAB available on <a href="http://localhost:8000">http://localhost:8000</a>.</p>
+
+<blockquote class="tip">
+  <p>To run in the background, add the <code class="language-plaintext highlighter-rouge">-d</code> flag to the <code class="language-plaintext highlighter-rouge">docker-compose</code> command.</p>
+</blockquote>
+
+<p>You will need to login to your MathWorks account for license validation.</p>
+
+<blockquote class="note">
+  <p>Due to the nature of the container, and that I haven’t found a solution. You will need to login to your MathWorks account everytime the container is freshly launched.</p>
+</blockquote>
+
+<blockquote class="warning">
+  <p>The browser version of the container <strong>does not</strong> plot interactive features. For this, follow the VNC subsection.</p>
+</blockquote>
+
+<h3 id="vnc-version">VNC version</h3>
+
+<p>If you want a more capable VNV version of the same container, simply make a few modifications to the compose file. We will use the same mounted points so that they can work in combo.</p>
+
+<div class="language-yaml codeblock highlighter-rouge" data-title="compose-vnc.yaml"><div class="highlight"><pre class="highlight"><code><span class="na">services</span><span class="pi">:</span>
+  <span class="na">matlab</span><span class="pi">:</span>
+    <span class="na">image</span><span class="pi">:</span> <span class="s">mathworks/matlab:r2025a</span>
+    <span class="na">container_name</span><span class="pi">:</span> <span class="s">matlab-vnc</span>
+    <span class="na">ports</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">5901:5901"</span>   <span class="c1"># VNC port</span>
+      <span class="pi">-</span> <span class="s2">"</span><span class="s">6080:6080"</span>   <span class="c1"># noVNC browser access</span>
+    <span class="na">shm_size</span><span class="pi">:</span> <span class="s2">"</span><span class="s">2g"</span>
+    <span class="na">tty</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">stdin_open</span><span class="pi">:</span> <span class="no">true</span>
+    <span class="na">volumes</span><span class="pi">:</span>
+      <span class="pi">-</span> <span class="s">./matlab-files:/home/matlab/Documents/MATLAB:rw</span>
+    <span class="na">command</span><span class="pi">:</span> <span class="s">-vnc</span>
+    <span class="na">restart</span><span class="pi">:</span> <span class="s">unless-stopped</span>
+</code></pre></div></div>
+
+<blockquote class="tip">
+  <p>Allocate more or less resources with the <code class="language-plaintext highlighter-rouge">shm_size</code> flag.</p>
+</blockquote>
+
+<p>Additionally install a VNC Client, I recommend <code class="language-plaintext highlighter-rouge">remmina</code> as it has proper scaling for HiDPI monitors</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> remmina gtk-vnc
+</code></pre></div></div>
+
+<p>Launch the container</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose <span class="nt">--file</span><span class="o">=</span>./compose-vnc.yaml up <span class="nt">-d</span>
+</code></pre></div></div>
+<p>Then connect to <code class="language-plaintext highlighter-rouge">localhost:5901</code> from remmina.</p>
+
+<blockquote class="note">
+  <p>The <strong>default password</strong> is <code class="language-plaintext highlighter-rouge">matlab</code>.</p>
+</blockquote>
 
 <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>
 
