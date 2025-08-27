@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=e9409cd10cffd8c2f33c0cb0dd3ca14e2c821419">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=93648403a25234b829e70541d5e780abb3f25044">
 
 
 
@@ -633,21 +633,24 @@
 </code></pre></div></div>
 
 <blockquote class="tip">
-  <p>Allocate more or less resources with the <code class="language-plaintext highlighter-rouge">shm_size</code> flag.</p>
+  <p>Allocate more or less resources with the <code class="language-plaintext highlighter-rouge">shm_size</code> and <code class="language-plaintext highlighter-rouge">cpus</code> flags.</p>
 </blockquote>
-
-<p>Additionally install a VNC Client, I recommend <code class="language-plaintext highlighter-rouge">remmina</code> as it has proper scaling for HiDPI monitors</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> remmina gtk-vnc
-</code></pre></div></div>
 
 <p>Launch the container</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>docker compose <span class="nt">--file</span><span class="o">=</span>./compose-vnc.yaml up <span class="nt">-d</span>
 </code></pre></div></div>
-<p>Then connect to <code class="language-plaintext highlighter-rouge">localhost:5901</code> from remmina.</p>
+<p>You now can access the VNC version at <a href="http://localhost:6080">http://localhost:6080</a>. It will look like XFCE with a MATLAB icon on the desktop.</p>
 
 <blockquote class="note">
   <p>The <strong>default password</strong> is <code class="language-plaintext highlighter-rouge">matlab</code>.</p>
+</blockquote>
+
+<blockquote class="note">
+  <p>Optionally, install a VNC Client, I recommend <code class="language-plaintext highlighter-rouge">remmina</code> as it has proper scaling for HiDPI monitors</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> remmina gtk-vnc
+</code></pre></div>  </div>
+  <p>Then connect to <code class="language-plaintext highlighter-rouge">localhost:5901</code> from remmina.</p>
 </blockquote>
 
 <h1 id="frequently-asked-questions">Frequently Asked Questions</h1>

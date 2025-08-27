@@ -106,23 +106,28 @@ services:
 ```
 
 {: .tip}
-> Allocate more or less resources with the `shm_size` flag.
+> Allocate more or less resources with the `shm_size` and `cpus` flags.
 
 
-Additionally install a VNC Client, I recommend `remmina` as it has proper scaling for HiDPI monitors
 
-```bash
-sudo pacman -S remmina gtk-vnc
-```
 
 Launch the container
 ```bash
 docker compose --file=./compose-vnc.yaml up -d
 ```
-Then connect to `localhost:5901` from remmina.
+You now can access the VNC version at [http://localhost:6080](http://localhost:6080). It will look like XFCE with a MATLAB icon on the desktop.
 
 {: .note}
 > The **default password** is `matlab`.
+
+{: .note}
+>Optionally, install a VNC Client, I recommend `remmina` as it has proper scaling for HiDPI monitors
+>
+>```bash
+>sudo pacman -S remmina gtk-vnc
+>```
+>Then connect to `localhost:5901` from remmina.
+
 
 
 
