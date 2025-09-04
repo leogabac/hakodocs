@@ -1,6 +1,6 @@
 ---
-title: Linux CLI Tips
-description: Linux CLI Tips
+title: "Linux CLI Tips"
+description: "Linux CLI Tips"
 ---
 
 # Linux: CLI Tips
@@ -8,6 +8,17 @@ description: Linux CLI Tips
 This is a collection of quick commands you can use to accomplish very specific tasks using the command line. This is a continuously growing collection, and contributions are accepted.
 
 See the Table of Contents for a full guide.
+
+# Useful and unorganized bash functions
+
+## Add git branch to `PS1` prompt
+
+The following bash function writes adds `(branch)` at the end of your default prompt.
+```
+git_branch() {
+  git branch 2>/dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+```
 
 # Images
 

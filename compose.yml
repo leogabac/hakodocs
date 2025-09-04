@@ -22,10 +22,12 @@ services:
       - 35729:35729
     environment:
       - BUNDLE_GEMFILE=.env-files/Gemfile.gitlab
+      - LANG=C.UTF-8
+      - LC_ALL=C.UTF-8
     volumes:
       - .:/srv/jekyll
       - gitlab_site:/srv/jekyll/_site
-    command: 'bundle exec jekyll serve --host 0.0.0.0 --force_polling --livereload'
+    command: 'sh -c "git config --global --add safe.directory /srv/jekyll && bundle exec jekyll serve --host 0.0.0.0"'
     profiles:
       - gitlab
 volumes:

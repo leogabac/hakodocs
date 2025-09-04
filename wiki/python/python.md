@@ -1,6 +1,6 @@
 ---
-title: Python
-description: Python
+title: "Python"
+description: "Python"
 ---
 
 # Python

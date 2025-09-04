@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=93648403a25234b829e70541d5e780abb3f25044">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9812f36d5ab6e1ae64f0964130612cb6b8958ceb">
 
 
 
@@ -268,7 +268,7 @@
         
         <li class="page-list-item">
             
-            <a href="/ollama.openwebui">Ollama: Open Web UI</a>
+            <a href="/ollama.openwebui">Ollama: Open WebUI</a>
         </li>
         
         
@@ -596,24 +596,28 @@
     <div id="git-wiki-content">
       <h1 id="arch-linux">Arch Linux</h1>
 
-<p>Arch Linux is a <em>rolling-release</em> distribution, i.e. <em>packages</em> (software) receive updates constantly. There is not a concensus on how often one needs to update their system, a good rule of thumb is once per week.</p>
+<p>Arch Linux is a <em>rolling-release</em> distribution, i.e. <em>packages</em> (software) receive updates constantly. There is not a consensus on how often one needs to update their system, a good rule of thumb is once per week.</p>
 
 <blockquote class="tip">
-  <p>If case something happens, <strong>always</strong> check the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> first. It always help, no matter the problem you may have. Read <strong>very</strong> carefully the instructions, and don’t skip steps. I have encountered many problems for literally not reading the next line in the wiki.</p>
+  <p>If case something happens, <strong>always</strong> check the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> first. It always helps, no matter the problem you may have. Read <strong>very</strong> carefully the instructions, and <strong>do not skip steps</strong>. I have encountered many problems for literally not reading the next line in the wiki.</p>
 </blockquote>
 
-<p>This guide serves as both a beginner guide to know that to check after they install Arch Linux for the first time, but also a checklist for myself to remember what to look for in a new installation. I will assume that you installed KDE Plasma as your Desktop Environment.</p>
+<p>This guide serves as both a beginner guide to know that to check after they install Arch Linux for the first time, but also a checklist for myself to remember what to look for in a new installation.</p>
+
+<blockquote class="warning">
+  <p>I will assume that you installed KDE Plasma as your Desktop Environment.</p>
+</blockquote>
 
 <h2 id="the-package-manager">The package Manager</h2>
 
-<p>As in any Linux distribution, Arch Linux has a <em>package manager</em> called <code class="language-plaintext highlighter-rouge">pacman</code> that installs software from the <em>Arch repository</em> . Package names may differ from other distributions, so it is recommended that you check on the <a href="https://archlinux.org/packages/">repositories</a> or the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> how to install particular software.</p>
+<p>Arch Linux has a <em>package manager</em> called <code class="language-plaintext highlighter-rouge">pacman</code> helps you automate the process of installing software from the <em>Arch repository</em> . Package’s names may differ from other distributions, so it is recommended that you check on the <a href="https://archlinux.org/packages/">repositories</a> or the <a href="https://wiki.archlinux.org/title/Main_page">Arch Wiki</a> on how to install any particular software.</p>
 
 <p>To install packages simply run</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> PACKAGE_NAME
 </code></pre></div></div>
 
-<p>where the <code class="language-plaintext highlighter-rouge">-S</code> flag stands for <em>Sync</em>. It basically reads</p>
+<p>where the <code class="language-plaintext highlighter-rouge">-S</code> flag stands for <em>Sync</em>. It basically means</p>
 
 <blockquote>
   <p>Sync from the pacman (Arch) repository PACKAGE_NAME with my system</p>
@@ -621,7 +625,7 @@
 
 <h2 id="the-arch-user-repository">The Arch User Repository</h2>
 
-<p>Not every piece of software can be found in the regular Arch repositories. Take for example <code class="language-plaintext highlighter-rouge">dropbox</code>, that has official support for Debian/Ubuntu, but not for Arch Linux. Another example would be software that need to be <em>compiled from source</em> like <code class="language-plaintext highlighter-rouge">lammps</code>, <code class="language-plaintext highlighter-rouge">gromacs</code> or some of the <code class="language-plaintext highlighter-rouge">xp-pen</code> drivers for their tablets. Manually repackaging, or compiling from source will install the software on your system at the cost of not being properly managed by <code class="language-plaintext highlighter-rouge">pacman</code>. On such cases we turn to the so-called <em>Arch User Repository</em> (AUR).</p>
+<p>Although the Arch repositories have a vast collection of software, not every piece of existing software can be found in it. Take for example <code class="language-plaintext highlighter-rouge">dropbox</code>, that has official support for Debian/Ubuntu, but not for Arch Linux. Another example would be software that need to be <em>compiled from source</em> like <code class="language-plaintext highlighter-rouge">lammps</code>, <code class="language-plaintext highlighter-rouge">gromacs</code> or some of the <code class="language-plaintext highlighter-rouge">xp-pen</code> drivers for their tablets. Manually repackaging, or compiling from source will install the software on your system at the cost of not being properly managed by <code class="language-plaintext highlighter-rouge">pacman</code>. On such cases we turn to the so-called <em>Arch User Repository</em> (AUR).</p>
 
 <p>The Arch User Repository (AUR) is a community-driven repository for Arch Linux that allows users to share and install packages not available in the official Arch repositories. Unlike the official repos, which provide precompiled binaries, the AUR contains <em>PKGBUILD</em> scripts—text files that define how to download, compile, and install software from source or external sources like .deb packages. Users can manually download a PKGBUILD and run <code class="language-plaintext highlighter-rouge">makepkg -si</code> to build and install the package, or use an <em>AUR helper</em> like <code class="language-plaintext highlighter-rouge">yay</code> or <code class="language-plaintext highlighter-rouge">paru</code> to automate the process. Since AUR packages are maintained by the community, they are not officially supported by Arch and may require user intervention if dependencies or builds break.</p>
 
@@ -634,12 +638,12 @@ git clone https://aur.archlinux.org/yay.git /tmp/yay
 makepkg <span class="nt">-si</span>
 </code></pre></div></div>
 
-<p>Then from the AUR, we can install with same flags as in <code class="language-plaintext highlighter-rouge">pacman</code></p>
+<p>Then from the AUR, we can install with the same syntax as <code class="language-plaintext highlighter-rouge">pacman</code></p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> PACKAGE_NAME
 </code></pre></div></div>
 
-<p>When yay installs an AUR package, it first downloads the <em>PKGBUILD</em> script, builds the package into a <code class="language-plaintext highlighter-rouge">.pkg.tar.zst</code> file, and then installs it using <code class="language-plaintext highlighter-rouge">pacman -U</code>. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means <code class="language-plaintext highlighter-rouge">pacman -Q</code> can list it, <code class="language-plaintext highlighter-rouge">pacman -R</code> can remove it, and <code class="language-plaintext highlighter-rouge">pacman -U</code> can reinstall it.</p>
+<p>When <code class="language-plaintext highlighter-rouge">yay</code> installs an AUR package, it first downloads the <em>PKGBUILD</em> script, builds the package into a <code class="language-plaintext highlighter-rouge">.pkg.tar.zst</code> file, and then installs it using <code class="language-plaintext highlighter-rouge">pacman -U</code>. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means <code class="language-plaintext highlighter-rouge">pacman -Q</code> can list it, <code class="language-plaintext highlighter-rouge">pacman -R</code> can remove it, and <code class="language-plaintext highlighter-rouge">pacman -U</code> can reinstall it.</p>
 
 <p>Because AUR packages are not in the official repositories, <code class="language-plaintext highlighter-rouge">pacman -Syu</code> does not update them—users must manually rebuild them or use an AUR helper like <code class="language-plaintext highlighter-rouge">yay -Syu</code>, which automates the update process by fetching new <em>PKGBUILD</em> versions and repeating the build-and-install process.</p>
 
@@ -703,8 +707,7 @@ makepkg <span class="nt">-si</span>
 
     <p>Typically the Bluetooth Services is not enabled by default.</p>
 
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl start bluetooth.service
-<span class="nb">sudo </span>systemctl <span class="nb">enable </span>bluetooth.service
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>systemctl <span class="nb">enable</span> <span class="nt">--now</span> bluetooth.service
 </code></pre></div>    </div>
 
     <p>Sometimes you will need to reboot your PC for everything to work properly.</p>
@@ -723,7 +726,7 @@ makepkg <span class="nt">-si</span>
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> brightnessctl
 </code></pre></div>    </div>
 
-    <p>If that does not solve it, check the Archwiki.</p>
+    <p>If this does not solve your problem, check the Arch Wiki.</p>
   </li>
 </ul>
 
@@ -742,10 +745,10 @@ makepkg <span class="nt">-si</span>
 
 <h2 id="monitors">Monitors</h2>
 
-<p>In particular, check that</p>
+<p>Although everything should work <em>out of the box</em> with the open-source drivers, here is a quick checklist for you to verify:</p>
 
 <ol>
-  <li>All monitors connect correctly, in particular those that use Thunderbolt/USB4.</li>
+  <li>All monitors connect correctly, in particular via Thunderbolt/USB4.</li>
   <li>All monitors run at their respective refresh rate.</li>
 </ol>
 
@@ -763,7 +766,7 @@ makepkg <span class="nt">-si</span>
 
     <ol>
       <li>In KDE Plasma, look for the <em>About</em> setting, it should list all of your components.</li>
-      <li>Using fastfetch</li>
+      <li>Using <code class="language-plaintext highlighter-rouge">fastfetch</code></li>
     </ol>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> fastfetch
@@ -780,39 +783,41 @@ fastfech
   <li>
     <p><strong>OpenGL Renderer</strong></p>
 
-    <p>You can check the default OpenGL rendered for your system to make sure which card is currently being used</p>
+    <p>You can verify the default OpenGL rendered for your system to make sure which card is currently being used</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
 <span class="c"># OpenGL renderer string: AMD Radeon RX 6650M (radeonsi, navi23, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</span>
 </code></pre></div>    </div>
 
-    <p>This will list the current renderer and used driver. If it is not the correct one, you can force it with the <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> environment variable.</p>
+    <p>This will list the current renderer and used driver. If it is not the correct one, you can force it using the <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> environment variable.</p>
 
     <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">DRI_PRIME</span><span class="o">=</span>1 glxinfo | <span class="nb">grep</span> <span class="s2">"OpenGL renderer"</span>
-<span class="c"># OpenGL renderer string: AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)</span>
+<span class="c"># OpenGL renderer string: zink Vulkan 1.4(NVIDIA RTX 2000 Ada Generation Laptop GPU (NVIDIA_PROPRIETARY))</span>
 </code></pre></div>    </div>
-
-    <p>As a final sanity check, a good way to <em>really</em> make sure your card is working is by launching minecraft. You can install it from the AUR</p>
-
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> minecraft-launcher
-</code></pre></div>    </div>
-
-    <p>In a world, press F3 and check the <em>display</em> information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> variable state. I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.</p>
   </li>
 </ul>
 
+<blockquote class="tip">
+  <p>As a final sanity check, a good way to <em>really</em> make sure your card is working is by launching a game, e.g. Minecraft. You can install it from the AUR</p>
+
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yay <span class="nt">-S</span> minecraft-launcher
+</code></pre></div>  </div>
+
+  <p>In a world, press F3 and check the <em>display</em> information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct <code class="language-plaintext highlighter-rouge">DRI_PRIME</code> variable state. I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.</p>
+</blockquote>
+
 <h2 id="fonts">Fonts</h2>
 
-<p>You will note that some characters (chinese, japanese or korean) will not render correctly in your browser. Install the Google Noto CJK fonts</p>
+<p>Some characters e.g. chinese, japanese or korean (CJK) will not render correctly in some browsers. To fix this, install the Google Noto CJK fonts</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> noto-fonts-cjk
 </code></pre></div></div>
-<p>and reset your browser.</p>
+<p>and restart your browser.</p>
 
 <h1 id="text-editor">Text Editor</h1>
 
 <h2 id="vscode">VSCode</h2>
 
-<p>There are many text editors on Linux. VSCode is a Microsoft editor with enabled telemetry, Linux users do not like that for privacy concerns. VSCodium is a community open-source release that nullifies telemetry, and is available in the AUR. For Arch Linux, there is an official OSS release</p>
+<p>There are many text editors on Linux. VSCode is a Microsoft editor with enabled telemetry, but generally speaking, most Linux users do not like that for privacy concerns. VSCodium is a community open-source release that nullifies telemetry, and is available in the AUR. For Arch Linux, there is an official OSS release</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> code
 </code></pre></div></div>
@@ -903,7 +908,7 @@ nvim
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
     });
 </script>
 

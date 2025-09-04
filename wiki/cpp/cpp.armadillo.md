@@ -1,6 +1,6 @@
 ---
-title: C++: Armadillo
-description: Armadillo
+title: "C++: Armadillo"
+description: "Armadillo"
 ---
 
 # C++: Armadillo

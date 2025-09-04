@@ -1,6 +1,6 @@
 ---
-title: Linux: Settings
-description: A compilation of useful linux settings
+title: "Linux: Settings"
+description: "A compilation of useful linux settings"
 ---
 
 # Linux: Settings

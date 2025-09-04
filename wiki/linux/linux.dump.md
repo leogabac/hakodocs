@@ -1,6 +1,6 @@
 ---
-title: Linux: Dump
-description: Some troubleshooting and guides.
+title: "Linux: Dump"
+description: "Some troubleshooting and guides."
 ---
 
 

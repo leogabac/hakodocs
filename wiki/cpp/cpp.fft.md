@@ -1,6 +1,6 @@
 ---
-title: C++: FFT
-description: FFT
+title: "C++: FFT"
+description: "FFT"
 ---
 
 # C++: Fast Fourier Transform

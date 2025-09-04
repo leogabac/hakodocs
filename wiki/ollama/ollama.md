@@ -1,6 +1,6 @@
 ---
-title: Ollama
-description: Ollama
+title: "Ollama"
+description: "Ollama"
 ---
 
 # Ollama

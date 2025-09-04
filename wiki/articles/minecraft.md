@@ -1,6 +1,6 @@
 ---
-title: Minecraft
-description: Minecraft
+title: "Minecraft"
+description: "Minecraft"
 ---
 
 # Minecraft

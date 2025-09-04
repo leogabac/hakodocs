@@ -1,6 +1,6 @@
 ---
-title: C++
-description: C++
+title: "C++"
+description: "C++"
 ---
 
 # C++

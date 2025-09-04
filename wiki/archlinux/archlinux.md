@@ -1,21 +1,24 @@
 ---
-title: Arch Linux
-description: Arch Linux
+title: "Arch Linux"
+description: "Arch Linux"
 ---
 
 # Arch Linux
 
-Arch Linux is a _rolling-release_ distribution, i.e. _packages_ (software) receive updates constantly. There is not a concensus on how often one needs to update their system, a good rule of thumb is once per week.
+Arch Linux is a _rolling-release_ distribution, i.e. _packages_ (software) receive updates constantly. There is not a consensus on how often one needs to update their system, a good rule of thumb is once per week.
 
 
 {: .tip}
->If case something happens, **always** check the [Arch Wiki](https://wiki.archlinux.org/title/Main_page) first. It always help, no matter the problem you may have. Read **very** carefully the instructions, and don't skip steps. I have encountered many problems for literally not reading the next line in the wiki.
+>If case something happens, **always** check the [Arch Wiki](https://wiki.archlinux.org/title/Main_page) first. It always helps, no matter the problem you may have. Read **very** carefully the instructions, and **do not skip steps**. I have encountered many problems for literally not reading the next line in the wiki.
 
-This guide serves as both a beginner guide to know that to check after they install Arch Linux for the first time, but also a checklist for myself to remember what to look for in a new installation. I will assume that you installed KDE Plasma as your Desktop Environment.
+This guide serves as both a beginner guide to know that to check after they install Arch Linux for the first time, but also a checklist for myself to remember what to look for in a new installation. 
+
+{: .warning}
+>I will assume that you installed KDE Plasma as your Desktop Environment.
 
 ## The package Manager
 
-As in any Linux distribution, Arch Linux has a _package manager_ called `pacman` that installs software from the _Arch repository_ . Package names may differ from other distributions, so it is recommended that you check on the [repositories](https://archlinux.org/packages/) or the [Arch Wiki](https://wiki.archlinux.org/title/Main_page) how to install particular software.
+Arch Linux has a _package manager_ called `pacman` helps you automate the process of installing software from the _Arch repository_ . Package's names may differ from other distributions, so it is recommended that you check on the [repositories](https://archlinux.org/packages/) or the [Arch Wiki](https://wiki.archlinux.org/title/Main_page) on how to install any particular software.
 
 To install packages simply run
 
@@ -23,13 +26,13 @@ To install packages simply run
 sudo pacman -S PACKAGE_NAME
 ```
 
-where the `-S` flag stands for _Sync_. It basically reads
+where the `-S` flag stands for _Sync_. It basically means
 
 > Sync from the pacman (Arch) repository PACKAGE_NAME with my system
 
 ## The Arch User Repository
 
-Not every piece of software can be found in the regular Arch repositories. Take for example `dropbox`, that has official support for Debian/Ubuntu, but not for Arch Linux. Another example would be software that need to be _compiled from source_ like `lammps`, `gromacs` or some of the `xp-pen` drivers for their tablets. Manually repackaging, or compiling from source will install the software on your system at the cost of not being properly managed by `pacman`. On such cases we turn to the so-called _Arch User Repository_ (AUR).
+Although the Arch repositories have a vast collection of software, not every piece of existing software can be found in it. Take for example `dropbox`, that has official support for Debian/Ubuntu, but not for Arch Linux. Another example would be software that need to be _compiled from source_ like `lammps`, `gromacs` or some of the `xp-pen` drivers for their tablets. Manually repackaging, or compiling from source will install the software on your system at the cost of not being properly managed by `pacman`. On such cases we turn to the so-called _Arch User Repository_ (AUR).
 
 The Arch User Repository (AUR) is a community-driven repository for Arch Linux that allows users to share and install packages not available in the official Arch repositories. Unlike the official repos, which provide precompiled binaries, the AUR contains _PKGBUILD_ scripts—text files that define how to download, compile, and install software from source or external sources like .deb packages. Users can manually download a PKGBUILD and run `makepkg -si` to build and install the package, or use an _AUR helper_ like `yay` or `paru` to automate the process. Since AUR packages are maintained by the community, they are not officially supported by Arch and may require user intervention if dependencies or builds break.
 
@@ -43,13 +46,13 @@ cd /tmp/yay
 makepkg -si
 ```
 
-Then from the AUR, we can install with same flags as in `pacman`
+Then from the AUR, we can install with the same syntax as `pacman`
 
 ```bash
 yay -S PACKAGE_NAME
 ```
 
-When yay installs an AUR package, it first downloads the _PKGBUILD_ script, builds the package into a `.pkg.tar.zst` file, and then installs it using `pacman -U`. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means `pacman -Q` can list it, `pacman -R` can remove it, and `pacman -U` can reinstall it.
+When `yay` installs an AUR package, it first downloads the _PKGBUILD_ script, builds the package into a `.pkg.tar.zst` file, and then installs it using `pacman -U`. Since pacman tracks all installed packages in its local database (/var/lib/pacman/), the AUR package becomes indistinguishable from an official package in terms of management. This means `pacman -Q` can list it, `pacman -R` can remove it, and `pacman -U` can reinstall it.
 
 Because AUR packages are not in the official repositories, `pacman -Syu` does not update them—users must manually rebuild them or use an AUR helper like `yay -Syu`, which automates the update process by fetching new _PKGBUILD_ versions and repeating the build-and-install process.
 
@@ -106,8 +109,7 @@ See [Migrating wpa_supplicant to iwd](linux.dump#migrating-wpa_supplicant-to-iwd
   Typically the Bluetooth Services is not enabled by default.
 
   ```bash
-  sudo systemctl start bluetooth.service
-  sudo systemctl enable bluetooth.service
+  sudo systemctl enable --now bluetooth.service
   ```
 
   Sometimes you will need to reboot your PC for everything to work properly.
@@ -122,7 +124,7 @@ See [Migrating wpa_supplicant to iwd](linux.dump#migrating-wpa_supplicant-to-iwd
   sudo pacman -S brightnessctl
   ```
 
-  If that does not solve it, check the Archwiki.
+  If this does not solve your problem, check the Arch Wiki.
 
 ## Screenshots
 
@@ -136,9 +138,9 @@ See [Migrating wpa_supplicant to iwd](linux.dump#migrating-wpa_supplicant-to-iwd
 
 ## Monitors
 
-In particular, check that
+Although everything should work _out of the box_ with the open-source drivers, here is a quick checklist for you to verify:
 
-1. All monitors connect correctly, in particular those that use Thunderbolt/USB4.
+1. All monitors connect correctly, in particular via Thunderbolt/USB4.
 2. All monitors run at their respective refresh rate.
 
 ## Graphics Card
@@ -151,7 +153,7 @@ There are a few ways to make sure your dedicated graphics card is working.
 - **Card Is Detected**
 
   1. In KDE Plasma, look for the _About_ setting, it should list all of your components.
-  2. Using fastfetch
+  2. Using `fastfetch`
 
   ```bash
   sudo pacman -S fastfetch
@@ -166,41 +168,43 @@ There are a few ways to make sure your dedicated graphics card is working.
 
 - **OpenGL Renderer**
 
-  You can check the default OpenGL rendered for your system to make sure which card is currently being used
+  You can verify the default OpenGL rendered for your system to make sure which card is currently being used
 
   ```bash
   glxinfo | grep "OpenGL renderer"
   # OpenGL renderer string: AMD Radeon RX 6650M (radeonsi, navi23, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)
   ```
 
-  This will list the current renderer and used driver. If it is not the correct one, you can force it with the `DRI_PRIME` environment variable.
+  This will list the current renderer and used driver. If it is not the correct one, you can force it using the `DRI_PRIME` environment variable.
 
   ```bash
   DRI_PRIME=1 glxinfo | grep "OpenGL renderer"
-  # OpenGL renderer string: AMD Radeon 780M (radeonsi, gfx1103_r1, LLVM 19.1.6, DRM 3.59, 6.12.9-arch1-1)
+  # OpenGL renderer string: zink Vulkan 1.4(NVIDIA RTX 2000 Ada Generation Laptop GPU (NVIDIA_PROPRIETARY))
   ```
 
-  As a final sanity check, a good way to _really_ make sure your card is working is by launching minecraft. You can install it from the AUR
 
-  ```bash
-  yay -S minecraft-launcher
-  ```
-
-  In a world, press F3 and check the _display_ information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct `DRI_PRIME` variable state. I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.
+{: .tip}
+>As a final sanity check, a good way to _really_ make sure your card is working is by launching a game, e.g. Minecraft. You can install it from the AUR
+>
+>```bash
+>yay -S minecraft-launcher
+>```
+>
+>In a world, press F3 and check the _display_ information on the right side. If you see the incorrect graphics card, change Plasma to use the other one as default, or force the application launcher to use the correct `DRI_PRIME` variable state. I am not sure on how this is configured, typically after a few restards, Plasma always decides to use the dedicated graphics.
 
 ## Fonts
 
-You will note that some characters (chinese, japanese or korean) will not render correctly in your browser. Install the Google Noto CJK fonts
+Some characters e.g. chinese, japanese or korean (CJK) will not render correctly in some browsers. To fix this, install the Google Noto CJK fonts
 ```bash
 sudo pacman -S noto-fonts-cjk
 ```
-and reset your browser.
+and restart your browser.
 
 # Text Editor
 
 ## VSCode
 
-There are many text editors on Linux. VSCode is a Microsoft editor with enabled telemetry, Linux users do not like that for privacy concerns. VSCodium is a community open-source release that nullifies telemetry, and is available in the AUR. For Arch Linux, there is an official OSS release
+There are many text editors on Linux. VSCode is a Microsoft editor with enabled telemetry, but generally speaking, most Linux users do not like that for privacy concerns. VSCodium is a community open-source release that nullifies telemetry, and is available in the AUR. For Arch Linux, there is an official OSS release
 
 ```bash
 sudo pacman -S code
@@ -241,8 +245,6 @@ Check the [leovim repository](https://github.com/leogabac/leovim) for more infor
 
 1. [Headscale](https://headscale.net/stable/) is an open-source, self-hosted implementation of the [tailscale](https://tailscale.com/) service, providing a secure, encrypted network for connecting devices over the internet.
 2. [ZeroTier](https://www.zerotier.com/). Networking (SDN) platform that allows the cration of global private networks between machines. It uses the proprietary ZeroTier protocol.
-
-
 
 # See also
 

@@ -1,6 +1,6 @@
 ---
-title: Jupyter Notebooks
-description: Jupyter Notebooks
+title: "Jupyter Notebooks"
+description: "Jupyter Notebooks"
 ---
 
 

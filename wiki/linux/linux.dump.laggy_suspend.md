@@ -1,6 +1,6 @@
 ---
-title: Linux Dump: Laggy suspend
-description: Laptop is laggy after suspend
+title: "Linux Dump: Laggy suspend"
+description: "Laptop is laggy after suspend"
 ---
 
 # Linux Dump: Laptop is laggy after suspend

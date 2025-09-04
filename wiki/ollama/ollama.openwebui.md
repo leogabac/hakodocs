@@ -1,6 +1,6 @@
 ---
-title: Ollama: Open WebUI
-description: Ollama integration with Open WebUI
+title: "Ollama: Open WebUI"
+description: "Ollama integration with Open WebUI"
 ---
 
 # Ollama: Open Web UI

@@ -1,6 +1,6 @@
 ---
-title: Home
-description: Home
+title: "Home"
+description: "Home"
 redirect_from: "/"
 ---
 
@@ -61,4 +61,7 @@ Here is a list of the (most useful) articles you will find in this wiki.
 {:.three-column-list}
 
 
+# Contributing
+
+See the [Contributions](contributions) page for more information.
 

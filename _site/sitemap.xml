@@ -4,6 +4,9 @@
 <loc>http://localhost:4000/archlinux</loc>
 </url>
 <url>
+<loc>http://localhost:4000/contributions</loc>
+</url>
+<url>
 <loc>http://localhost:4000/cpp.armadillo</loc>
 </url>
 <url>

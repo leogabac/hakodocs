@@ -1,6 +1,6 @@
 ---
-title: Git
-description: Git
+title: "Git"
+description: "Git"
 ---
 
 # Git
@@ -213,8 +213,25 @@ To apply changes after modifying `.gitignore`, use:
 git rm --cached <file>
 ```
 
+# Useful and Quick Commands
 
+## Print the repository root directory
+
+```bash
+git rev-parse --show-toplevel
+```
+
+## Create local branch that from remote
+
+If you have a remote branch at `origin/REMOTE-NAME`, and you want a local branch named `LOCAL-NAME`, you can do this by running:
+
+```bash
+git checkout -b LOCAL-NAME origin/REMOTE-NAME
+```
+
+{: .note}
+> Note that the local and remote names do not need to coincide.
 
 # See also
 
-- [Github](git.github)
+- [Github](git.github

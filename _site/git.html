@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=93648403a25234b829e70541d5e780abb3f25044">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9812f36d5ab6e1ae64f0964130612cb6b8958ceb">
 
 
 
@@ -268,7 +268,7 @@
         
         <li class="page-list-item">
             
-            <a href="/ollama.openwebui">Ollama: Open Web UI</a>
+            <a href="/ollama.openwebui">Ollama: Open WebUI</a>
         </li>
         
         
@@ -386,6 +386,12 @@
   </li>
   <li><a href="#branches">Branches</a></li>
   <li><a href="#ignoring-files">Ignoring Files</a></li>
+  <li><a href="#useful-and-quick-commands">Useful and Quick Commands</a>
+    <ol>
+      <li><a href="#print-the-repository-root-directory">Print the repository root directory</a></li>
+      <li><a href="#create-local-branch-that-from-remote">Create local branch that from remote</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -404,6 +410,12 @@
   </li>
   <li><a href="#branches">Branches</a></li>
   <li><a href="#ignoring-files">Ignoring Files</a></li>
+  <li><a href="#useful-and-quick-commands">Useful and Quick Commands</a>
+    <ol>
+      <li><a href="#print-the-repository-root-directory">Print the repository root directory</a></li>
+      <li><a href="#create-local-branch-that-from-remote">Create local branch that from remote</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -421,6 +433,12 @@
   </li>
   <li><a href="#branches">Branches</a></li>
   <li><a href="#ignoring-files">Ignoring Files</a></li>
+  <li><a href="#useful-and-quick-commands">Useful and Quick Commands</a>
+    <ul>
+      <li><a href="#print-the-repository-root-directory">Print the repository root directory</a></li>
+      <li><a href="#create-local-branch-that-from-remote">Create local branch that from remote</a></li>
+    </ul>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ul>
 -->
@@ -443,6 +461,12 @@
   </li>
   <li><a href="#branches">Branches</a></li>
   <li><a href="#ignoring-files">Ignoring Files</a></li>
+  <li><a href="#useful-and-quick-commands">Useful and Quick Commands</a>
+    <ol>
+      <li><a href="#print-the-repository-root-directory">Print the repository root directory</a></li>
+      <li><a href="#create-local-branch-that-from-remote">Create local branch that from remote</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -466,6 +490,12 @@
   </li>
   <li><a href="#branches">Branches</a></li>
   <li><a href="#ignoring-files">Ignoring Files</a></li>
+  <li><a href="#useful-and-quick-commands">Useful and Quick Commands</a>
+    <ol>
+      <li><a href="#print-the-repository-root-directory">Print the repository root directory</a></li>
+      <li><a href="#create-local-branch-that-from-remote">Create local branch that from remote</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -686,10 +716,28 @@ logs/
 <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git <span class="nb">rm</span> <span class="nt">--cached</span> &lt;file&gt;
 </code></pre></div></div>
 
+<h1 id="useful-and-quick-commands">Useful and Quick Commands</h1>
+
+<h2 id="print-the-repository-root-directory">Print the repository root directory</h2>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git rev-parse <span class="nt">--show-toplevel</span>
+</code></pre></div></div>
+
+<h2 id="create-local-branch-that-from-remote">Create local branch that from remote</h2>
+
+<p>If you have a remote branch at <code class="language-plaintext highlighter-rouge">origin/REMOTE-NAME</code>, and you want a local branch named <code class="language-plaintext highlighter-rouge">LOCAL-NAME</code>, you can do this by running:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout <span class="nt">-b</span> LOCAL-NAME origin/REMOTE-NAME
+</code></pre></div></div>
+
+<blockquote class="note">
+  <p>Note that the local and remote names do not need to coincide.</p>
+</blockquote>
+
 <h1 id="see-also">See also</h1>
 
 <ul>
-  <li><a href="git.github">Github</a></li>
+  <li>[Github](git.github</li>
 </ul>
 
     </div>
@@ -727,7 +775,7 @@ logs/
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
     });
 </script>
 
