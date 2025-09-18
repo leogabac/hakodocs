@@ -9,6 +9,35 @@ This is a collection of quick commands you can use to accomplish very specific t
 
 See the Table of Contents for a full guide.
 
+# Remote connections
+
+## Simple `ssh` connection
+To connect to some `user` at remote server that has some `ip` at the default port (port 22)
+```bash
+ssh user@ip
+```
+If successful, it will prompt for a password. For custom ports use the `-p` flag.
+
+## Mounting remote filesystem
+
+The _seamless_ way to access directories from a remote computer, like a server or cluster you need to constantly use is by mounting the remote directory into your filesystem. To do this, you will need `sshfs`. On Linux install it via you package manager, on macOS you will need to follow [this tutorial](https://medium.com/@airdipu/use-sshfs-to-mount-drive-in-macos-using-macfuse-563be8eac634), and on Windows, figure it out yourself.
+
+For Arch-based systems
+```bash
+sudo pacman -S sshfs
+```
+
+Then make some directory where you want to mount the filesystem, as an example
+```bash
+mkdir -p $HOME/remote-mnt/host
+```
+then simply
+```bash
+sshfs user@host:path/in/host/machine $HOME/remote-mnt/host
+```
+If successful it will prompt for your password, and your file manager like `dolphin` or `nautilus` should detect it immediately.
+
+
 # Useful and unorganized bash functions
 
 ## Add git branch to `PS1` prompt
