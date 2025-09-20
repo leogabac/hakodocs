@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9812f36d5ab6e1ae64f0964130612cb6b8958ceb">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=0b1de385477958360a9ba12f27826e8cbcf8434b">
 
 
 
@@ -372,6 +372,12 @@
     Table of Contents:
     <ol id="git-wiki-toc">
   <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
+  <li><a href="#remote-connections">Remote connections</a>
+    <ol>
+      <li><a href="#simple-ssh-connection">Simple ssh connection</a></li>
+      <li><a href="#mounting-remote-filesystem">Mounting remote filesystem</a></li>
+    </ol>
+  </li>
   <li><a href="#useful-and-unorganized-bash-functions">Useful and unorganized bash functions</a>
     <ol>
       <li><a href="#add-git-branch-to-ps1-prompt">Add git branch to PS1 prompt</a></li>
@@ -398,6 +404,12 @@
     Table of Contents:
     <ol id="sidebar-toc">
   <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
+  <li><a href="#remote-connections">Remote connections</a>
+    <ol>
+      <li><a href="#simple-ssh-connection">Simple ssh connection</a></li>
+      <li><a href="#mounting-remote-filesystem">Mounting remote filesystem</a></li>
+    </ol>
+  </li>
   <li><a href="#useful-and-unorganized-bash-functions">Useful and unorganized bash functions</a>
     <ol>
       <li><a href="#add-git-branch-to-ps1-prompt">Add git branch to PS1 prompt</a></li>
@@ -423,6 +435,12 @@
     Table of Contents:
     <ul id="sidebar-toc">
   <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
+  <li><a href="#remote-connections">Remote connections</a>
+    <ul>
+      <li><a href="#simple-ssh-connection">Simple ssh connection</a></li>
+      <li><a href="#mounting-remote-filesystem">Mounting remote filesystem</a></li>
+    </ul>
+  </li>
   <li><a href="#useful-and-unorganized-bash-functions">Useful and unorganized bash functions</a>
     <ul>
       <li><a href="#add-git-branch-to-ps1-prompt">Add git branch to PS1 prompt</a></li>
@@ -453,6 +471,12 @@
     Table of Contents:
     <ol id="inline-toc">
   <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
+  <li><a href="#remote-connections">Remote connections</a>
+    <ol>
+      <li><a href="#simple-ssh-connection">Simple ssh connection</a></li>
+      <li><a href="#mounting-remote-filesystem">Mounting remote filesystem</a></li>
+    </ol>
+  </li>
   <li><a href="#useful-and-unorganized-bash-functions">Useful and unorganized bash functions</a>
     <ol>
       <li><a href="#add-git-branch-to-ps1-prompt">Add git branch to PS1 prompt</a></li>
@@ -477,6 +501,12 @@
     Table of Contents:
     <ol id="floating_toc">
   <li><a href="#linux-cli-tips">Linux: CLI Tips</a></li>
+  <li><a href="#remote-connections">Remote connections</a>
+    <ol>
+      <li><a href="#simple-ssh-connection">Simple ssh connection</a></li>
+      <li><a href="#mounting-remote-filesystem">Mounting remote filesystem</a></li>
+    </ol>
+  </li>
   <li><a href="#useful-and-unorganized-bash-functions">Useful and unorganized bash functions</a>
     <ol>
       <li><a href="#add-git-branch-to-ps1-prompt">Add git branch to PS1 prompt</a></li>
@@ -511,6 +541,30 @@
 <p>This is a collection of quick commands you can use to accomplish very specific tasks using the command line. This is a continuously growing collection, and contributions are accepted.</p>
 
 <p>See the Table of Contents for a full guide.</p>
+
+<h1 id="remote-connections">Remote connections</h1>
+
+<h2 id="simple-ssh-connection">Simple <code class="language-plaintext highlighter-rouge">ssh</code> connection</h2>
+<p>To connect to some <code class="language-plaintext highlighter-rouge">user</code> at remote server that has some <code class="language-plaintext highlighter-rouge">ip</code> at the default port (port 22)</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh user@ip
+</code></pre></div></div>
+<p>If successful, it will prompt for a password. For custom ports use the <code class="language-plaintext highlighter-rouge">-p</code> flag.</p>
+
+<h2 id="mounting-remote-filesystem">Mounting remote filesystem</h2>
+
+<p>The <em>seamless</em> way to access directories from a remote computer, like a server or cluster you need to constantly use is by mounting the remote directory into your filesystem. To do this, you will need <code class="language-plaintext highlighter-rouge">sshfs</code>. On Linux install it via you package manager, on macOS you will need to follow <a href="https://medium.com/@airdipu/use-sshfs-to-mount-drive-in-macos-using-macfuse-563be8eac634">this tutorial</a>, and on Windows, figure it out yourself.</p>
+
+<p>For Arch-based systems</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> sshfs
+</code></pre></div></div>
+
+<p>Then make some directory where you want to mount the filesystem, as an example</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">mkdir</span> <span class="nt">-p</span> <span class="nv">$HOME</span>/remote-mnt/host
+</code></pre></div></div>
+<p>then simply</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sshfs user@host:path/in/host/machine <span class="nv">$HOME</span>/remote-mnt/host
+</code></pre></div></div>
+<p>If successful it will prompt for your password, and your file manager like <code class="language-plaintext highlighter-rouge">dolphin</code> or <code class="language-plaintext highlighter-rouge">nautilus</code> should detect it immediately.</p>
 
 <h1 id="useful-and-unorganized-bash-functions">Useful and unorganized bash functions</h1>
 
@@ -581,7 +635,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
     });
 </script>
 

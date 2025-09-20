@@ -1,0 +1,18 @@
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/erb-4.0.4/ext/erb/escape
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-v40hz sitelibdir\=./.gem.20250920-20251-v40hz clean
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-v40hz sitelibdir\=./.gem.20250920-20251-v40hz
+compiling escape.c
+linking shared-object erb/escape.so
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-v40hz sitelibdir\=./.gem.20250920-20251-v40hz install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20250920-20251-v40hz/erb
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/erb-4.0.4/ext/erb/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-v40hz sitelibdir\=./.gem.20250920-20251-v40hz clean

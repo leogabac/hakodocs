@@ -31,6 +31,9 @@
 <loc>http://localhost:4000/julia</loc>
 </url>
 <url>
+<loc>http://localhost:4000/kdeconnect</loc>
+</url>
+<url>
 <loc>http://localhost:4000/linux.clitips</loc>
 </url>
 <url>
@@ -41,6 +44,9 @@
 </url>
 <url>
 <loc>http://localhost:4000/linux.settings</loc>
+</url>
+<url>
+<loc>http://localhost:4000/matlab</loc>
 </url>
 <url>
 <loc>http://localhost:4000/minecraft</loc>

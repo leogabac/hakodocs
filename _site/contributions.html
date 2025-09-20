@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=9812f36d5ab6e1ae64f0964130612cb6b8958ceb">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=0b1de385477958360a9ba12f27826e8cbcf8434b">
 
 
 
@@ -371,7 +371,11 @@
 
     Table of Contents:
     <ol id="git-wiki-toc">
-  <li><a href="#contributions">Contributions</a></li>
+  <li><a href="#contributions">Contributions</a>
+    <ol>
+      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+    </ol>
+  </li>
 </ol>
 
 
@@ -381,7 +385,11 @@
 
     Table of Contents:
     <ol id="sidebar-toc">
-  <li><a href="#contributions">Contributions</a></li>
+  <li><a href="#contributions">Contributions</a>
+    <ol>
+      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+    </ol>
+  </li>
 </ol>
 -->
 
@@ -390,7 +398,11 @@
 
     Table of Contents:
     <ul id="sidebar-toc">
-  <li><a href="#contributions">Contributions</a></li>
+  <li><a href="#contributions">Contributions</a>
+    <ul>
+      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+    </ul>
+  </li>
 </ul>
 -->
 
@@ -404,7 +416,11 @@
 
     Table of Contents:
     <ol id="inline-toc">
-  <li><a href="#contributions">Contributions</a></li>
+  <li><a href="#contributions">Contributions</a>
+    <ol>
+      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+    </ol>
+  </li>
 </ol>
 -->
         
@@ -412,7 +428,11 @@
 
     Table of Contents:
     <ol id="floating_toc">
-  <li><a href="#contributions">Contributions</a></li>
+  <li><a href="#contributions">Contributions</a>
+    <ol>
+      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+    </ol>
+  </li>
 </ol>
 
     </div>
@@ -427,7 +447,42 @@
 
     <div id="git-wiki-content">
       <h1 id="contributions">Contributions</h1>
-<p>WIP</p>
+
+<h2 id="setting-up-the-environment">Setting up the environment</h2>
+
+<p>Since I have not had the time for setting up a proper docker container with the jekyll server, here is small guide on how to set everything up locally.</p>
+
+<ol>
+  <li>Install <code class="language-plaintext highlighter-rouge">ruby</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> ruby
+</code></pre></div>    </div>
+  </li>
+  <li>Install the corresponding gems
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>rails
+gem <span class="nb">install </span>jekyll
+gem <span class="nb">install </span>jekyll bundler
+</code></pre></div>    </div>
+  </li>
+  <li>Figure out the path where those gems are
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem which bundler
+# e.g. output
+#  /home/holo/.local/share/gem/ruby/3.4.0/gems/bundler-2.7.2/lib/bundler.rb
+</code></pre></div>    </div>
+  </li>
+  <li>Add that to <code class="language-plaintext highlighter-rouge">PATH</code>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/share/gem/ruby/3.4.0/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
+</code></pre></div>    </div>
+  </li>
+  <li>cd into the repo and install the rest of the gems into a local path
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span> <span class="nt">--path</span> vendor/bundle
+</code></pre></div>    </div>
+  </li>
+  <li>Then you can run
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
+</code></pre></div>    </div>
+    <p>Which will make the local site visible at <a href="http://localhost:4000/home">http://localhost:4000/home</a></p>
+  </li>
+</ol>
 
 
     </div>
@@ -465,7 +520,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
     });
 </script>
 

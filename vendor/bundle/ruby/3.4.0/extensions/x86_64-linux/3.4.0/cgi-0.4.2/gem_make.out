@@ -1,0 +1,18 @@
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/cgi-0.4.2/ext/cgi/escape
+/usr/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/cgi-0.4.2/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-q0fuq4 sitelibdir\=./.gem.20250920-20251-q0fuq4 clean
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/cgi-0.4.2/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-q0fuq4 sitelibdir\=./.gem.20250920-20251-q0fuq4
+compiling escape.c
+linking shared-object cgi/escape.so
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/cgi-0.4.2/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-q0fuq4 sitelibdir\=./.gem.20250920-20251-q0fuq4 install
+/usr/bin/install -c -m 0755 escape.so ./.gem.20250920-20251-q0fuq4/cgi
+
+current directory: /home/holo/Documents/projects/hakodocs/vendor/bundle/ruby/3.4.0/gems/cgi-0.4.2/ext/cgi/escape
+make DESTDIR\= sitearchdir\=./.gem.20250920-20251-q0fuq4 sitelibdir\=./.gem.20250920-20251-q0fuq4 clean
