@@ -1,0 +1,890 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Neovim Setup Guide | HakoDocs</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Neovim Setup Guide" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Neovim Setup Guide" />
+<meta property="og:description" content="Neovim Setup Guide" />
+<link rel="canonical" href="http://localhost:4000/guide" />
+<meta property="og:url" content="http://localhost:4000/guide" />
+<meta property="og:site_name" content="HakoDocs" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Neovim Setup Guide" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Neovim Setup Guide","headline":"Neovim Setup Guide","url":"http://localhost:4000/guide"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>guide - HakoDocs</title>
+
+<meta property="og:title" content="guide - HakoDocs">
+
+<meta property="og:description" content="
+        
+      ">
+
+
+<meta property="og:url"
+  content="http://localhost:4000/guide" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<!--mathjax support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!--custom js-->
+<script src="/assets/js/custom.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=77027a5450597d589721451bd1b5735b045d0498">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">☰</button>
+  <a href="/">
+    
+    HakoDocs
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close ×</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1>HakoDocs</h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="https://github.com/leogabac/hakodocs/zipball/gh-pages">Download <strong>ZIP File</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs/tarball/gh-pages">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+    Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
+
+<ul>
+  <li><a href="/">Home</a></li>
+</ul>
+
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/linux.docker">Docker</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/inkscape">Inkscape</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/timeshift">Timeshift</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/zerotier">ZeroTier</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/sunshine">Sushine/Moonlight</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/steam">Steam</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/ollama.openwebui">Ollama: Open WebUI</a>
+        </li>
+        
+        
+
+        
+        
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/assets/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/nvim/guide.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/nvim/guide.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/nvim/guide.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+
+
+
+    Table of Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#a-step-by-step-guide-for-a-decent-neovim-configuration">A Step-by-Step Guide for a Decent Neovim Configuration</a></li>
+  <li><a href="#the-structure-of-a-configuration">The Structure of a Configuration</a></li>
+  <li>
+<a href="#core-modules">Core Modules</a>
+    <ol>
+      <li><a href="#vim-options">Vim Options</a></li>
+      <li><a href="#keymaps">Keymaps</a></li>
+    </ol>
+  </li>
+  <li>
+<a href="#basic-plugins">Basic Plugins</a>
+    <ol>
+      <li><a href="#plugin-manager">Plugin Manager</a></li>
+      <li><a href="#colorscheme">Colorscheme</a></li>
+      <li><a href="#filetree">Filetree</a></li>
+      <li><a href="#picker-fuzzy-finder">Picker (Fuzzy finder)</a></li>
+      <li><a href="#bufferline">Bufferline</a></li>
+    </ol>
+  </li>
+  <li><a href="#status-line">Status Line</a></li>
+  <li><a href="#language-server-protocol">Language Server Protocol</a></li>
+</ol>
+
+
+
+<!--
+
+
+    Table of Contents:
+    <ol id="sidebar-toc">
+  <li><a href="#a-step-by-step-guide-for-a-decent-neovim-configuration">A Step-by-Step Guide for a Decent Neovim Configuration</a></li>
+  <li><a href="#the-structure-of-a-configuration">The Structure of a Configuration</a></li>
+  <li><a href="#core-modules">Core Modules</a>
+    <ol>
+      <li><a href="#vim-options">Vim Options</a></li>
+      <li><a href="#keymaps">Keymaps</a></li>
+    </ol>
+  </li>
+  <li><a href="#basic-plugins">Basic Plugins</a>
+    <ol>
+      <li><a href="#plugin-manager">Plugin Manager</a></li>
+      <li><a href="#colorscheme">Colorscheme</a></li>
+      <li><a href="#filetree">Filetree</a></li>
+      <li><a href="#picker-fuzzy-finder">Picker (Fuzzy finder)</a></li>
+      <li><a href="#bufferline">Bufferline</a></li>
+    </ol>
+  </li>
+  <li><a href="#status-line">Status Line</a></li>
+  <li><a href="#language-server-protocol">Language Server Protocol</a></li>
+</ol>
+-->
+
+<!--
+
+
+    Table of Contents:
+    <ul id="sidebar-toc">
+  <li><a href="#a-step-by-step-guide-for-a-decent-neovim-configuration">A Step-by-Step Guide for a Decent Neovim Configuration</a></li>
+  <li><a href="#the-structure-of-a-configuration">The Structure of a Configuration</a></li>
+  <li><a href="#core-modules">Core Modules</a>
+    <ul>
+      <li><a href="#vim-options">Vim Options</a></li>
+      <li><a href="#keymaps">Keymaps</a></li>
+    </ul>
+  </li>
+  <li><a href="#basic-plugins">Basic Plugins</a>
+    <ul>
+      <li><a href="#plugin-manager">Plugin Manager</a></li>
+      <li><a href="#colorscheme">Colorscheme</a></li>
+      <li><a href="#filetree">Filetree</a></li>
+      <li><a href="#picker-fuzzy-finder">Picker (Fuzzy finder)</a></li>
+      <li><a href="#bufferline">Bufferline</a></li>
+    </ul>
+  </li>
+  <li><a href="#status-line">Status Line</a></li>
+  <li><a href="#language-server-protocol">Language Server Protocol</a></li>
+</ul>
+-->
+
+<button id="toggle-toc" class="toggle-toc-btn">☰ </button>
+
+<div id="sidebar-toc">
+    <button id="close-toc" class="close-toc-btn">✖</button>
+    <div class="toc-content">
+        <!--
+
+
+    Table of Contents:
+    <ol id="inline-toc">
+  <li><a href="#a-step-by-step-guide-for-a-decent-neovim-configuration">A Step-by-Step Guide for a Decent Neovim Configuration</a></li>
+  <li><a href="#the-structure-of-a-configuration">The Structure of a Configuration</a></li>
+  <li><a href="#core-modules">Core Modules</a>
+    <ol>
+      <li><a href="#vim-options">Vim Options</a></li>
+      <li><a href="#keymaps">Keymaps</a></li>
+    </ol>
+  </li>
+  <li><a href="#basic-plugins">Basic Plugins</a>
+    <ol>
+      <li><a href="#plugin-manager">Plugin Manager</a></li>
+      <li><a href="#colorscheme">Colorscheme</a></li>
+      <li><a href="#filetree">Filetree</a></li>
+      <li><a href="#picker-fuzzy-finder">Picker (Fuzzy finder)</a></li>
+      <li><a href="#bufferline">Bufferline</a></li>
+    </ol>
+  </li>
+  <li><a href="#status-line">Status Line</a></li>
+  <li><a href="#language-server-protocol">Language Server Protocol</a></li>
+</ol>
+-->
+        
+
+
+    Table of Contents:
+    <ol id="floating_toc">
+  <li><a href="#a-step-by-step-guide-for-a-decent-neovim-configuration">A Step-by-Step Guide for a Decent Neovim Configuration</a></li>
+  <li><a href="#the-structure-of-a-configuration">The Structure of a Configuration</a></li>
+  <li>
+<a href="#core-modules">Core Modules</a>
+    <ol>
+      <li><a href="#vim-options">Vim Options</a></li>
+      <li><a href="#keymaps">Keymaps</a></li>
+    </ol>
+  </li>
+  <li>
+<a href="#basic-plugins">Basic Plugins</a>
+    <ol>
+      <li><a href="#plugin-manager">Plugin Manager</a></li>
+      <li><a href="#colorscheme">Colorscheme</a></li>
+      <li><a href="#filetree">Filetree</a></li>
+      <li><a href="#picker-fuzzy-finder">Picker (Fuzzy finder)</a></li>
+      <li><a href="#bufferline">Bufferline</a></li>
+    </ol>
+  </li>
+  <li><a href="#status-line">Status Line</a></li>
+  <li><a href="#language-server-protocol">Language Server Protocol</a></li>
+</ol>
+
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1 id="a-step-by-step-guide-for-a-decent-neovim-configuration">A Step-by-Step Guide for a Decent Neovim Configuration</h1>
+
+<p>Welcome to Neovim! There are many ways you might have ended up on this path. Maybe you watched a big content creator like <a href="https://www.youtube.com/c/theprimeagen">The Primeagen</a>, or perhaps you know a bunch of nerdy students who won’t stop talking about a text editor. Whatever the reason, you got curious and landed here.</p>
+
+<p>By default, Neovim is a minimal text editor with a powerful set of keybindings. However, there are useful features you’ll probably want—like a <em>tabline</em> or a <em>file tree</em>. That’s where the true power of Neovim comes into play: you can <em>really</em> do whatever you want with it and tailor it to your liking. But it takes time to learn, and the information is scattered across the internet. That’s what this guide is here for.</p>
+
+<p>This is a <em>written</em> guide to walk you step by step through setting up a minimal but decent Neovim configuration. Each section covers a few fundamentals.</p>
+
+<h1 id="the-structure-of-a-configuration">The Structure of a Configuration</h1>
+
+<p>Neovim is configured using the <a href="https://www.lua.org">Lua programming language</a> by writing code into the file <code class="language-plaintext highlighter-rouge">~/.config/nvim/init.lua</code>. You can put your entire configuration in a single file, but this is discouraged because it can quickly become messy and unorganized.</p>
+
+<p>In this guide, we’ll build the configuration step by step. Start by creating the directory <code class="language-plaintext highlighter-rouge">~/.config/nvim</code> with the following structure:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>nvim
+├── init.lua
+└── lua/
+    ├── core/
+    └── plugins/
+</code></pre></div></div>
+
+<ul>
+  <li>The <code class="language-plaintext highlighter-rouge">init.lua</code> script runs each time <code class="language-plaintext highlighter-rouge">nvim</code> starts. Here we’ll write the code that (1) loads all modules in the <code class="language-plaintext highlighter-rouge">lua/</code> directory, and (2) initializes important options and configurations.</li>
+  <li>Inside the <code class="language-plaintext highlighter-rouge">lua</code> directory, we’ll keep Lua scripts (called <em>modules</em>) that return <em>Lua tables</em> with configuration options.</li>
+  <li>For organization, we’ll put all <em>plugins</em> inside <code class="language-plaintext highlighter-rouge">lua/plugins</code> and all global options inside <code class="language-plaintext highlighter-rouge">lua/core</code>.</li>
+</ul>
+
+<h1 id="core-modules">Core Modules</h1>
+
+<p>This section covers how to set up the core modules:</p>
+
+<ol>
+  <li>Global Vim options</li>
+  <li>Keymaps</li>
+</ol>
+
+<h2 id="vim-options">Vim Options</h2>
+
+<p>There are a few global options we need to set up first to make the editor more comfortable. For example:</p>
+
+<ol>
+  <li>Show line numbers</li>
+  <li>Enable <em>relative</em> line numbers</li>
+  <li>Configure tab spacing</li>
+</ol>
+
+<p>Paste the following into <code class="language-plaintext highlighter-rouge">lua/core/options.lua</code>:</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/core/options.lua"><div class="highlight"><pre class="highlight"><code><span class="n">vim</span><span class="p">.</span><span class="n">wo</span><span class="p">.</span><span class="n">number</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">-- show line numbers</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">o</span><span class="p">.</span><span class="n">relativenumber</span> <span class="o">=</span> <span class="kc">true</span> <span class="c1">-- show relative line numbers</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">o</span><span class="p">.</span><span class="n">clipboard</span> <span class="o">=</span> <span class="s2">"unnamedplus"</span> <span class="c1">-- sync clipboard between OS and Neovim</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">o</span><span class="p">.</span><span class="n">tabstop</span> <span class="o">=</span> <span class="mi">4</span> <span class="c1">-- insert 4 spaces for a tab</span>
+</code></pre></div></div>
+
+<p>These won’t take effect until <code class="language-plaintext highlighter-rouge">init.lua</code> loads the module. Add the following to your init.lua:</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"core.options"</span><span class="p">)</span> <span class="c1">-- ./core/options.lua</span>
+</code></pre></div></div>
+<p>Then start <code class="language-plaintext highlighter-rouge">nvim</code>. You will see line numbers.</p>
+
+<blockquote class="tip">
+  <p><a href="https://github.com/leogabac/hakovim/blob/main/lua/core/options.lua">Here</a> is a list of recommended options. Check them one by one and add whatever feels right</p>
+</blockquote>
+
+<h2 id="keymaps">Keymaps</h2>
+<p>Keymaps are among the most important things to learn in Vim. Pretty much anything is possible, but let’s start by setting up your leader key. This is a key (usually the space bar) you press first to start a keymap.</p>
+
+<p>Create the file <code class="language-plaintext highlighter-rouge">lua/core/keymaps.lua</code> and add:</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/core/keymaps.lua"><div class="highlight"><pre class="highlight"><code><span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">mapleader</span> <span class="o">=</span> <span class="s2">" "</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">maplocalleader</span> <span class="o">=</span> <span class="s2">" "</span>
+
+<span class="c1">-- disable the spacebar key's default behavior in Normal and Visual modes</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">({</span> <span class="s2">"n"</span><span class="p">,</span> <span class="s2">"v"</span> <span class="p">},</span> <span class="s2">"&lt;Space&gt;"</span><span class="p">,</span> <span class="s2">"&lt;Nop&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">})</span>
+</code></pre></div></div>
+
+<p>and load the module in your <code class="language-plaintext highlighter-rouge">init.lua</code>.</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"core.keymaps"</span><span class="p">)</span> <span class="c1">-- ./core/options.lua</span>
+</code></pre></div></div>
+<p>Now the <code class="language-plaintext highlighter-rouge">&lt;Space&gt;</code> key acts as your <code class="language-plaintext highlighter-rouge">&lt;leader&gt;</code> key. For example, to manage buffers, you can add:</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/core/keymaps.lua"><div class="highlight"><pre class="highlight"><code><span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s2">"&lt;S-l&gt;"</span><span class="p">,</span> <span class="s2">":bnext&lt;CR&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">"Next buffer"</span><span class="p">,</span> <span class="n">unpack</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span> <span class="p">})</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s2">"&lt;S-h&gt;"</span><span class="p">,</span> <span class="s2">":bprevious&lt;CR&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">"Previous buffer"</span><span class="p">,</span> <span class="n">unpack</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span> <span class="p">})</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s2">"&lt;leader&gt;bd"</span><span class="p">,</span> <span class="s2">":bdelete!&lt;CR&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">"[B]uffer [D]elete"</span><span class="p">,</span> <span class="n">unpack</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span> <span class="p">})</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s2">"&lt;leader&gt;bn"</span><span class="p">,</span> <span class="s2">"&lt;cmd&gt; enew &lt;CR&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s2">"[B]uffer [N]ew"</span><span class="p">,</span> <span class="n">unpack</span><span class="p">(</span><span class="n">opts</span><span class="p">)</span> <span class="p">})</span> <span class="c1">-- new buffer</span>
+</code></pre></div></div>
+
+<p>Here <code class="language-plaintext highlighter-rouge">&lt;S-l&gt;</code> means pressing <code class="language-plaintext highlighter-rouge">&lt;Shift&gt;</code> + <code class="language-plaintext highlighter-rouge">l</code>, while <code class="language-plaintext highlighter-rouge">&lt;leader&gt;bd</code> means pressing the leader key (space) followed by <code class="language-plaintext highlighter-rouge">b</code> and <code class="language-plaintext highlighter-rouge">d</code> to delete a buffer. These mappings make it easy to move between and manage buffers.full list of recommended keymaps.</p>
+
+<blockquote class="tip">
+  <p>Check <a href="https://github.com/leogabac/hakovim/blob/main/lua/core/keymaps.lua">this file</a> for a full list of recommended keymaps.</p>
+</blockquote>
+
+<h1 id="basic-plugins">Basic Plugins</h1>
+
+<h2 id="plugin-manager">Plugin Manager</h2>
+
+<p>Neovim is <em>very</em> customizable by writing lua scripts that interact with the API, however most people do not have the time to implement each and every feature by themselves, thus we turn to installing <em>plugins</em>. One of the most popular <em>plugin managers</em> out there is <a href="https://github.com/folke/lazy.nvim">lazy.nvim</a>, to install it, include the following in your <code class="language-plaintext highlighter-rouge">init.lua</code> file and restart <code class="language-plaintext highlighter-rouge">nvim</code>.</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="c1">-- install lazy plugin manager</span>
+<span class="kd">local</span> <span class="n">lazypath</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">stdpath</span><span class="p">(</span><span class="s2">"data"</span><span class="p">)</span> <span class="o">..</span> <span class="s2">"/lazy/lazy.nvim"</span>
+<span class="k">if</span> <span class="ow">not</span> <span class="p">(</span><span class="n">vim</span><span class="p">.</span><span class="n">uv</span> <span class="ow">or</span> <span class="n">vim</span><span class="p">.</span><span class="n">loop</span><span class="p">).</span><span class="n">fs_stat</span><span class="p">(</span><span class="n">lazypath</span><span class="p">)</span> <span class="k">then</span>
+  <span class="kd">local</span> <span class="n">lazyrepo</span> <span class="o">=</span> <span class="s2">"https://github.com/folke/lazy.nvim.git"</span>
+  <span class="kd">local</span> <span class="n">out</span> <span class="o">=</span> <span class="n">vim</span><span class="p">.</span><span class="n">fn</span><span class="p">.</span><span class="n">system</span><span class="p">({</span> <span class="s2">"git"</span><span class="p">,</span> <span class="s2">"clone"</span><span class="p">,</span> <span class="s2">"--filter=blob:none"</span><span class="p">,</span> <span class="s2">"--branch=stable"</span><span class="p">,</span> <span class="n">lazyrepo</span><span class="p">,</span> <span class="n">lazypath</span> <span class="p">})</span>
+  <span class="k">if</span> <span class="n">vim</span><span class="p">.</span><span class="n">v</span><span class="p">.</span><span class="n">shell_error</span> <span class="o">~=</span> <span class="mi">0</span> <span class="k">then</span>
+    <span class="nb">error</span><span class="p">(</span><span class="s2">"Error cloning lazy.nvim:\n"</span> <span class="o">..</span> <span class="n">out</span><span class="p">)</span>
+  <span class="k">end</span>
+<span class="k">end</span> <span class="c1">---@diagnostic disable-next-line: undefined-field</span>
+<span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">rtp</span><span class="p">:</span><span class="n">prepend</span><span class="p">(</span><span class="n">lazypath</span><span class="p">)</span>
+
+<span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({})</span>
+</code></pre></div></div>
+<p>You will notice it takes a bit longer to load, it is normal since it just installed the plugin manager. You can verify everything works by running the <code class="language-plaintext highlighter-rouge">:Lazy</code> command and seeing the main UI for the plugin manager.</p>
+
+<p>To install plugins you need to pass to the setup function a lua table with all the plugins information. Let’s practice by installing a colorscheme.</p>
+
+<h2 id="colorscheme">Colorscheme</h2>
+
+<p>After installing the <code class="language-plaintext highlighter-rouge">lazy.nvim</code> plugin manager, let us now install our first plugin: a colorscheme. You will be able to find many on the internet, but we will use the <a href="https://github.com/catppuccin/nvim">catpuccin</a> colors like a <em>normie</em> developer.</p>
+
+<p>Create a new file <code class="language-plaintext highlighter-rouge">lua/plugins/colorscheme.lua</code> that returns the following lua table</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/plugins/colorscheme.lua"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">{</span>
+    <span class="s2">"catppuccin/nvim"</span><span class="p">,</span> 
+    <span class="n">name</span> <span class="o">=</span> <span class="s2">"catppuccin"</span><span class="p">,</span> 
+    <span class="n">priority</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+        <span class="n">vim</span><span class="p">.</span><span class="n">cmd</span><span class="p">(</span><span class="s2">"colorscheme catppuccin"</span><span class="p">)</span>
+    <span class="k">end</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Here <code class="language-plaintext highlighter-rouge">config</code> is a function that <code class="language-plaintext highlighter-rouge">lazy</code> executes once whenever the plugin is loaded. In this case the only thing that it is doing is setting the color in the vim API. After this, pass it to the <code class="language-plaintext highlighter-rouge">lazy.nvim</code> setup and restart <code class="language-plaintext highlighter-rouge">nvim</code>.</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.colorscheme"</span><span class="p">),</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h2 id="filetree">Filetree</h2>
+
+<p>One feature that we are missing is a <em>file tree</em>. Although some people do not like to have it, in my opinion it is still useful to have it available for whenever you are exploring the structure of a project you don’t know.</p>
+
+<p>For this tutorial, we will use <code class="language-plaintext highlighter-rouge">nvim-tree.lua</code>(https://github.com/nvim-tree/nvim-tree.lua). To add it, create the file <code class="language-plaintext highlighter-rouge">lua/plugins/nvim-tree.lua</code></p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/plugins/nvim-tree.lua"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">{</span>
+  <span class="s2">"nvim-tree/nvim-tree.lua"</span><span class="p">,</span>
+  <span class="n">version</span> <span class="o">=</span> <span class="s2">"*"</span><span class="p">,</span>
+  <span class="n">dependencies</span> <span class="o">=</span> <span class="p">{</span> <span class="s2">"nvim-tree/nvim-web-devicons"</span> <span class="p">},</span>
+  <span class="n">config</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">loaded_netrw</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">vim</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="n">loaded_netrwPlugin</span> <span class="o">=</span> <span class="mi">1</span>
+
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"nvim-tree"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+      <span class="n">view</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">width</span> <span class="o">=</span> <span class="mi">35</span><span class="p">,</span>
+        <span class="n">side</span> <span class="o">=</span> <span class="s2">"left"</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="n">renderer</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">icons</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">glyphs</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="n">folder</span> <span class="o">=</span> <span class="p">{</span>
+              <span class="n">arrow_closed</span> <span class="o">=</span> <span class="s2">"▶"</span><span class="p">,</span>
+              <span class="n">arrow_open</span> <span class="o">=</span> <span class="s2">"▼"</span><span class="p">,</span>
+            <span class="p">},</span>
+          <span class="p">},</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+      <span class="n">filters</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">dotfiles</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="p">},</span>
+      <span class="n">actions</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">open_file</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">quit_on_open</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="p">},</span>
+      <span class="p">},</span>
+    <span class="p">})</span>
+
+    <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s2">"n"</span><span class="p">,</span> <span class="s2">"&lt;leader&gt;e"</span><span class="p">,</span> <span class="s2">":NvimTreeToggle&lt;CR&gt;"</span><span class="p">,</span> <span class="p">{</span> <span class="n">silent</span> <span class="o">=</span> <span class="kc">true</span> <span class="p">})</span>
+  <span class="k">end</span><span class="p">,</span>
+<span class="p">}</span>
+</code></pre></div></div>
+<p>Then add it to your <code class="language-plaintext highlighter-rouge">init.lua</code> file</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.colorscheme"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.nvim-tree"</span><span class="p">),</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>When you restart <code class="language-plaintext highlighter-rouge">nvim</code>, lazy will install the two plugins that we added, and now you will be able to toggle the filetree with <code class="language-plaintext highlighter-rouge">&lt;leader&gt;e</code> as we set it up.</p>
+
+<blockquote class="tip">
+  <p>Check the setup function line by line and modify all of the values as you see fit.</p>
+</blockquote>
+
+<h2 id="picker-fuzzy-finder">Picker (Fuzzy finder)</h2>
+
+<p>A <em>picker</em> is a plugin that opens a menu with a list of items that you can pick from. A common feature all of them implement is the ability to <em>fuzzy find</em> between those items, e.g. if the picker lists all of the files of your project, you can just more or less write the file name quickly, and it will be able to find it even if you miss capitalization and extensions.</p>
+
+<p>The following is a basic setup of <a href="https://github.com/nvim-telescope/telescope.nvim">telescope.nvim</a></p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/plugins/telescope.lua"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">{</span>
+    <span class="s1">'nvim-telescope/telescope.nvim'</span><span class="p">,</span> <span class="n">tag</span> <span class="o">=</span> <span class="s1">'0.1.8'</span><span class="p">,</span>
+    <span class="n">dependencies</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'nvim-lua/plenary.nvim'</span> <span class="p">},</span>
+    <span class="n">config</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+        <span class="kd">local</span> <span class="n">builtin</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s1">'telescope.builtin'</span><span class="p">)</span>
+        <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;leader&gt;sf'</span><span class="p">,</span> <span class="n">builtin</span><span class="p">.</span><span class="n">find_files</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">'Telescope find files'</span> <span class="p">})</span>
+        <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;leader&gt;sg'</span><span class="p">,</span> <span class="n">builtin</span><span class="p">.</span><span class="n">live_grep</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">'Telescope live grep'</span> <span class="p">})</span>
+        <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;leader&gt;sb'</span><span class="p">,</span> <span class="n">builtin</span><span class="p">.</span><span class="n">buffers</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">'Telescope buffers'</span> <span class="p">})</span>
+        <span class="n">vim</span><span class="p">.</span><span class="n">keymap</span><span class="p">.</span><span class="n">set</span><span class="p">(</span><span class="s1">'n'</span><span class="p">,</span> <span class="s1">'&lt;leader&gt;sh'</span><span class="p">,</span> <span class="n">builtin</span><span class="p">.</span><span class="n">help_tags</span><span class="p">,</span> <span class="p">{</span> <span class="n">desc</span> <span class="o">=</span> <span class="s1">'Telescope help tags'</span> <span class="p">})</span>
+    <span class="k">end</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Add it to your <code class="language-plaintext highlighter-rouge">init.lua</code></p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.colorscheme"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.nvim-tree"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.telescope"</span><span class="p">),</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>When you restart <code class="language-plaintext highlighter-rouge">nvim</code>, the <code class="language-plaintext highlighter-rouge">telescope</code> plugin will be installed, and you will be able to search your files with <code class="language-plaintext highlighter-rouge">&lt;leader&gt;sf</code> as we set it up.</p>
+
+<h2 id="bufferline">Bufferline</h2>
+
+<p>In neovim, your usual <em>tabs</em> are called buffers, since <em>tab</em> already has another meaning. Typically you will want a way to visualize and ideally click on them. There are many plugins that do this, a very popular is <a href="https://github.com/akinsho/bufferline.nvim">bufferline.nvim</a>. A basic setup looks like the following</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/plugins/bufferline.lua"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">{</span>
+  <span class="s1">'akinsho/bufferline.nvim'</span><span class="p">,</span>
+  <span class="n">dependencies</span> <span class="o">=</span> <span class="s1">'kyazdani42/nvim-web-devicons'</span><span class="p">,</span>
+  <span class="n">config</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">status_ok</span><span class="p">,</span> <span class="n">bufferline</span> <span class="o">=</span> <span class="nb">pcall</span><span class="p">(</span><span class="nb">require</span><span class="p">,</span> <span class="s2">"bufferline"</span><span class="p">)</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">status_ok</span> <span class="k">then</span>
+      <span class="k">return</span>
+    <span class="k">end</span>
+    <span class="n">vim</span><span class="p">.</span><span class="n">opt</span><span class="p">.</span><span class="n">termguicolors</span> <span class="o">=</span> <span class="kc">true</span>
+    <span class="n">bufferline</span><span class="p">.</span><span class="n">setup</span> <span class="p">{}</span>
+  <span class="k">end</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Add it to your <code class="language-plaintext highlighter-rouge">init.lua</code></p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.colorscheme"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.nvim-tree"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.telescope"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.bufferline"</span><span class="p">),</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<p>As we set up in <code class="language-plaintext highlighter-rouge">keymaps.lua</code>, you can change bufffers with <code class="language-plaintext highlighter-rouge">&lt;S-h&gt;</code> and <code class="language-plaintext highlighter-rouge">&lt;S-l&gt;</code>.</p>
+
+<h1 id="status-line">Status Line</h1>
+
+<p>The last piece of basic setup we need is a <em>status line</em> since the one built-in neovim is <em>hard to see</em> (to say the least). A popular plugin for this is <a href="https://github.com/nvim-lualine/lualine.nvim">nvim-lualine</a>. A basic setup looks like the following</p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="lua/plugins/lualine.lua"><div class="highlight"><pre class="highlight"><code><span class="k">return</span> <span class="p">{</span>
+  <span class="s1">'nvim-lualine/lualine.nvim'</span><span class="p">,</span>
+  <span class="n">dependencies</span> <span class="o">=</span> <span class="p">{</span> <span class="s1">'nvim-tree/nvim-web-devicons'</span> <span class="p">},</span>
+  <span class="n">config</span> <span class="o">=</span> <span class="k">function</span><span class="p">()</span>
+    <span class="kd">local</span> <span class="n">lualine</span> <span class="o">=</span> <span class="nb">require</span><span class="p">(</span><span class="s2">"lualine"</span><span class="p">)</span>
+    <span class="n">lualine</span><span class="p">.</span><span class="n">setup</span><span class="p">({</span>
+      <span class="n">options</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">icons_enabled</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">theme</span> <span class="o">=</span> <span class="s1">'auto'</span><span class="p">,</span>
+        <span class="n">component_separators</span> <span class="o">=</span> <span class="p">{</span> <span class="n">left</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="s1">''</span><span class="p">},</span>
+        <span class="n">section_separators</span> <span class="o">=</span> <span class="p">{</span> <span class="n">left</span> <span class="o">=</span> <span class="s1">''</span><span class="p">,</span> <span class="n">right</span> <span class="o">=</span> <span class="s1">''</span><span class="p">},</span>
+        <span class="n">disabled_filetypes</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">statusline</span> <span class="o">=</span> <span class="p">{},</span>
+          <span class="n">winbar</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="p">},</span>
+        <span class="n">ignore_focus</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">always_divide_middle</span> <span class="o">=</span> <span class="kc">true</span><span class="p">,</span>
+        <span class="n">globalstatus</span> <span class="o">=</span> <span class="kc">false</span><span class="p">,</span>
+        <span class="n">refresh</span> <span class="o">=</span> <span class="p">{</span>
+          <span class="n">statusline</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+          <span class="n">tabline</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+          <span class="n">winbar</span> <span class="o">=</span> <span class="mi">1000</span><span class="p">,</span>
+        <span class="p">}</span>
+      <span class="p">},</span>
+      <span class="n">sections</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">lualine_a</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'mode'</span><span class="p">},</span>
+        <span class="n">lualine_b</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'branch'</span><span class="p">,</span> <span class="s1">'diff'</span><span class="p">,</span> <span class="s1">'diagnostics'</span><span class="p">},</span>
+        <span class="n">lualine_c</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'filename'</span><span class="p">},</span>
+        <span class="n">lualine_x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'encoding'</span><span class="p">,</span> <span class="s1">'fileformat'</span><span class="p">,</span> <span class="s1">'filetype'</span><span class="p">},</span>
+        <span class="n">lualine_y</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'progress'</span><span class="p">},</span>
+        <span class="n">lualine_z</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'location'</span><span class="p">}</span>
+      <span class="p">},</span>
+      <span class="n">inactive_sections</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="n">lualine_a</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">lualine_b</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">lualine_c</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'filename'</span><span class="p">},</span>
+        <span class="n">lualine_x</span> <span class="o">=</span> <span class="p">{</span><span class="s1">'location'</span><span class="p">},</span>
+        <span class="n">lualine_y</span> <span class="o">=</span> <span class="p">{},</span>
+        <span class="n">lualine_z</span> <span class="o">=</span> <span class="p">{}</span>
+      <span class="p">},</span>
+      <span class="n">tabline</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="n">winbar</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="n">inactive_winbar</span> <span class="o">=</span> <span class="p">{},</span>
+      <span class="n">extensions</span> <span class="o">=</span> <span class="p">{}</span>
+    <span class="p">})</span>
+  <span class="k">end</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Add it to your <code class="language-plaintext highlighter-rouge">init.lua</code></p>
+
+<div class="language-lua codeblock highlighter-rouge" data-title="init.lua"><div class="highlight"><pre class="highlight"><code><span class="nb">require</span><span class="p">(</span><span class="s2">"lazy"</span><span class="p">).</span><span class="n">setup</span><span class="p">({</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.colorscheme"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.nvim-tree"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.telescope"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.bufferline"</span><span class="p">),</span>
+    <span class="nb">require</span><span class="p">(</span><span class="s2">"plugins.lualine"</span><span class="p">),</span>
+<span class="p">})</span>
+</code></pre></div></div>
+
+<h1 id="language-server-protocol">Language Server Protocol</h1>
+<p>…</p>
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+<div class="git-wiki-copyrights">
+    <p>This project is maintained by <a href="https://github.com/leogabac">leogabac</a></p>
+    
+    <p><small>Hosted on GitHub Pages — Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.6</a> </small></p>
+
+    
+    <p class="view"><a href="https://github.com/leogabac/hakodocs">View the Project on  Github  <small></small></a></p>
+</div>
+
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/guide,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/linux.sleep,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>
