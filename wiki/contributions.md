@@ -5,37 +5,26 @@ description: "Contributions"
 
 # Contributions
 
-## Setting up the environment
 
-Since I have not had the time for setting up a proper docker container with the jekyll server, here is small guide on how to set everything up locally.
+## Guidelines
 
-1. Install `ruby`
+There are no specific contribution guidelines yet, other than
+1. Try to keep the style consistent
+2. Make a pull request
+3. Have common sense
+
+## How to make an article?
+
+
+## Running the server locally
+
+The repository provides a `Dockerfile` to run the server locally. Simply build the image with the provided script
 ```bash
-sudo pacman -S ruby
+./build-image
 ```
-2. Install the corresponding gems
+This process will create the image `hakodocs:latest` and needs to be done only once. Then, run the server with
 ```bash
-gem install rails
-gem install jekyll
-gem install jekyll bundler
-```
-3. Figure out the path where those gems are
-```
-gem which bundler
-# e.g. output
-#  /home/holo/.local/share/gem/ruby/3.4.0/gems/bundler-2.7.2/lib/bundler.rb
-```
-4. Add that to `PATH`
-```bash
-export PATH="$HOME/.local/share/gem/ruby/3.4.0/bin:$PATH"
-```
-5. cd into the repo and install the rest of the gems into a local path
-```bash
-bundle install --path vendor/bundle
-```
-6. Then you can run
-```bash
-bundle exec jekyll serve
+./run-image
 ```
 Which will make the local site visible at [http://localhost:4000/home](http://localhost:4000/home)
 
