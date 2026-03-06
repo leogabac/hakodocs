@@ -655,3 +655,40 @@ body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
   mix-blend-mode: difference;
 }
 
+
+// doc links
+.doc-link {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+.doc-link::after {
+    content: "doc";
+    font-size: 0.65em;
+    margin-left: 2px;
+    color: currentColor;
+    opacity: 0.8;
+
+    position: relative;
+    top: -0.45em;
+    line-height: 1;
+}
+
+
+
+a[data-sup] {
+    display: inline-flex;
+    align-items: baseline;
+}
+
+a[data-sup]::after {
+    content: attr(data-sup);   /* ← pulls text from Markdown */
+    font-size: 0.65em;
+    margin-left: 2px;
+    color: currentColor;
+    opacity: 0.8;
+
+    position: relative;
+    top: -0.45em;
+    line-height: 1;
+}

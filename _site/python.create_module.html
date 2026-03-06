@@ -1,0 +1,679 @@
+
+
+
+
+<!doctype html>
+<html>
+<head>
+  
+ 
+  
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="viewport" content="width=device-width">
+
+<!-- Begin Jekyll SEO tag v2.8.0 -->
+<title>Python: Creating Modules | HakoDocs</title>
+<meta name="generator" content="Jekyll v3.10.0" />
+<meta property="og:title" content="Python: Creating Modules" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Python: Creating Modules" />
+<meta property="og:description" content="Python: Creating Modules" />
+<link rel="canonical" href="http://0.0.0.0:4000/python.create_module" />
+<meta property="og:url" content="http://0.0.0.0:4000/python.create_module" />
+<meta property="og:site_name" content="HakoDocs" />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Python: Creating Modules" />
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","description":"Python: Creating Modules","headline":"Python: Creating Modules","url":"http://0.0.0.0:4000/python.create_module"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+
+
+
+<title>python.create_module - HakoDocs</title>
+
+<meta property="og:title" content="python.create_module - HakoDocs">
+
+<meta property="og:description" content="
+        A collection of tech-related notes
+      ">
+
+
+<meta property="og:url"
+  content="http://0.0.0.0:4000/python.create_module" />
+
+
+
+
+
+  
+
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<!--mathjax support-->
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+<!--custom js-->
+<script src="/assets/js/custom.js"></script>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+<script src="/assets/js/checkLinks.js"></script>
+<!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+<!-- dark mode -->
+<style>
+  body {
+    visibility: hidden;
+    opacity: 0;
+  }
+</style>
+<noscript>
+  <style>
+    body {
+      visibility: visible;
+      opacity: 1;
+    }
+  </style>
+</noscript>
+<script>
+  function darkModeSetBodyBg() {
+    if (localStorage.getItem('darkmode')==="true") {
+      console.log("darkmode activated");
+      document.body.style.backgroundColor = "black !important";
+    } else {
+      document.body.style.backgroundColor = ""; // reset background color
+    }
+  }
+
+  function addDarkmodeWidget() {
+
+    const options = {
+        label: '🌓', // default: ''
+        time: '0s'
+    }
+
+    new Darkmode(options).showWidget();
+
+    document.body.style.visibility = 'visible';
+    document.body.style.opacity = 1;
+  }
+
+  $(document).ready(addDarkmodeWidget);
+</script>
+
+
+
+  
+
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=">
+
+
+
+  
+</head>
+
+<body style="background-color: black;" onload="darkModeSetBodyBg()">
+    <!-- dark mode -->
+    <script>
+        darkModeSetBodyBg()
+    </script>
+    
+    <div class="wrapper">
+    <div class=" w3-xlarge w3-hide-large" id="git-wiki-mobile-header">
+  <button class="w3-button w3-teal" onclick="sidebar_toggle()">&#9776;</button>
+  <a href="/">
+    
+    HakoDocs
+  </a>
+</div>
+<header class="w3-sidebar w3-bar-block w3-collapse" id="git-wiki-sidebar">
+  <div>
+    <button class="w3-bar-item w3-button w3-large w3-hide-large" onclick="sidebar_toggle()">Close &times;</button>
+    
+
+    <div class="w3-hide-medium w3-hide-small">
+      
+      <h1>HakoDocs</h1>
+      
+    </div>
+
+
+    
+
+    
+    <ul class="git-wiki-downloads">
+    <li><a href="https://github.com/leogabac/hakodocs/zipball/gh-pages">Download <strong>ZIP File</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs/tarball/gh-pages">Download <strong>TAR Ball</strong></a></li>
+    <li><a href="https://github.com/leogabac/hakodocs">View On <strong> Github  </strong></a></li>
+</ul>
+
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+    Menu (<a href="https://github.com/leogabac/hakodocs/edit/master/_includes/sidebar.html">Edit</a>):
+
+<ul>
+  <li><a href="/">Home</a></li>
+</ul>
+
+    
+
+    <span class="page-list-title">Pages  (Latest 10 updated) :</span>
+    <ul class="page-list">
+        
+        
+        
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/linux.docker">Docker</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/latex">LaTeX</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/inkscape">Inkscape</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/timeshift">Timeshift</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/zerotier">ZeroTier</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/sunshine">Sushine/Moonlight</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/steam">Steam</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python">Python</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.jupyter">Jupyter Notebooks</a>
+        </li>
+        
+        
+
+        
+        
+        
+        <li class="page-list-item">
+            
+            <a href="/python.create_module">Python: Creating Modules</a>
+        </li>
+        
+        
+
+        
+        
+        
+    </ul>
+
+    
+</div>
+    
+
+    
+    <div class="git-wiki-page-list">
+    
+
+    <span class="post-list-title">Posts  (Latest 10 updated) :</span>
+    <ul class="post-list">
+        
+        
+        
+    </ul>
+
+    <span class="post-list read-all"><a href="/assets/blog/">Read all</a></span>
+
+    
+</div>
+    
+
+    
+  </div>
+</header>
+<script>
+  function sidebar_toggle() {
+    var sidebar = document.getElementById("git-wiki-sidebar");
+    if (sidebar.style.display == "block") {
+      sidebar.style.display = "none";
+      sidebar.style.position = "inherit";
+    } else {
+      $(sidebar).attr('style', 'display: block;');
+    }
+  }
+</script>
+
+    <div class="git-wiki-page">
+  <section>
+
+    <div id="tools-buttons" style="width: 100%; text-align: right">
+    
+
+    <div class="git-wiki-tools">
+    
+
+    
+
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/commits/master//wiki/python/python.create_module.md">History</a></span>
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/blob/master//wiki/python/python.create_module.md">Source</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="https://github.com/leogabac/hakodocs/new/master/_posts?filename=">Add
+            new post</a></span>
+    
+    
+    <br>
+    Prose.io:
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/wiki">Add
+            new</a></span>
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/edit/master/wiki/python/python.create_module.md">Edit</a></span>
+    
+    <span class="tools-element"><a target="_blank" href="http://prose.io/#leogabac/hakodocs/new/master/_posts/">Add
+            new post</a></span>
+    
+    
+    
+</div>
+
+
+    <div class="git-wiki-search">
+    
+
+    
+    
+    <div class="git-wiki-search-js">
+	<input type="text" id="search-input" placeholder="Search..">
+	<ul id="results-container"></ul>
+</div>
+<!-- script pointing to jekyll-search.js -->
+<script src="/assets/js/simple-jekyll-search.min.js"></script>
+<script async src="/assets/js/searchdata.js"></script>
+
+</div>
+
+    
+</div>
+
+    
+
+
+
+
+    Table of Contents:
+    <ol id="git-wiki-toc">
+  <li><a href="#python-creating-modules">Python: Creating Modules</a>
+    <ol>
+      <li><a href="#the-project-structure">The project structure</a></li>
+      <li><a href="#the-pyprojecttoml">The pyproject.toml</a>
+        <ol>
+          <li><a href="#optional-but-recommended">Optional (but recommended)</a></li>
+        </ol>
+      </li>
+      <li><a href="#the-__init__py">The __init__.py</a>
+        <ol>
+          <li><a href="#1-mark-the-directory-as-a-module">1. Mark the directory as a module</a></li>
+          <li><a href="#2-control-the-public-api">2. Control the public API</a></li>
+          <li><a href="#3-handle-package-level-metadata">3. Handle package-level metadata</a></li>
+          <li><a href="#4-provide-convenience-imports">4. Provide convenience imports</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+
+<!--
+
+
+    Table of Contents:
+    <ol id="sidebar-toc">
+  <li><a href="#python-creating-modules">Python: Creating Modules</a>
+    <ol>
+      <li><a href="#the-project-structure">The project structure</a></li>
+      <li><a href="#the-pyprojecttoml">The pyproject.toml</a></li>
+      <li><a href="#the-__init__py">The __init__.py</a></li>
+    </ol>
+  </li>
+</ol>
+-->
+
+<!--
+
+
+    Table of Contents:
+    <ul id="sidebar-toc">
+  <li><a href="#python-creating-modules">Python: Creating Modules</a>
+    <ul>
+      <li><a href="#the-project-structure">The project structure</a></li>
+      <li><a href="#the-pyprojecttoml">The pyproject.toml</a></li>
+      <li><a href="#the-__init__py">The __init__.py</a></li>
+    </ul>
+  </li>
+</ul>
+-->
+
+<button id="toggle-toc" class="toggle-toc-btn">☰ </button>
+
+<div id="sidebar-toc">
+    <button id="close-toc" class="close-toc-btn">✖</button>
+    <div class="toc-content">
+        <!--
+
+
+    Table of Contents:
+    <ol id="inline-toc">
+  <li><a href="#python-creating-modules">Python: Creating Modules</a>
+    <ol>
+      <li><a href="#the-project-structure">The project structure</a></li>
+      <li><a href="#the-pyprojecttoml">The pyproject.toml</a></li>
+      <li><a href="#the-__init__py">The __init__.py</a></li>
+    </ol>
+  </li>
+</ol>
+-->
+        
+
+
+    Table of Contents:
+    <ol id="floating_toc">
+  <li><a href="#python-creating-modules">Python: Creating Modules</a>
+    <ol>
+      <li><a href="#the-project-structure">The project structure</a></li>
+      <li><a href="#the-pyprojecttoml">The pyproject.toml</a>
+        <ol>
+          <li><a href="#optional-but-recommended">Optional (but recommended)</a></li>
+        </ol>
+      </li>
+      <li><a href="#the-__init__py">The __init__.py</a>
+        <ol>
+          <li><a href="#1-mark-the-directory-as-a-module">1. Mark the directory as a module</a></li>
+          <li><a href="#2-control-the-public-api">2. Control the public API</a></li>
+          <li><a href="#3-handle-package-level-metadata">3. Handle package-level metadata</a></li>
+          <li><a href="#4-provide-convenience-imports">4. Provide convenience imports</a></li>
+        </ol>
+      </li>
+    </ol>
+  </li>
+</ol>
+
+    </div>
+</div>
+
+
+
+
+
+
+    
+
+    <div id="git-wiki-content">
+      <h1 id="python-creating-modules">Python: Creating Modules</h1>
+
+<p>When your collection of helper functions, simulation utilities, plotting scripts, and half‑forgotten experimental snippets starts ballooning into a maze of files like <code class="language-plaintext highlighter-rouge">utils_new_final_v3_reallyfinal.py</code>, and you keep gluing paths together with <code class="language-plaintext highlighter-rouge">sys.path.append(...)</code>, that’s usually a sign: <strong>it’s time to turn your growing toolbox into a proper Python module</strong>.</p>
+
+<p>This is not overkill (even for small research projects). A clean module structure makes your work reproducible, easier to share, and much easier to maintain as your simulations, datasets, and ideas evolve. In theoretical or computational sciences, where one often runs several experiments in parallel with slightly different parameters, this separation between <em>core tools</em> and <em>experiment code</em> becomes easier to maintain in the long run.</p>
+
+<p>This guide will demystify the structure of a Python module and help you build your own from scratch.</p>
+
+<h2 id="the-project-structure">The project structure</h2>
+
+<p>A minimal, clean Python module layout looks like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>myproject/
+├── pyproject.toml
+├── README.md
+└── src/
+    └── myproject/
+        ├── __init__.py
+        ├── core.py
+        ├── context.py
+        ├── io.py
+        └── physics/
+            ├── __init__.py
+            ├── core.py
+            └── potentials.py
+</code></pre></div></div>
+
+<p>This example has a module called <code class="language-plaintext highlighter-rouge">myproject</code> with one submodule <code class="language-plaintext highlighter-rouge">myproject.physics</code> each one with several scripts.</p>
+
+<p>There are two main parts to this:</p>
+
+<ul>
+  <li>
+    <p><strong>Inside <code class="language-plaintext highlighter-rouge">myproject/src</code></strong></p>
+
+    <p>Everything that is part of your module goes inside this directory:</p>
+
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">__init__.py</code> file</li>
+      <li>Scripts</li>
+      <li>Submodules</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>Outside <code class="language-plaintext highlighter-rouge">myproject/src</code></strong></p>
+
+    <p>Here you write files that are intended for documentation, automation and package managers, e.g.</p>
+
+    <ul>
+      <li>The <code class="language-plaintext highlighter-rouge">pyproject.toml</code> file, which contains module information, requirements, python version, and declares possible CLI scripts. The <code class="language-plaintext highlighter-rouge">pip</code> tool uses it for installation.</li>
+      <li><code class="language-plaintext highlighter-rouge">README.md</code> for brief documentation, instructions and to have it nicely visualized on Github</li>
+    </ul>
+
+    <p>This structure scales well whether your project has 3 files or 300.</p>
+  </li>
+</ul>
+
+<h2 id="the-pyprojecttoml">The <code class="language-plaintext highlighter-rouge">pyproject.toml</code></h2>
+
+<p>The <code class="language-plaintext highlighter-rouge">pyproject.toml</code> is the modern configuration file for Python packages. It tells package managers how to build and install your module.</p>
+
+<p>A minimal working example:</p>
+
+<div class="language-toml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nn">[project]</span>
+<span class="py">name</span> <span class="p">=</span> <span class="s">"myproject"</span>
+<span class="py">version</span> <span class="p">=</span> <span class="s">"0.1.0"</span>
+<span class="py">description</span> <span class="p">=</span> <span class="s">"Tools for my physics simulations"</span>
+<span class="py">readme</span> <span class="p">=</span> <span class="s">"README.md"</span>
+<span class="py">authors</span> <span class="p">=</span> <span class="p">[</span> <span class="err">{</span> <span class="py">name</span> <span class="p">=</span> <span class="s">"Your Name"</span> <span class="err">}</span> <span class="p">]</span>
+<span class="nn">license</span> <span class="o">=</span> <span class="p">{</span> <span class="py">text</span> <span class="p">=</span> <span class="s">"MIT"</span> <span class="p">}</span>
+<span class="py">requires-python</span> <span class="p">=</span> <span class="py">"&gt;</span><span class="p">=</span><span class="mf">3.10</span><span class="s">"</span><span class="err">
+</span><span class="py">dependencies</span> <span class="p">=</span> <span class="p">[</span>
+    <span class="s">"numpy"</span><span class="p">,</span>
+    <span class="s">"scipy"</span><span class="p">,</span>
+<span class="p">]</span>
+
+<span class="nn">[build-system]</span>
+<span class="py">requires</span> <span class="p">=</span> <span class="nn">["setuptools&gt;=61.0"]</span>
+<span class="py">build-backend</span> <span class="p">=</span> <span class="s">"setuptools.build_meta"</span>
+</code></pre></div></div>
+
+<p>Here, what is important to point out are the following</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">name</code> is the module’s name used during installation (<code class="language-plaintext highlighter-rouge">pip install -e .</code>).</li>
+  <li><code class="language-plaintext highlighter-rouge">dependencies</code> lists what your module needs to run.</li>
+  <li><code class="language-plaintext highlighter-rouge">build-system</code> tells installers how to build the project (using modern setuptools).</li>
+</ul>
+
+<h3 id="optional-but-recommended">Optional (but recommended)</h3>
+
+<ul>
+  <li>Versioning tools (<code class="language-plaintext highlighter-rouge">setuptools_scm</code>)</li>
+  <li>Optional dependency groups (<code class="language-plaintext highlighter-rouge">[project.optional-dependencies]</code>)</li>
+  <li>Entry points (for command line tools)</li>
+</ul>
+
+<hr />
+
+<h2 id="the-__init__py">The <code class="language-plaintext highlighter-rouge">\_\_init\_\_.py</code></h2>
+
+<p>Every directory that should behave as a Python package needs an <code class="language-plaintext highlighter-rouge">__init__.py</code>.</p>
+
+<p>Its roles:</p>
+
+<h3 id="1-mark-the-directory-as-a-module">1. Mark the directory as a module</h3>
+
+<p>Without this file, Python won’t import it.</p>
+
+<h3 id="2-control-the-public-api">2. Control the public API</h3>
+
+<p>Example:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1"># src/myproject/__init__.py
+</span><span class="kn">from</span> <span class="nn">.core</span> <span class="kn">import</span> <span class="n">simulate</span><span class="p">,</span> <span class="n">Particle</span>
+<span class="kn">from</span> <span class="nn">.io</span> <span class="kn">import</span> <span class="n">load_data</span>
+
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s">"simulate"</span><span class="p">,</span> <span class="s">"Particle"</span><span class="p">,</span> <span class="s">"load_data"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This tells users:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">from</span> <span class="nn">myproject</span> <span class="kn">import</span> <span class="n">simulate</span>
+</code></pre></div></div>
+
+<p>which objects you consider “public”.</p>
+
+<h3 id="3-handle-package-level-metadata">3. Handle package-level metadata</h3>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">__version__</span> <span class="o">=</span> <span class="s">"0.1.0"</span>
+</code></pre></div></div>
+
+<p>If using <code class="language-plaintext highlighter-rouge">setuptools_scm</code>, this can be auto-generated.</p>
+
+<h3 id="4-provide-convenience-imports">4. Provide convenience imports</h3>
+
+<p>You can re-export subpackages so users can write:</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">myproject.physics</span> <span class="k">as</span> <span class="n">phys</span>
+</code></pre></div></div>
+
+<hr />
+
+<p>If you want, I can expand the guide with:</p>
+
+<ul>
+  <li>Packaging and distributing your module</li>
+  <li>Using <code class="language-plaintext highlighter-rouge">pip install -e .</code> for editable development</li>
+  <li>Structuring modules for scientific computing</li>
+  <li>Adding configuration systems (YAML, dataclasses, Hydra, etc.)</li>
+  <li>Best practices for naming, API stability, testing, and documentation</li>
+</ul>
+
+<p>Just tell me what to add next.</p>
+
+    </div>
+
+    
+  </section>
+</div>
+    <footer>
+    
+
+    
+<div class="git-wiki-copyrights">
+    <p>This project is maintained by <a href="https://github.com/leogabac">leogabac</a></p>
+    
+    <p><small>Hosted on GitHub Pages &mdash; Powered by <a href="https://github.com/Drassil/git-wiki-theme">Git-Wiki v2.8.6</a> </p>
+
+    
+    <p class="view"><a href="https://github.com/leogabac/hakodocs">View the Project on  Github  <small></small></a></p>
+</div>
+
+
+
+    
+</footer>
+</div>
+
+    
+
+<script src="/assets/js/scale.fix.js"></script>
+
+
+
+
+
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/guide,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/linux.sleep,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.create_module,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+    });
+</script>
+
+
+
+</body>
+
+</html>

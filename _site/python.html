@@ -20,14 +20,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Python" />
 <meta property="og:description" content="Python" />
-<link rel="canonical" href="http://localhost:4000/python" />
-<meta property="og:url" content="http://localhost:4000/python" />
+<link rel="canonical" href="http://0.0.0.0:4000/python" />
+<meta property="og:url" content="http://0.0.0.0:4000/python" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Python" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Python","headline":"Python","url":"http://localhost:4000/python"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Python","headline":"Python","url":"http://0.0.0.0:4000/python"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -39,12 +39,12 @@
 <meta property="og:title" content="python - HakoDocs">
 
 <meta property="og:description" content="
-        
+        A collection of tech-related notes
       ">
 
 
 <meta property="og:url"
-  content="http://localhost:4000/python" />
+  content="http://0.0.0.0:4000/python" />
 
 
 
@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=77027a5450597d589721451bd1b5735b045d0498">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=">
 
 
 
@@ -268,7 +268,7 @@
         
         <li class="page-list-item">
             
-            <a href="/ollama.openwebui">Ollama: Open WebUI</a>
+            <a href="/python.create_module">Python: Creating Modules</a>
         </li>
         
         
@@ -378,10 +378,17 @@
   </li>
   <li><a href="#virtual-environments">Virtual Environments</a>
     <ol>
-      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+      <li><a href="#the-venv-module">The venv module</a></li>
+      <li><a href="#the-virtualenv-tool">The virtualenv tool</a></li>
+      <li><a href="#conda">Conda</a></li>
     </ol>
   </li>
-  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#managing-versions">Managing Versions</a>
+    <ol>
+      <li><a href="#the-pyenv-tool">The pyenv tool</a></li>
+      <li><a href="#conda-1">Conda</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -399,10 +406,17 @@
   </li>
   <li><a href="#virtual-environments">Virtual Environments</a>
     <ol>
-      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+      <li><a href="#the-venv-module">The venv module</a></li>
+      <li><a href="#the-virtualenv-tool">The virtualenv tool</a></li>
+      <li><a href="#conda">Conda</a></li>
     </ol>
   </li>
-  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#managing-versions">Managing Versions</a>
+    <ol>
+      <li><a href="#the-pyenv-tool">The pyenv tool</a></li>
+      <li><a href="#conda-1">Conda</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -419,10 +433,17 @@
   </li>
   <li><a href="#virtual-environments">Virtual Environments</a>
     <ul>
-      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+      <li><a href="#the-venv-module">The venv module</a></li>
+      <li><a href="#the-virtualenv-tool">The virtualenv tool</a></li>
+      <li><a href="#conda">Conda</a></li>
     </ul>
   </li>
-  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#managing-versions">Managing Versions</a>
+    <ul>
+      <li><a href="#the-pyenv-tool">The pyenv tool</a></li>
+      <li><a href="#conda-1">Conda</a></li>
+    </ul>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ul>
 -->
@@ -444,10 +465,17 @@
   </li>
   <li><a href="#virtual-environments">Virtual Environments</a>
     <ol>
-      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+      <li><a href="#the-venv-module">The venv module</a></li>
+      <li><a href="#the-virtualenv-tool">The virtualenv tool</a></li>
+      <li><a href="#conda">Conda</a></li>
     </ol>
   </li>
-  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#managing-versions">Managing Versions</a>
+    <ol>
+      <li><a href="#the-pyenv-tool">The pyenv tool</a></li>
+      <li><a href="#conda-1">Conda</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 -->
@@ -463,10 +491,17 @@
   </li>
   <li><a href="#virtual-environments">Virtual Environments</a>
     <ol>
-      <li><a href="#pythons-built-in-venv-module">Python’s built-in venv module</a></li>
+      <li><a href="#the-venv-module">The venv module</a></li>
+      <li><a href="#the-virtualenv-tool">The virtualenv tool</a></li>
+      <li><a href="#conda">Conda</a></li>
     </ol>
   </li>
-  <li><a href="#managing-versions">Managing Versions</a></li>
+  <li><a href="#managing-versions">Managing Versions</a>
+    <ol>
+      <li><a href="#the-pyenv-tool">The pyenv tool</a></li>
+      <li><a href="#conda-1">Conda</a></li>
+    </ol>
+  </li>
   <li><a href="#see-also">See also</a></li>
 </ol>
 
@@ -509,8 +544,35 @@
 <h1 id="virtual-environments">Virtual Environments</h1>
 
 <p>A virtual environment in Python is an isolated workspace that allows you to manage dependencies separately for different projects. It prevents conflicts between packages by creating a self-contained directory with its own Python interpreter and libraries. Python &gt;3.11 prevents users from installing packages globally via <code class="language-plaintext highlighter-rouge">pip</code> and are encouraged to  to use virtual environments or user installs</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--user</span>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip <span class="nb">install</span> <span class="nt">--user</span> &lt;package&gt;
 </code></pre></div></div>
+
+<p>For better or for worse, there are several ways to create a virtual environment, the following sections will give an overview on the ones I (the main maintainer) have used in the past.</p>
+
+<h2 id="the-venv-module">The <code class="language-plaintext highlighter-rouge">venv</code> module</h2>
+
+<p>Python, has a built-in <a href="https://docs.python.org/3/library/venv.html" class="doc-link"><code class="language-plaintext highlighter-rouge">venv</code></a> module for creating virtual environments. It is slow and limited, but if you don’t have access to fancy tools in a server that is not yours, then it can come in handy to know it exists.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python <span class="nt">-m</span> venv &lt;path/to/vritual/environment&gt;
+</code></pre></div></div>
+
+<p>For example, in one of the High Performance Computing (HPC) servers I have access, there are multiple python versions callable by e.g. <code class="language-plaintext highlighter-rouge">python3.12</code> or <code class="language-plaintext highlighter-rouge">python3.8</code>, but we don’t have access to <code class="language-plaintext highlighter-rouge">virtualenv</code>. Thus I need to manage virtual environments either with <code class="language-plaintext highlighter-rouge">conda</code> or <code class="language-plaintext highlighter-rouge">venv</code>. To do this, call the the python binary you are interested in, followed by the module flag <code class="language-plaintext highlighter-rouge">-m venv</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.12 <span class="nt">-m</span> venv .venv
+</code></pre></div></div>
+
+<blockquote class="tip">
+  <p>To activate any virtual environment, you need to <code class="language-plaintext highlighter-rouge">source</code> the <code class="language-plaintext highlighter-rouge">activate</code> binary, e.g.</p>
+  <div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">source</span> .venv/bin/activate
+</code></pre></div>  </div>
+  <p>If using the <code class="language-plaintext highlighter-rouge">fish</code> shell, then use the <code class="language-plaintext highlighter-rouge">activate.fish</code> binary.</p>
+</blockquote>
+
+<blockquote class="tip">
+  <p>To exit any virtual environment, at any time run the command <code class="language-plaintext highlighter-rouge">deactivate</code>.</p>
+</blockquote>
+
+<h2 id="the-virtualenv-tool">The <code class="language-plaintext highlighter-rouge">virtualenv</code> tool</h2>
 
 <p>Let us create a virtual environment for general usage under the directory <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code>. First install the system package <code class="language-plaintext highlighter-rouge">python-virtualenv</code></p>
 
@@ -520,48 +582,62 @@
 
 <p>As an example, let’s make a virtualenv called <code class="language-plaintext highlighter-rouge">pyglobal</code> and activate it via the <code class="language-plaintext highlighter-rouge">source</code> command.</p>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv ~/.virtualenvs/pyglobal
-<span class="nb">source</span> ~/.virtualenvs/global/bin/activate
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv .venv
+<span class="nb">source</span> ~/.venv/bin/activate
 </code></pre></div></div>
 
-<p>For easier access, add an alias to your <code class="language-plaintext highlighter-rouge">~/.bashrc</code>.</p>
+<h2 id="conda">Conda</h2>
 
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">alias </span><span class="nv">pyglobal</span><span class="o">=</span><span class="s2">"source ~/.virtualenvs/global/bin/activate"</span>
+<p>Conda, either from Anaconda or Miniconda is arguably one of the most popular tools for creating virtual environments of managing versions (particularly among  developers on MacOS).</p>
+
+<p>To create a virtual environment, run</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create -n &lt;environment name&gt; python=&lt;version&gt;
 </code></pre></div></div>
 
-<p>To exit any virtual environment, at any time run the command <code class="language-plaintext highlighter-rouge">deactivate</code>.</p>
-
-<h2 id="pythons-built-in-venv-module">Python’s built-in <code class="language-plaintext highlighter-rouge">venv</code> module</h2>
-
-<p>Python has its own tool for creating virtual environments. This is very helpful whenever you are accessing a server and don’t have access to <code class="language-plaintext highlighter-rouge">virtualenv</code>, but you still have some access to some python binaries.</p>
-
-<p>For example, in one of the High Performance Computing (HPC) servers I have access, there are multiple python versions callable by e.g. <code class="language-plaintext highlighter-rouge">python3.12</code> or <code class="language-plaintext highlighter-rouge">python3.8</code>, but we don’t have access to <code class="language-plaintext highlighter-rouge">virtualenv</code>. Thus I need to manage virtual environments either with <code class="language-plaintext highlighter-rouge">conda</code> or <code class="language-plaintext highlighter-rouge">venv</code>. To do this, call the the python binary you are interested in, followed by the module flag <code class="language-plaintext highlighter-rouge">-m venv</code></p>
-
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3.12 -m venv .venv
-</code></pre></div></div>
+<p>Note that we do not need to provide a path for the environment, as conda typically stores then in some sort of “global” location, typically under <code class="language-plaintext highlighter-rouge">~/.conda</code>.</p>
 
 <h1 id="managing-versions">Managing Versions</h1>
 
-<p>Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on Python 3.7 because some of its dependencies have not been updated for newer versions, while a new project could require Python 3.11 to take advantage of performance improvements and new language features. Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like <a href="https://github.com/pyenv/pyenv">pyenv</a> or <a href="https://docs.conda.io/projects/conda/en/stable/index.html">conda</a> allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.</p>
+<p>Different projects may require different Python versions due to compatibility with specific libraries, dependencies, or system requirements. For example, an older project might rely on <code class="language-plaintext highlighter-rouge">python 3.7</code> because some of its dependencies have not been updated for newer versions, while a new project could require <code class="language-plaintext highlighter-rouge">python 3.11</code> to take advantage of performance improvements and new language features.</p>
+
+<p>Additionally, some systems or frameworks may only support certain Python versions, making it necessary to switch between them. Tools like <a href="https://github.com/pyenv/pyenv" data-sup="gh">pyenv</a> or <a href="https://docs.conda.io/projects/conda/en/stable/index.html" class="doc-link">conda</a> allow users to manage multiple Python versions efficiently, ensuring that each project runs in a controlled and compatible environment.</p>
 
 <blockquote class="tip">
-  <p>For rolling-releases, it is better to use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
+  <p>For rolling-releases, it is better to <strong>always</strong> use virtual environments that do not point to the global python version. When the global python is updated, your virtualenv might break.</p>
 </blockquote>
 
-<p>Pyenv is a tool, that among other things, it serves as an automation tool for compiling python versions from source and have them under the user’s home directory <code class="language-plaintext highlighter-rouge">~/.pyenv/</code>. For installation follow their <a href="https://github.com/pyenv/pyenv">documentation</a>.</p>
+<h2 id="the-pyenv-tool">The <code class="language-plaintext highlighter-rouge">pyenv</code> tool</h2>
 
-<p>Once a python version is installed, we can let <code class="language-plaintext highlighter-rouge">virtualenv</code> point to those binaries. As an example, here we installed Python 3.12.0 and created a virtual environment called <code class="language-plaintext highlighter-rouge">py3.12</code> under the <code class="language-plaintext highlighter-rouge">~/.virtualenvs/</code> directory.</p>
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">--python</span><span class="o">=</span>/home/USER/.pyenv/versions/3.12.0/bin/python3.12 /home/USER/.virtualenv/py3.12
+<p>Pyenv is a tool, that among other things, it serves as an automation tool for compiling python versions from source and have them under the user’s home directory <code class="language-plaintext highlighter-rouge">~/.pyenv/</code>. For specific installation follow their <a href="https://github.com/pyenv/pyenv" class="doc-link">installation guide</a>, for Arch-based distributions you can find it on the <code class="language-plaintext highlighter-rouge">extra</code> repository, thus</p>
+
+<div class="language-sh highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> pyenv
 </code></pre></div></div>
 
-<blockquote class="warning">
-  <p>It is really important to give the full path to the python binaries. Otherwise it can throw you a RuntimeError.</p>
-</blockquote>
+<p>After you <a href="https://github.com/pyenv/pyenv?tab=readme-ov-file#b-set-up-your-shell-environment-for-pyenv" class="doc-link">set up your shell</a>, and <a href="https://github.com/pyenv/pyenv/wiki#suggested-build-environment">install the python build dependencies</a>, you can install a python version with</p>
+
+<pre><code class="language-language">pyenv install &lt;x.y.z&gt;
+</code></pre>
+<p>where <code class="language-plaintext highlighter-rouge">&lt;x.y.z&gt;</code> is some python version e.g. <code class="language-plaintext highlighter-rouge">3.12.0</code>. This command will compile and install the binaries under the local directory <code class="language-plaintext highlighter-rouge">$HOME/.pyenv/versions/&lt;x.y.z&gt;/</code>.</p>
+
+<p>Once a python version is installed, we can let e.g. <code class="language-plaintext highlighter-rouge">virtualenv</code> point to those binaries.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>virtualenv <span class="nt">--python</span><span class="o">=</span><span class="nv">$HOME</span>/.pyenv/versions/&lt;x.y.z&gt;/bin/python&lt;x.y&gt; /path/to/venv
+</code></pre></div></div>
+
+<p>or if <code class="language-plaintext highlighter-rouge">virtualenv</code> is not available, you can directly call the <code class="language-plaintext highlighter-rouge">venv</code> module from the installed python binaries.</p>
+
+<h2 id="conda-1">Conda</h2>
+
+<p>When <code class="language-plaintext highlighter-rouge">conda</code> is available, then it becomes really simple to choose a python version and create a virtual environment</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conda create -n &lt;environment name&gt; python=&lt;version&gt;
+</code></pre></div></div>
 
 <h1 id="see-also">See also</h1>
 
 <ul>
-  <li><a href="python.jupyter">Jupyter Notebook</a></li>
+  <li><a href="python.jupyter">Python: Jupyter Lab</a></li>
+  <li><a href="python.create_module">Python: Creating Modules</a></li>
 </ul>
 
     </div>
@@ -599,7 +675,7 @@
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/guide,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/linux.sleep,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/guide,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/linux.sleep,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.create_module,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
     });
 </script>
 

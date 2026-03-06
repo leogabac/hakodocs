@@ -139,3 +139,8 @@ this symlinks root so that the LSP can find libraries and binaries outside the j
 
 
 
+# See also
+
+- [Python](python)
+- [Python: Creating Modules](python.create_module)
+

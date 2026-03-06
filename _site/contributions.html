@@ -20,14 +20,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Contributions" />
 <meta property="og:description" content="Contributions" />
-<link rel="canonical" href="http://localhost:4000/contributions" />
-<meta property="og:url" content="http://localhost:4000/contributions" />
+<link rel="canonical" href="http://0.0.0.0:4000/contributions" />
+<meta property="og:url" content="http://0.0.0.0:4000/contributions" />
 <meta property="og:site_name" content="HakoDocs" />
 <meta property="og:type" content="website" />
 <meta name="twitter:card" content="summary" />
 <meta property="twitter:title" content="Contributions" />
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"WebPage","description":"Contributions","headline":"Contributions","url":"http://localhost:4000/contributions"}</script>
+{"@context":"https://schema.org","@type":"WebPage","description":"Contributions","headline":"Contributions","url":"http://0.0.0.0:4000/contributions"}</script>
 <!-- End Jekyll SEO tag -->
 
 
@@ -39,12 +39,12 @@
 <meta property="og:title" content="contributions - HakoDocs">
 
 <meta property="og:description" content="
-        
+        A collection of tech-related notes
       ">
 
 
 <meta property="og:url"
-  content="http://localhost:4000/contributions" />
+  content="http://0.0.0.0:4000/contributions" />
 
 
 
@@ -110,7 +110,7 @@
 
   
 
-<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=77027a5450597d589721451bd1b5735b045d0498">
+<link rel="stylesheet" href="/assets/css/git-wiki-style.css?v=">
 
 
 
@@ -268,7 +268,7 @@
         
         <li class="page-list-item">
             
-            <a href="/ollama.openwebui">Ollama: Open WebUI</a>
+            <a href="/python.create_module">Python: Creating Modules</a>
         </li>
         
         
@@ -373,7 +373,9 @@
     <ol id="git-wiki-toc">
   <li><a href="#contributions">Contributions</a>
     <ol>
-      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#how-to-make-an-article">How to make an article?</a></li>
+      <li><a href="#running-the-server-locally">Running the server locally</a></li>
     </ol>
   </li>
 </ol>
@@ -387,7 +389,9 @@
     <ol id="sidebar-toc">
   <li><a href="#contributions">Contributions</a>
     <ol>
-      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#how-to-make-an-article">How to make an article?</a></li>
+      <li><a href="#running-the-server-locally">Running the server locally</a></li>
     </ol>
   </li>
 </ol>
@@ -400,7 +404,9 @@
     <ul id="sidebar-toc">
   <li><a href="#contributions">Contributions</a>
     <ul>
-      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#how-to-make-an-article">How to make an article?</a></li>
+      <li><a href="#running-the-server-locally">Running the server locally</a></li>
     </ul>
   </li>
 </ul>
@@ -418,7 +424,9 @@
     <ol id="inline-toc">
   <li><a href="#contributions">Contributions</a>
     <ol>
-      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#how-to-make-an-article">How to make an article?</a></li>
+      <li><a href="#running-the-server-locally">Running the server locally</a></li>
     </ol>
   </li>
 </ol>
@@ -430,7 +438,9 @@
     <ol id="floating_toc">
   <li><a href="#contributions">Contributions</a>
     <ol>
-      <li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+      <li><a href="#guidelines">Guidelines</a></li>
+      <li><a href="#how-to-make-an-article">How to make an article?</a></li>
+      <li><a href="#running-the-server-locally">Running the server locally</a></li>
     </ol>
   </li>
 </ol>
@@ -448,41 +458,26 @@
     <div id="git-wiki-content">
       <h1 id="contributions">Contributions</h1>
 
-<h2 id="setting-up-the-environment">Setting up the environment</h2>
+<h2 id="guidelines">Guidelines</h2>
 
-<p>Since I have not had the time for setting up a proper docker container with the jekyll server, here is small guide on how to set everything up locally.</p>
-
+<p>There are no specific contribution guidelines yet, other than</p>
 <ol>
-  <li>Install <code class="language-plaintext highlighter-rouge">ruby</code>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>pacman <span class="nt">-S</span> ruby
-</code></pre></div>    </div>
-  </li>
-  <li>Install the corresponding gems
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem <span class="nb">install </span>rails
-gem <span class="nb">install </span>jekyll
-gem <span class="nb">install </span>jekyll bundler
-</code></pre></div>    </div>
-  </li>
-  <li>Figure out the path where those gems are
-    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem which bundler
-# e.g. output
-#  /home/holo/.local/share/gem/ruby/3.4.0/gems/bundler-2.7.2/lib/bundler.rb
-</code></pre></div>    </div>
-  </li>
-  <li>Add that to <code class="language-plaintext highlighter-rouge">PATH</code>
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">"</span><span class="nv">$HOME</span><span class="s2">/.local/share/gem/ruby/3.4.0/bin:</span><span class="nv">$PATH</span><span class="s2">"</span>
-</code></pre></div>    </div>
-  </li>
-  <li>cd into the repo and install the rest of the gems into a local path
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">install</span> <span class="nt">--path</span> vendor/bundle
-</code></pre></div>    </div>
-  </li>
-  <li>Then you can run
-    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle <span class="nb">exec </span>jekyll serve
-</code></pre></div>    </div>
-    <p>Which will make the local site visible at <a href="http://localhost:4000/home">http://localhost:4000/home</a></p>
-  </li>
+  <li>Try to keep the style consistent</li>
+  <li>Make a pull request</li>
+  <li>Have common sense</li>
 </ol>
+
+<h2 id="how-to-make-an-article">How to make an article?</h2>
+
+<h2 id="running-the-server-locally">Running the server locally</h2>
+
+<p>The repository provides a <code class="language-plaintext highlighter-rouge">Dockerfile</code> to run the server locally. Simply build the image with the provided script</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./build-image
+</code></pre></div></div>
+<p>This process will create the image <code class="language-plaintext highlighter-rouge">hakodocs:latest</code> and needs to be done only once. Then, run the server with</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./run-image
+</code></pre></div></div>
+<p>Which will make the local site visible at <a href="http://localhost:4000/home">http://localhost:4000/home</a></p>
 
 
     </div>
@@ -520,7 +515,7 @@ gem <span class="nb">install </span>jekyll bundler
 
 <script type="text/javascript">
     $(document).ready(function () {
-        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/guide,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/linux.sleep,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
+        $(document.body).checkLinks("/404.html,/archlinux,/contributions,/cpp.armadillo,/cpp.fft,/cpp,/git.github,/git,/guide,/home,/assets/blog/,/julia,/kdeconnect,/linux.clitips,/linux.dump.laggy_suspend,/linux.dump,/linux.settings,/linux.sleep,/matlab,/minecraft,/ollama,/ollama.openwebui,/python.create_module,/python.jupyter,/python,/steam,/sunshine,/zerotier,/timeshift,/inkscape,/latex,/linux.docker,/,".split(","));
     });
 </script>
 
