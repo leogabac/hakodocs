@@ -5,10 +5,15 @@ ENV LC_ALL C.UTF-8
 
 WORKDIR /srv/jekyll
 
-# Copy only Gemfile to cache bundle install
+RUN apt-get update \
+  && apt-get install -y --no-install-recommends build-essential git \
+  && rm -rf /var/lib/apt/lists/*
+
 COPY Gemfile Gemfile.lock ./
 
-RUN bundle install
+RUN bundle config set path /usr/local/bundle \
+  && bundle install
 
 EXPOSE 4000
 
+CMD ["bundle", "exec", "jekyll", "serve", "--host", "0.0.0.0", "--livereload", "--force_polling"]

@@ -1,0 +1,9 @@
+.git
+.github
+.bundle
+.codex
+_site
+.jekyll-cache
+.sass-cache
+vendor
+.DS_Store

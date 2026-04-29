@@ -76,7 +76,7 @@ First thing, is that we need to check if all basic functionalities are working p
 - **For general troubleshooting** visit [Network configuration](https://wiki.archlinux.org/title/Network_configuration/Wireless) on the ArchWiki.
 
 ### Migrating `wpa_supplicant` to `iwd`
-See [Migrating wpa_supplicant to iwd](linux.dump#migrating-wpa_supplicant-to-iwd)
+See [Migrating wpa_supplicant to iwd](/linux/troubleshooting/#migrating-wpa_supplicant-to-iwd)
 
 ## Sound
 
@@ -250,7 +250,7 @@ Check the [leovim repository](https://github.com/leogabac/leovim) for more infor
 
 There are other tools you might be interested in checking out. Here are some of them (Available on this Wiki)
 
-- [Linux: Settings](linux.settings): A list of common settings for Linux.
-- [Python](python): Installation, virtual environments, handling versions.
-- [Timeshift](timeshift): Tool for creating system snapshopts. Similar to MacOS TimeMachine.
-- [LaTeX](latex): Typesetting system.
+- [Linux: Settings](/linux/settings/): A list of common settings for Linux.
+- [Python](/python/): Installation, virtual environments, handling versions.
+- [Timeshift](/linux/timeshift/): Tool for creating system snapshots. Similar to macOS Time Machine.
+- [LaTeX](/latex): Typesetting system.

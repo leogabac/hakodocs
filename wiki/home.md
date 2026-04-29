@@ -30,38 +30,50 @@ Here is a list of the (most useful) articles you will find in this wiki.
 
 ## General
 
-- [Arch Linux](archlinux)
-- [Timeshift](timeshift)
-- [Zero Tier](zerotier)
+- [Arch Linux](/archlinux)
+- [Timeshift](/linux/timeshift/)
 {:.three-column-list}
 
 ## Linux
 
-- [Linux CLI Tips](linux.clitips)
-- [Common Linux Settings](linux.settings)
-- [Dump](linux.dump)
+- [CLI Tips](/linux/cli-tips/)
+- [Common Settings](/linux/settings/)
+- [Troubleshooting](/linux/troubleshooting/)
+{:.three-column-list}
+
+## Networking
+
+- [ZeroTier](/networking/zerotier/)
+- [Sunshine / Moonlight](/networking/sunshine/)
+- [KDE Connect](/networking/kde-connect/)
 {:.three-column-list}
  
 ## Git
 
-- [Git](git)
-- [GitHub](git.github)
+- [Git](/git/)
+- [GitHub](/git/github/)
 {:.three-column-list}
 
 ## Python
 
-- [Python](python)
-- [Jupyter Notebook](python.jupyter)
+- [Python](/python/)
+- [Jupyter Notebook](/python/jupyter/)
 {:.three-column-list}
 
 ## LLMs
 
-- [Ollama](ollama)
-- [Ollama: Open WebUI](ollama.openwebui)
+- [Ollama](/ollama/)
+- [Ollama: Open WebUI](/ollama/open-webui/)
+{:.three-column-list}
+
+## Apps
+
+- [MATLAB](/apps/matlab/)
+- [Steam](/gaming/steam/)
+- [Minecraft](/gaming/minecraft/)
 {:.three-column-list}
 
 
 # Contributing
 
-See the [Contributions](contributions) page for more information.
-
+See the [Contributions](/contributions) page for more information.

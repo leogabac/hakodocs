@@ -25,5 +25,4 @@ To install it (on Linux)
 4. Install the `python3-tinycss2` package from your package manager.
 
 {: .warning}
-> Make sure to have a LaTeX compiler installed (e.g. `texlive`). You can see the [Hakodocs' LaTeX page](latex) for more information.
-
+> Make sure to have a LaTeX compiler installed (e.g. `texlive`). You can see the [HakoDocs LaTeX page](/latex) for more information.

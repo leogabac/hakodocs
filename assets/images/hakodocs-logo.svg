@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 240 180"
+   role="img"
+   aria-labelledby="title desc"
+   version="1.1"
+   id="svg20"
+   sodipodi:docname="hakodocs-logo.svg"
+   inkscape:version="1.4.3 (0d15f75042, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview20"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="3.1466252"
+     inkscape:cx="122.98891"
+     inkscape:cy="104.39756"
+     inkscape:window-width="1920"
+     inkscape:window-height="1052"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg20" />
+  <title
+     id="title">HakoDocs logo</title>
+  <desc
+     id="desc">A wedge of Swiss cheese with rat ears and a tail.</desc>
+  <defs
+     id="defs5">
+    <linearGradient
+       id="cheese"
+       x1="23.261247"
+       y1="81.648676"
+       x2="143.82658"
+       y2="202.21401"
+       gradientTransform="scale(1.5261435,0.65524639)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#ffe88a"
+         id="stop1" />
+      <stop
+         offset="55%"
+         stop-color="#ffd454"
+         id="stop2" />
+      <stop
+         offset="100%"
+         stop-color="#f2b42f"
+         id="stop3" />
+    </linearGradient>
+    <linearGradient
+       id="rind"
+       x1="13.599102"
+       y1="332.84007"
+       x2="84.082882"
+       y2="332.84007"
+       gradientTransform="scale(2.6105104,0.38306686)"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0%"
+         stop-color="#d18d1f"
+         id="stop4" />
+      <stop
+         offset="100%"
+         stop-color="#b86f10"
+         id="stop5" />
+    </linearGradient>
+  </defs>
+  <path
+     d="m 179,43 c 9,-16 23,-21 35,-12 8,6 11,14 8,25 -14,-4 -28,-6 -43,-6 z"
+     fill="#7b7b80"
+     stroke="#4f4f55"
+     stroke-width="4"
+     stroke-linejoin="round"
+     id="path6"
+     style="fill-rule:evenodd;fill:#d4241c;fill-opacity:1;stroke:#91130d;stroke-opacity:1" />
+  <path
+     d="m 189.94937,48.54674 c 6,-9 14.42135,-11.280899 20.42135,-6.280899 3,2 4,6 4,10 -8,-2 -16.25281,-3.168539 -24.42135,-3.719101 z"
+     fill="#f6b0c4"
+     opacity="0.9"
+     id="path7"
+     style="fill-rule:evenodd"
+     sodipodi:nodetypes="cccc" />
+  <path
+     d="m 155.77528,45.5 c -5,-17 -18,-25 -32,-19 -9,4 -14,12 -14,23 14,0 29,-2 46,-4 z"
+     fill="#7b7b80"
+     stroke="#4f4f55"
+     stroke-width="4"
+     stroke-linejoin="round"
+     id="path8"
+     style="fill-rule:evenodd;fill:#d4241c;fill-opacity:1;stroke:#91130d;stroke-opacity:1" />
+  <path
+     d="m 145.91402,44.98878 c -5.32978,-9.359137 -12.81097,-12.364423 -19.33502,-8.435456 -3.68896,2.528155 -5.25997,5.773448 -5.5669,10.863221 7.92486,-1.093879 15.84972,-2.187758 24.90192,-2.427765 z"
+     fill="#f6b0c4"
+     opacity="0.9"
+     id="path9"
+     style="fill-rule:evenodd" />
+  <path
+     d="m 47,56 h 137 c 18,0 33,15 33,33 v 41 H 38 V 66 c 0,-6 4,-10 9,-10 z"
+     fill="url(#cheese)"
+     stroke="#b77817"
+     stroke-width="5"
+     stroke-linejoin="round"
+     id="path10"
+     style="fill:url(#cheese);fill-rule:evenodd" />
+  <path
+     d="m 38,130 h 179 l -42,22 H 72 Z"
+     fill="url(#rind)"
+     stroke="#a15c0b"
+     stroke-width="5"
+     stroke-linejoin="round"
+     id="path11"
+     style="fill:url(#rind);fill-rule:evenodd" />
+  <path
+     d="m 57,56 h 123 c 12,0 23,7 30,17 H 47 C 49,63 52,56 57,56 Z"
+     fill="#fff2b3"
+     opacity="0.45"
+     id="path12"
+     style="fill-rule:evenodd" />
+  <circle
+     cx="87"
+     cy="90"
+     r="13"
+     fill="#f0b126"
+     id="circle12"
+     style="fill-rule:evenodd" />
+  <circle
+     cx="131"
+     cy="103"
+     r="18"
+     fill="#efb028"
+     id="circle13"
+     style="fill-rule:evenodd" />
+  <circle
+     cx="175"
+     cy="89"
+     r="10"
+     fill="#efb028"
+     id="circle14"
+     style="fill-rule:evenodd" />
+  <circle
+     cx="154"
+     cy="72"
+     r="7"
+     fill="#efb028"
+     id="circle15"
+     style="fill-rule:evenodd" />
+  <circle
+     cx="108"
+     cy="69"
+     r="8"
+     fill="#efb028"
+     id="circle16"
+     style="fill-rule:evenodd" />
+  <path
+     d="m 67,117 c 9,-10 23,-9 29,3 -10,5 -21,3 -29,-3 z"
+     fill="#efb028"
+     id="path16"
+     style="fill-rule:evenodd" />
+  <circle
+     cx="157"
+     cy="77"
+     r="1.5"
+     fill="#ffffff"
+     id="circle18"
+     style="fill-rule:evenodd" />
+  <path
+     d="m 50,112 c -18,8 -28,20 -30,37"
+     stroke="#7b7b80"
+     stroke-width="6"
+     stroke-linecap="round"
+     id="path19"
+     style="fill:none;fill-rule:evenodd;stroke:#d4241c;stroke-opacity:1" />
+  <path
+     d="m 19,149 c -2,8 2,14 12,17"
+     stroke="#7b7b80"
+     stroke-width="6"
+     stroke-linecap="round"
+     id="path20"
+     style="fill:none;fill-rule:evenodd;stroke:#d4241c;stroke-opacity:1" />
+</svg>

@@ -1,10 +1,14 @@
-#! /bin/bash
+#!/usr/bin/env bash
 
+set -euo pipefail
 
-# docker run -it --rm -p 4000:4000 hakodocs bundle exec jekyll serve --host 0.0.0.0
+IMAGE_NAME="${IMAGE_NAME:-hakodocs}"
+CONTAINER_NAME="${CONTAINER_NAME:-hakodocs-dev}"
 
 docker run -it --rm \
+  --name "$CONTAINER_NAME" \
   -p 4000:4000 \
   -v "$PWD:/srv/jekyll" \
-  hakodocs \
-  bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling
+  -v hakodocs-bundle:/usr/local/bundle \
+  "$IMAGE_NAME" \
+  bash -lc 'git config --global --add safe.directory /srv/jekyll && bundle exec jekyll serve --host 0.0.0.0 --livereload --force_polling'
